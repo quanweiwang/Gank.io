@@ -17,6 +17,7 @@
 #define MAS_SHORTHAND_GLOBALS
 
 #import "Masonry.h"
+#import "MJExtension.h"
 
 #import "GKMacro.h"
 #import "GKNetwork.h"

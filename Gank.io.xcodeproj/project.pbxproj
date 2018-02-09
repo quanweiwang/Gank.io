@@ -22,6 +22,7 @@
 		D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784A3202D8EE900B7913C /* UIColor+Util.m */; };
 		D79784A7202D910400B7913C /* GKTodayHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784A6202D910400B7913C /* GKTodayHeaderView.m */; };
 		D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784AA202D9A9E00B7913C /* GKNetwork.m */; };
+		D79784B0202DA6C300B7913C /* GKTodayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784AF202DA6C300B7913C /* GKTodayModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		D79784A6202D910400B7913C /* GKTodayHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKTodayHeaderView.m; sourceTree = "<group>"; };
 		D79784A9202D9A9E00B7913C /* GKNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKNetwork.h; sourceTree = "<group>"; };
 		D79784AA202D9A9E00B7913C /* GKNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKNetwork.m; sourceTree = "<group>"; };
+		D79784AE202DA6C300B7913C /* GKTodayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKTodayModel.h; sourceTree = "<group>"; };
+		D79784AF202DA6C300B7913C /* GKTodayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKTodayModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,9 +189,9 @@
 		D797849D202D849B00B7913C /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				D79784AD202DA59000B7913C /* Model */,
+				D79784AC202DA57E00B7913C /* ViewController */,
 				D797849E202D84A400B7913C /* View */,
-				D7665DD1202AD50B00EF8B3A /* GKTodayVC.h */,
-				D7665DD2202AD50B00EF8B3A /* GKTodayVC.m */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -228,6 +231,24 @@
 				D79784AA202D9A9E00B7913C /* GKNetwork.m */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		D79784AC202DA57E00B7913C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D7665DD1202AD50B00EF8B3A /* GKTodayVC.h */,
+				D7665DD2202AD50B00EF8B3A /* GKTodayVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D79784AD202DA59000B7913C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D79784AE202DA6C300B7913C /* GKTodayModel.h */,
+				D79784AF202DA6C300B7913C /* GKTodayModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,6 +469,7 @@
 				D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */,
 				D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */,
 				D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */,
+				D79784B0202DA6C300B7913C /* GKTodayModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
