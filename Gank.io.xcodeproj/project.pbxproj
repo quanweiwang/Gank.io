@@ -1,0 +1,743 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		570D384E38021F8797BC6113 /* Pods_Gank_io.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742EBE2EAF90C128DD97BD04 /* Pods_Gank_io.framework */; };
+		D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665D9D202AA32800EF8B3A /* AppDelegate.m */; };
+		D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DA0202AA32800EF8B3A /* ViewController.m */; };
+		D7665DA4202AA32800EF8B3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7665DA2202AA32800EF8B3A /* Main.storyboard */; };
+		D7665DA6202AA32800EF8B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7665DA5202AA32800EF8B3A /* Assets.xcassets */; };
+		D7665DA9202AA32800EF8B3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7665DA7202AA32800EF8B3A /* LaunchScreen.storyboard */; };
+		D7665DAC202AA32800EF8B3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DAB202AA32800EF8B3A /* main.m */; };
+		D7665DB6202AA32800EF8B3A /* Gank_ioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DB5202AA32800EF8B3A /* Gank_ioTests.m */; };
+		D7665DC1202AA32800EF8B3A /* Gank_ioUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DC0202AA32800EF8B3A /* Gank_ioUITests.m */; };
+		D7665DD0202AAC7B00EF8B3A /* GKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DCF202AAC7B00EF8B3A /* GKTabBarController.m */; };
+		D7665DD3202AD50B00EF8B3A /* GKTodayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DD2202AD50B00EF8B3A /* GKTodayVC.m */; };
+		D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DD6202AD95100EF8B3A /* GKTodayCell.m */; };
+		D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784A3202D8EE900B7913C /* UIColor+Util.m */; };
+		D79784A7202D910400B7913C /* GKTodayHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784A6202D910400B7913C /* GKTodayHeaderView.m */; };
+		D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784AA202D9A9E00B7913C /* GKNetwork.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7665DB2202AA32800EF8B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7665D91202AA32800EF8B3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7665D98202AA32800EF8B3A;
+			remoteInfo = Gank.io;
+		};
+		D7665DBD202AA32800EF8B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7665D91202AA32800EF8B3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7665D98202AA32800EF8B3A;
+			remoteInfo = Gank.io;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		600C5F304B24BA741E369A45 /* Pods-Gank.io.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gank.io.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io.debug.xcconfig"; sourceTree = "<group>"; };
+		742EBE2EAF90C128DD97BD04 /* Pods_Gank_io.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gank_io.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D05CFF2E60B0548D03A34E /* Pods-Gank.io.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gank.io.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io.release.xcconfig"; sourceTree = "<group>"; };
+		D7665D99202AA32800EF8B3A /* Gank.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gank.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7665D9C202AA32800EF8B3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D7665D9D202AA32800EF8B3A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D7665D9F202AA32800EF8B3A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D7665DA0202AA32800EF8B3A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D7665DA3202AA32800EF8B3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D7665DA5202AA32800EF8B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7665DA8202AA32800EF8B3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D7665DAA202AA32800EF8B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7665DAB202AA32800EF8B3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D7665DB1202AA32800EF8B3A /* Gank.ioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gank.ioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7665DB5202AA32800EF8B3A /* Gank_ioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gank_ioTests.m; sourceTree = "<group>"; };
+		D7665DB7202AA32800EF8B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7665DBC202AA32800EF8B3A /* Gank.ioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gank.ioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7665DC0202AA32800EF8B3A /* Gank_ioUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gank_ioUITests.m; sourceTree = "<group>"; };
+		D7665DC2202AA32800EF8B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7665DCE202AAC7B00EF8B3A /* GKTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKTabBarController.h; sourceTree = "<group>"; };
+		D7665DCF202AAC7B00EF8B3A /* GKTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKTabBarController.m; sourceTree = "<group>"; };
+		D7665DD1202AD50B00EF8B3A /* GKTodayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKTodayVC.h; sourceTree = "<group>"; };
+		D7665DD2202AD50B00EF8B3A /* GKTodayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKTodayVC.m; sourceTree = "<group>"; };
+		D7665DD4202AD59100EF8B3A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D7665DD5202AD95100EF8B3A /* GKTodayCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKTodayCell.h; sourceTree = "<group>"; };
+		D7665DD6202AD95100EF8B3A /* GKTodayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKTodayCell.m; sourceTree = "<group>"; };
+		D797849F202D88E700B7913C /* GKMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKMacro.h; sourceTree = "<group>"; };
+		D79784A2202D8EE900B7913C /* UIColor+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
+		D79784A3202D8EE900B7913C /* UIColor+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
+		D79784A5202D910400B7913C /* GKTodayHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKTodayHeaderView.h; sourceTree = "<group>"; };
+		D79784A6202D910400B7913C /* GKTodayHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKTodayHeaderView.m; sourceTree = "<group>"; };
+		D79784A9202D9A9E00B7913C /* GKNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKNetwork.h; sourceTree = "<group>"; };
+		D79784AA202D9A9E00B7913C /* GKNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKNetwork.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7665D96202AA32800EF8B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				570D384E38021F8797BC6113 /* Pods_Gank_io.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7665DAE202AA32800EF8B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7665DB9202AA32800EF8B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0733373CF18088EB5B0061B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				742EBE2EAF90C128DD97BD04 /* Pods_Gank_io.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7633468B6E00DDC476ECA352 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				600C5F304B24BA741E369A45 /* Pods-Gank.io.debug.xcconfig */,
+				84D05CFF2E60B0548D03A34E /* Pods-Gank.io.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D7665D90202AA32800EF8B3A = {
+			isa = PBXGroup;
+			children = (
+				D7665D9B202AA32800EF8B3A /* Gank.io */,
+				D7665DB4202AA32800EF8B3A /* Gank.ioTests */,
+				D7665DBF202AA32800EF8B3A /* Gank.ioUITests */,
+				D7665D9A202AA32800EF8B3A /* Products */,
+				7633468B6E00DDC476ECA352 /* Pods */,
+				0733373CF18088EB5B0061B6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D7665D9A202AA32800EF8B3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7665D99202AA32800EF8B3A /* Gank.io.app */,
+				D7665DB1202AA32800EF8B3A /* Gank.ioTests.xctest */,
+				D7665DBC202AA32800EF8B3A /* Gank.ioUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7665D9B202AA32800EF8B3A /* Gank.io */ = {
+			isa = PBXGroup;
+			children = (
+				D79784A8202D9A6F00B7913C /* Network */,
+				D79784A0202D8EC500B7913C /* Categories */,
+				D797849D202D849B00B7913C /* Today */,
+				D7665D9C202AA32800EF8B3A /* AppDelegate.h */,
+				D7665D9D202AA32800EF8B3A /* AppDelegate.m */,
+				D7665D9F202AA32800EF8B3A /* ViewController.h */,
+				D7665DA0202AA32800EF8B3A /* ViewController.m */,
+				D7665DA2202AA32800EF8B3A /* Main.storyboard */,
+				D7665DA5202AA32800EF8B3A /* Assets.xcassets */,
+				D7665DA7202AA32800EF8B3A /* LaunchScreen.storyboard */,
+				D7665DAA202AA32800EF8B3A /* Info.plist */,
+				D7665DAB202AA32800EF8B3A /* main.m */,
+				D7665DCE202AAC7B00EF8B3A /* GKTabBarController.h */,
+				D7665DCF202AAC7B00EF8B3A /* GKTabBarController.m */,
+				D7665DD4202AD59100EF8B3A /* PrefixHeader.pch */,
+				D797849F202D88E700B7913C /* GKMacro.h */,
+			);
+			path = Gank.io;
+			sourceTree = "<group>";
+		};
+		D7665DB4202AA32800EF8B3A /* Gank.ioTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7665DB5202AA32800EF8B3A /* Gank_ioTests.m */,
+				D7665DB7202AA32800EF8B3A /* Info.plist */,
+			);
+			path = Gank.ioTests;
+			sourceTree = "<group>";
+		};
+		D7665DBF202AA32800EF8B3A /* Gank.ioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D7665DC0202AA32800EF8B3A /* Gank_ioUITests.m */,
+				D7665DC2202AA32800EF8B3A /* Info.plist */,
+			);
+			path = Gank.ioUITests;
+			sourceTree = "<group>";
+		};
+		D797849D202D849B00B7913C /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				D797849E202D84A400B7913C /* View */,
+				D7665DD1202AD50B00EF8B3A /* GKTodayVC.h */,
+				D7665DD2202AD50B00EF8B3A /* GKTodayVC.m */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		D797849E202D84A400B7913C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7665DD5202AD95100EF8B3A /* GKTodayCell.h */,
+				D7665DD6202AD95100EF8B3A /* GKTodayCell.m */,
+				D79784A5202D910400B7913C /* GKTodayHeaderView.h */,
+				D79784A6202D910400B7913C /* GKTodayHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D79784A0202D8EC500B7913C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D79784A1202D8ECE00B7913C /* UIKit */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		D79784A1202D8ECE00B7913C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D79784A2202D8EE900B7913C /* UIColor+Util.h */,
+				D79784A3202D8EE900B7913C /* UIColor+Util.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		D79784A8202D9A6F00B7913C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D79784A9202D9A9E00B7913C /* GKNetwork.h */,
+				D79784AA202D9A9E00B7913C /* GKNetwork.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7665D98202AA32800EF8B3A /* Gank.io */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7665DC5202AA32800EF8B3A /* Build configuration list for PBXNativeTarget "Gank.io" */;
+			buildPhases = (
+				630C0BFEB8C108ED78372DFE /* [CP] Check Pods Manifest.lock */,
+				D7665D95202AA32800EF8B3A /* Sources */,
+				D7665D96202AA32800EF8B3A /* Frameworks */,
+				D7665D97202AA32800EF8B3A /* Resources */,
+				D8F63E2D1AD524496B6CF9C7 /* [CP] Embed Pods Frameworks */,
+				009398AFC105EA50BECFC27C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gank.io;
+			productName = Gank.io;
+			productReference = D7665D99202AA32800EF8B3A /* Gank.io.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D7665DB0202AA32800EF8B3A /* Gank.ioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7665DC8202AA32800EF8B3A /* Build configuration list for PBXNativeTarget "Gank.ioTests" */;
+			buildPhases = (
+				D7665DAD202AA32800EF8B3A /* Sources */,
+				D7665DAE202AA32800EF8B3A /* Frameworks */,
+				D7665DAF202AA32800EF8B3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7665DB3202AA32800EF8B3A /* PBXTargetDependency */,
+			);
+			name = Gank.ioTests;
+			productName = Gank.ioTests;
+			productReference = D7665DB1202AA32800EF8B3A /* Gank.ioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D7665DBB202AA32800EF8B3A /* Gank.ioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7665DCB202AA32800EF8B3A /* Build configuration list for PBXNativeTarget "Gank.ioUITests" */;
+			buildPhases = (
+				D7665DB8202AA32800EF8B3A /* Sources */,
+				D7665DB9202AA32800EF8B3A /* Frameworks */,
+				D7665DBA202AA32800EF8B3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7665DBE202AA32800EF8B3A /* PBXTargetDependency */,
+			);
+			name = Gank.ioUITests;
+			productName = Gank.ioUITests;
+			productReference = D7665DBC202AA32800EF8B3A /* Gank.ioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7665D91202AA32800EF8B3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GK;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "王权伟";
+				TargetAttributes = {
+					D7665D98202AA32800EF8B3A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					D7665DB0202AA32800EF8B3A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D7665D98202AA32800EF8B3A;
+					};
+					D7665DBB202AA32800EF8B3A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D7665D98202AA32800EF8B3A;
+					};
+				};
+			};
+			buildConfigurationList = D7665D94202AA32800EF8B3A /* Build configuration list for PBXProject "Gank.io" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D7665D90202AA32800EF8B3A;
+			productRefGroup = D7665D9A202AA32800EF8B3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7665D98202AA32800EF8B3A /* Gank.io */,
+				D7665DB0202AA32800EF8B3A /* Gank.ioTests */,
+				D7665DBB202AA32800EF8B3A /* Gank.ioUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7665D97202AA32800EF8B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7665DA9202AA32800EF8B3A /* LaunchScreen.storyboard in Resources */,
+				D7665DA6202AA32800EF8B3A /* Assets.xcassets in Resources */,
+				D7665DA4202AA32800EF8B3A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7665DAF202AA32800EF8B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7665DBA202AA32800EF8B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		009398AFC105EA50BECFC27C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		630C0BFEB8C108ED78372DFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gank.io-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8F63E2D1AD524496B6CF9C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/WRNavigationBar/WRNavigationBar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WRNavigationBar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7665D95202AA32800EF8B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */,
+				D7665DD0202AAC7B00EF8B3A /* GKTabBarController.m in Sources */,
+				D7665DAC202AA32800EF8B3A /* main.m in Sources */,
+				D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */,
+				D7665DD3202AD50B00EF8B3A /* GKTodayVC.m in Sources */,
+				D79784A7202D910400B7913C /* GKTodayHeaderView.m in Sources */,
+				D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */,
+				D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */,
+				D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7665DAD202AA32800EF8B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7665DB6202AA32800EF8B3A /* Gank_ioTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7665DB8202AA32800EF8B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7665DC1202AA32800EF8B3A /* Gank_ioUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7665DB3202AA32800EF8B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7665D98202AA32800EF8B3A /* Gank.io */;
+			targetProxy = D7665DB2202AA32800EF8B3A /* PBXContainerItemProxy */;
+		};
+		D7665DBE202AA32800EF8B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7665D98202AA32800EF8B3A /* Gank.io */;
+			targetProxy = D7665DBD202AA32800EF8B3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D7665DA2202AA32800EF8B3A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7665DA3202AA32800EF8B3A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D7665DA7202AA32800EF8B3A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7665DA8202AA32800EF8B3A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D7665DC3202AA32800EF8B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D7665DC4202AA32800EF8B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7665DC6202AA32800EF8B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 600C5F304B24BA741E369A45 /* Pods-Gank.io.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89BZ957YW3;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Gank.io/PrefixHeader.pch";
+				INFOPLIST_FILE = Gank.io/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangquanwei.Gank-io";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7665DC7202AA32800EF8B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D05CFF2E60B0548D03A34E /* Pods-Gank.io.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89BZ957YW3;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Gank.io/PrefixHeader.pch";
+				INFOPLIST_FILE = Gank.io/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangquanwei.Gank-io";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7665DC9202AA32800EF8B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89BZ957YW3;
+				INFOPLIST_FILE = Gank.ioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangquanwei.Gank-ioTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gank.io.app/Gank.io";
+			};
+			name = Debug;
+		};
+		D7665DCA202AA32800EF8B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89BZ957YW3;
+				INFOPLIST_FILE = Gank.ioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangquanwei.Gank-ioTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gank.io.app/Gank.io";
+			};
+			name = Release;
+		};
+		D7665DCC202AA32800EF8B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89BZ957YW3;
+				INFOPLIST_FILE = Gank.ioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangquanwei.Gank-ioUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gank.io;
+			};
+			name = Debug;
+		};
+		D7665DCD202AA32800EF8B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89BZ957YW3;
+				INFOPLIST_FILE = Gank.ioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangquanwei.Gank-ioUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gank.io;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7665D94202AA32800EF8B3A /* Build configuration list for PBXProject "Gank.io" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7665DC3202AA32800EF8B3A /* Debug */,
+				D7665DC4202AA32800EF8B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7665DC5202AA32800EF8B3A /* Build configuration list for PBXNativeTarget "Gank.io" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7665DC6202AA32800EF8B3A /* Debug */,
+				D7665DC7202AA32800EF8B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7665DC8202AA32800EF8B3A /* Build configuration list for PBXNativeTarget "Gank.ioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7665DC9202AA32800EF8B3A /* Debug */,
+				D7665DCA202AA32800EF8B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7665DCB202AA32800EF8B3A /* Build configuration list for PBXNativeTarget "Gank.ioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7665DCC202AA32800EF8B3A /* Debug */,
+				D7665DCD202AA32800EF8B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7665D91202AA32800EF8B3A /* Project object */;
+}

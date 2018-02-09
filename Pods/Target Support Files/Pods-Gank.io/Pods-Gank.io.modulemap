@@ -1,0 +1,6 @@
+framework module Pods_Gank_io {
+  umbrella header "Pods-Gank.io-umbrella.h"
+
+  export *
+  module * { export * }
+}
