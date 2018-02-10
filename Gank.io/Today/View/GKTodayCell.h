@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class GKTodayModel;
 
 @interface GKTodayCell : UITableViewCell
 
-@property(strong, nonatomic) UILabel * titleLabel;//标题
-@property(strong, nonatomic) UIImageView * demoImageView;//demo图片
-@property(strong, nonatomic) UILabel * classifyLabel;//分类
-@property(strong, nonatomic) UILabel * authorLabel;//作者
+- (void)setModel:(GKTodayModel *)model;
+
 @end

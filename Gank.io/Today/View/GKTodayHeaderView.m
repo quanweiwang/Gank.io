@@ -24,7 +24,10 @@
 
 - (void)initUI {
     
+    self.clipsToBounds = YES;
+    
     self.girlImageView = [[UIImageView alloc] init];
+    self.girlImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:self.girlImageView];
     
     [self.girlImageView makeConstraints:^(MASConstraintMaker *make) {

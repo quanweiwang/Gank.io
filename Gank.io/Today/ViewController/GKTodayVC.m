@@ -9,12 +9,15 @@
 #import "GKTodayVC.h"
 #import "GKTodayCell.h"
 #import "GKTodayHeaderView.h"
+#import "GKTodayModel.h"
 
 @interface GKTodayVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong, nonatomic) UILabel * titleLabel;//标题
 @property(strong, nonatomic) UITableView * table;
 
+@property(strong, nonatomic) NSMutableArray * data;//数据源
+@property(strong, nonatomic) NSString * girlURL;//妹子图
 @end
 
 @implementation GKTodayVC
@@ -28,6 +31,7 @@
     
     //网络请求
     [self gankDayList];
+    [self gankTitle];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +44,6 @@
     //标题
     self.titleLabel = [[UILabel alloc] init];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.text = @"今日力推：Nintendo Switch Emulator / Life-Commit";
     self.titleLabel.backgroundColor = RGB_HEX(0xD7E9F7);
     self.titleLabel.textColor = RGB_HEX(0x61ABD4);
     self.titleLabel.font = [UIFont systemFontOfSize:14.f];
@@ -65,6 +68,7 @@
     self.table.dataSource = self;
     self.table.estimatedSectionHeaderHeight = 200;
     self.table.estimatedSectionFooterHeight = 0;
+    self.table.estimatedRowHeight = 108;
     [self.table registerClass:[GKTodayCell class] forCellReuseIdentifier:@"cell"];
     [self.table registerClass:[GKTodayHeaderView class] forHeaderFooterViewReuseIdentifier:@"headerView"];
     [self.view addSubview:self.table];
@@ -85,7 +89,24 @@
     }];
 }
 
-#pragma mark:- 网络请求
+#pragma mark 网络请求
+- (void)gankTitle {
+    
+    NSString * url = @"/api/history/content/1/1";
+    [GKNetwork getWithUrl:url completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        
+        if (error == nil) {
+            NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+            self.titleLabel.text = [[jsonDict objectForKey:@"results"][0] objectForKey:@"title"];
+        }
+        else {
+            
+        }
+        
+        
+    }];
+}
+
 - (void)gankDayList {
     
     NSString * url = @"/api/day/history";
@@ -114,19 +135,57 @@
     [GKNetwork getWithUrl:url completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         
         NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"%@",jsonDict);
         
+        NSDictionary * results = [jsonDict objectForKey:@"results"];
         
+        NSMutableArray * contentArray = [NSMutableArray array];
+        if ([results.allKeys containsObject:@"iOS"]) {
+            [contentArray addObjectsFromArray:[results objectForKey:@"iOS"]];
+        }
         
+        if ([results.allKeys containsObject:@"Android"]) {
+            [contentArray addObjectsFromArray:[results objectForKey:@"Android"]];
+        }
+        
+        if ([results.allKeys containsObject:@"前端"]) {
+            [contentArray addObjectsFromArray:[results objectForKey:@"前端"]];
+        }
+        
+        if ([results.allKeys containsObject:@"拓展资源"]) {
+            [contentArray addObjectsFromArray:[results objectForKey:@"拓展资源"]];
+        }
+        
+        if ([results.allKeys containsObject:@"瞎推荐"]) {
+            [contentArray addObjectsFromArray:[results objectForKey:@"瞎推荐"]];
+        }
+        
+        if ([results.allKeys containsObject:@"App"]) {
+            [contentArray addObjectsFromArray:[results objectForKey:@"App"]];
+        }
+        
+        if ([results.allKeys containsObject:@"休息视频"]) {
+            [contentArray addObjectsFromArray:[results objectForKey:@"休息视频"]];
+        }
+        
+        if ([results.allKeys containsObject:@"福利"]) {
+            
+            NSArray * girlImgArray = [results objectForKey:@"福利"];
+            self.girlURL = [girlImgArray[0] objectForKey:@"url"];
+        }
+        
+        self.data = [GKTodayModel mj_objectArrayWithKeyValuesArray:contentArray];
+        [self.table reloadData];
     }];
 }
 
-#pragma mark:- tableView相关
+#pragma mark tableView相关
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.data.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -142,6 +201,7 @@ static NSString * headerViewStr = @"headerView";
         headerView = [(GKTodayHeaderView *)[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:headerViewStr];
     }
     
+    [headerView.girlImageView setImageWithURL:self.girlURL placeholderImage:nil];
     
     return headerView;
 }
@@ -163,19 +223,32 @@ static NSString * cellStr = @"cell";
         cell = (GKTodayCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
     }
     
-    cell.demoImageView.backgroundColor = [UIColor blackColor];
+    GKTodayModel * model = [self.data objectAtIndex:indexPath.row];
     
-    cell.titleLabel.text = @"《React 学习之道》";
-    
-    cell.classifyLabel.text = @"前端";
-    
-    cell.authorLabel.text = @"by 吕立青";
+    [cell setModel:model];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    GKTodayModel * model = [self.data objectAtIndex:indexPath.row];
+    
+    GKWebViewVC * vc = [[GKWebViewVC alloc] init];
+    vc.url = model.url;
+    [self.navigationController pushViewController:vc animated:YES];
 }
+
+#pragma mark 懒加载
+- (NSMutableArray *)data {
+    
+    if (_data == nil) {
+        _data = [NSMutableArray array];
+    }
+    
+    return _data;
+}
+
 
 @end

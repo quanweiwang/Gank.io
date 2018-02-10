@@ -12,12 +12,12 @@
 
 @property(strong, nonatomic) NSString * createdAt;
 @property(strong, nonatomic) NSString * desc;
-@property(strong, nonatomic) NSString * images;
+@property(strong, nonatomic) NSArray * images;
 @property(strong, nonatomic) NSString * publishedAt;
 @property(strong, nonatomic) NSString * source;
 @property(strong, nonatomic) NSString * type;
 @property(strong, nonatomic) NSString * url;
 @property(strong, nonatomic) NSString * used;
 @property(strong, nonatomic) NSString * who;
-
+@property(assign, nonatomic) CGFloat textHeight;//文字高度
 @end

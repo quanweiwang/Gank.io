@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		570D384E38021F8797BC6113 /* Pods_Gank_io.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742EBE2EAF90C128DD97BD04 /* Pods_Gank_io.framework */; };
+		D61939B8202E98240081CB68 /* UIImageView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D61939B7202E98240081CB68 /* UIImageView+Util.m */; };
+		D61939BC202EA0E20081CB68 /* GKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D61939BB202EA0E20081CB68 /* GKWebViewVC.m */; };
+		D61939BE202EA0F40081CB68 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61939BD202EA0F40081CB68 /* WebKit.framework */; };
+		D61939C2202EA2E60081CB68 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61939C1202EA2E60081CB68 /* BaseNavigationController.m */; };
+		D61FF05C202EDE420084E9FA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF05B202EDE420084E9FA /* BaseViewController.m */; };
+		D61FF060202EE0C10084E9FA /* GKHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF05F202EE0C10084E9FA /* GKHistoryVC.m */; };
+		D61FF066202EE1AA0084E9FA /* GKHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF065202EE1AA0084E9FA /* GKHistoryCell.m */; };
+		D61FF069202EF0400084E9FA /* GKHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF068202EF0400084E9FA /* GKHistoryModel.m */; };
 		D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665D9D202AA32800EF8B3A /* AppDelegate.m */; };
 		D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DA0202AA32800EF8B3A /* ViewController.m */; };
 		D7665DA4202AA32800EF8B3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7665DA2202AA32800EF8B3A /* Main.storyboard */; };
@@ -46,6 +54,21 @@
 		600C5F304B24BA741E369A45 /* Pods-Gank.io.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gank.io.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io.debug.xcconfig"; sourceTree = "<group>"; };
 		742EBE2EAF90C128DD97BD04 /* Pods_Gank_io.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gank_io.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D05CFF2E60B0548D03A34E /* Pods-Gank.io.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gank.io.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io.release.xcconfig"; sourceTree = "<group>"; };
+		D61939B6202E98240081CB68 /* UIImageView+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Util.h"; sourceTree = "<group>"; };
+		D61939B7202E98240081CB68 /* UIImageView+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Util.m"; sourceTree = "<group>"; };
+		D61939BA202EA0E20081CB68 /* GKWebViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWebViewVC.h; sourceTree = "<group>"; };
+		D61939BB202EA0E20081CB68 /* GKWebViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWebViewVC.m; sourceTree = "<group>"; };
+		D61939BD202EA0F40081CB68 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D61939C0202EA2E60081CB68 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		D61939C1202EA2E60081CB68 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		D61FF05A202EDE420084E9FA /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		D61FF05B202EDE420084E9FA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		D61FF05E202EE0C10084E9FA /* GKHistoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKHistoryVC.h; sourceTree = "<group>"; };
+		D61FF05F202EE0C10084E9FA /* GKHistoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKHistoryVC.m; sourceTree = "<group>"; };
+		D61FF064202EE1AA0084E9FA /* GKHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKHistoryCell.h; sourceTree = "<group>"; };
+		D61FF065202EE1AA0084E9FA /* GKHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKHistoryCell.m; sourceTree = "<group>"; };
+		D61FF067202EF0400084E9FA /* GKHistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKHistoryModel.h; sourceTree = "<group>"; };
+		D61FF068202EF0400084E9FA /* GKHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKHistoryModel.m; sourceTree = "<group>"; };
 		D7665D99202AA32800EF8B3A /* Gank.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gank.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7665D9C202AA32800EF8B3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7665D9D202AA32800EF8B3A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D61939BE202EA0F40081CB68 /* WebKit.framework in Frameworks */,
 				570D384E38021F8797BC6113 /* Pods_Gank_io.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +133,7 @@
 		0733373CF18088EB5B0061B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D61939BD202EA0F40081CB68 /* WebKit.framework */,
 				742EBE2EAF90C128DD97BD04 /* Pods_Gank_io.framework */,
 			);
 			name = Frameworks;
@@ -121,6 +146,63 @@
 				84D05CFF2E60B0548D03A34E /* Pods-Gank.io.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D61939B9202EA0C00081CB68 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				D61939BA202EA0E20081CB68 /* GKWebViewVC.h */,
+				D61939BB202EA0E20081CB68 /* GKWebViewVC.m */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		D61939BF202EA2BB0081CB68 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				D61FF05A202EDE420084E9FA /* BaseViewController.h */,
+				D61FF05B202EDE420084E9FA /* BaseViewController.m */,
+				D61939C0202EA2E60081CB68 /* BaseNavigationController.h */,
+				D61939C1202EA2E60081CB68 /* BaseNavigationController.m */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		D61FF05D202EE08B0084E9FA /* History */ = {
+			isa = PBXGroup;
+			children = (
+				D61FF062202EE0D50084E9FA /* Model */,
+				D61FF063202EE0DE0084E9FA /* View */,
+				D61FF061202EE0C60084E9FA /* ViewController */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		D61FF061202EE0C60084E9FA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D61FF05E202EE0C10084E9FA /* GKHistoryVC.h */,
+				D61FF05F202EE0C10084E9FA /* GKHistoryVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D61FF062202EE0D50084E9FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D61FF067202EF0400084E9FA /* GKHistoryModel.h */,
+				D61FF068202EF0400084E9FA /* GKHistoryModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D61FF063202EE0DE0084E9FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D61FF064202EE1AA0084E9FA /* GKHistoryCell.h */,
+				D61FF065202EE1AA0084E9FA /* GKHistoryCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D7665D90202AA32800EF8B3A = {
@@ -148,8 +230,11 @@
 		D7665D9B202AA32800EF8B3A /* Gank.io */ = {
 			isa = PBXGroup;
 			children = (
+				D61939BF202EA2BB0081CB68 /* BaseClass */,
+				D61939B9202EA0C00081CB68 /* WebView */,
 				D79784A8202D9A6F00B7913C /* Network */,
 				D79784A0202D8EC500B7913C /* Categories */,
+				D61FF05D202EE08B0084E9FA /* History */,
 				D797849D202D849B00B7913C /* Today */,
 				D7665D9C202AA32800EF8B3A /* AppDelegate.h */,
 				D7665D9D202AA32800EF8B3A /* AppDelegate.m */,
@@ -190,8 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				D79784AD202DA59000B7913C /* Model */,
-				D79784AC202DA57E00B7913C /* ViewController */,
 				D797849E202D84A400B7913C /* View */,
+				D79784AC202DA57E00B7913C /* ViewController */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -220,6 +305,8 @@
 			children = (
 				D79784A2202D8EE900B7913C /* UIColor+Util.h */,
 				D79784A3202D8EE900B7913C /* UIColor+Util.m */,
+				D61939B6202E98240081CB68 /* UIImageView+Util.h */,
+				D61939B7202E98240081CB68 /* UIImageView+Util.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -464,11 +551,18 @@
 				D7665DD0202AAC7B00EF8B3A /* GKTabBarController.m in Sources */,
 				D7665DAC202AA32800EF8B3A /* main.m in Sources */,
 				D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */,
+				D61939BC202EA0E20081CB68 /* GKWebViewVC.m in Sources */,
+				D61FF05C202EDE420084E9FA /* BaseViewController.m in Sources */,
 				D7665DD3202AD50B00EF8B3A /* GKTodayVC.m in Sources */,
+				D61939C2202EA2E60081CB68 /* BaseNavigationController.m in Sources */,
 				D79784A7202D910400B7913C /* GKTodayHeaderView.m in Sources */,
+				D61939B8202E98240081CB68 /* UIImageView+Util.m in Sources */,
+				D61FF060202EE0C10084E9FA /* GKHistoryVC.m in Sources */,
 				D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */,
 				D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */,
 				D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */,
+				D61FF066202EE1AA0084E9FA /* GKHistoryCell.m in Sources */,
+				D61FF069202EF0400084E9FA /* GKHistoryModel.m in Sources */,
 				D79784B0202DA6C300B7913C /* GKTodayModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

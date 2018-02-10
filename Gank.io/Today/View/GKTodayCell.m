@@ -7,6 +7,15 @@
 //
 
 #import "GKTodayCell.h"
+#import "GKTodayModel.h"
+
+@interface GKTodayCell()
+
+@property(strong, nonatomic) UILabel * titleLabel;//标题
+@property(strong, nonatomic) UIImageView * demoImageView;//demo图片
+@property(strong, nonatomic) UILabel * classifyLabel;//分类
+
+@end
 
 @implementation GKTodayCell
 
@@ -36,29 +45,15 @@
     
     //图片
     self.demoImageView = [[UIImageView alloc] init];
+    self.demoImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.demoImageView];
     
     [self.demoImageView makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(10);
-        make.right.equalTo(self).offset(-10);
+        make.top.equalTo(self).offset(15);
+        make.right.equalTo(self).offset(-15);
         make.width.equalTo(120);
+        make.bottom.equalTo(self).offset(-15);
         make.height.equalTo(80);
-        make.bottom.equalTo(self).offset(-10).priority(MASLayoutPriorityDefaultLow);
-    }];
-    
-    //标题
-    self.titleLabel = [[UILabel alloc] init];
-    self.titleLabel.backgroundColor = [UIColor yellowColor];
-    self.titleLabel.numberOfLines = 0;
-    self.titleLabel.font = [UIFont systemFontOfSize:19.f];
-    [self addSubview:self.titleLabel];
-    
-    [self.titleLabel makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.left.equalTo(self).offset(10);
-        make.right.equalTo(self.demoImageView.left).offset(-10);
-        make.top.equalTo(self.demoImageView.top);
-        make.height.lessThanOrEqualTo(self.demoImageView.height);
     }];
     
     //分类
@@ -67,26 +62,125 @@
     self.classifyLabel.font = [UIFont boldSystemFontOfSize:12.f];
     [self addSubview:self.classifyLabel];
     
-    CGFloat classifyLabelWidth = kSCREENWIDTH/2.f;
     [self.classifyLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.titleLabel.left);
-        make.bottom.equalTo(self).offset(-10).priority(MASLayoutPriorityDefaultHigh);
-        make.top.equalTo(self.titleLabel.bottom).offset(5);
-        make.width.lessThanOrEqualTo(classifyLabelWidth);
+        make.left.equalTo(self).offset(15);
+        make.bottom.equalTo(self).offset(-15);
+//        make.top.equalTo(self.titleLabel.bottom).offset(5);
+        make.right.equalTo(self.demoImageView.left).offset(-15);
+        
     }];
     
-    //作者
-    self.authorLabel = [[UILabel alloc] init];
-    self.authorLabel.textColor = RGB_HEX(0xAEAEAE);
-    self.authorLabel.font = [UIFont boldSystemFontOfSize:12.f];
-    [self addSubview:self.authorLabel];
+    //标题
+    self.titleLabel = [[UILabel alloc] init];
+    self.titleLabel.numberOfLines = 3;
+    self.titleLabel.font = [UIFont systemFontOfSize:19.f];
+    [self addSubview:self.titleLabel];
     
-    [self.authorLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.classifyLabel.right).offset(5);
-        make.bottom.equalTo(self.classifyLabel.bottom);
-        make.top.equalTo(self.classifyLabel.top);
-        make.right.equalTo(self).offset(-10);
+    [self.titleLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(15);
+        make.left.equalTo(self).offset(15);
+        make.height.lessThanOrEqualTo(80);
+        make.right.equalTo(self.demoImageView.left).offset(-15);
     }];
+    
+}
+
+- (void)setModel:(GKTodayModel *)model {
+    
+    //标题
+    self.titleLabel.text = model.desc;
+    
+    //类型
+    self.classifyLabel.text = [NSString stringWithFormat:@"%@   by %@",model.type,model.who];
+    
+    //图片
+    if (model.images.count > 0) {
+
+        [self.demoImageView setImageWithURL:model.images[0] placeholderImage:nil];
+        
+        if (model.textHeight == 0) {
+            //缓存文字高度
+            CGSize titleSize = [self.titleLabel.text boundingRectWithSize:CGSizeMake(kSCREENWIDTH-150, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19]} context:nil].size;
+            model.textHeight = titleSize.height;
+        }
+        
+        if (model.textHeight < 80) {
+            [self.demoImageView remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self).offset(15);
+                make.right.equalTo(self).offset(-15);
+                make.width.equalTo(120);
+                make.bottom.equalTo(self).offset(-15).priority(UILayoutPriorityDefaultLow);
+                make.height.equalTo(80);
+            }];
+            
+            [self.titleLabel remakeConstraints:^(MASConstraintMaker *make) {
+//                make.top.equalTo(self).offset(15);
+                make.left.equalTo(self).offset(15);
+                make.height.lessThanOrEqualTo(80);
+                make.right.equalTo(self.demoImageView.left).offset(-15);
+                make.centerY.equalTo(self.centerY).offset(-10);
+            }];
+            
+            [self.classifyLabel remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self).offset(15);
+                //            make.bottom.equalTo(self).offset(-15);
+                make.top.equalTo(self.titleLabel.bottom).offset(5);
+                make.right.equalTo(self.demoImageView.left).offset(-15);
+                
+            }];
+        }
+        else {
+            [self.demoImageView remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self).offset(15);
+                make.right.equalTo(self).offset(-15);
+                make.width.equalTo(120);
+//                make.bottom.equalTo(self).offset(-15).priority(UILayoutPriorityDefaultLow);
+                make.height.equalTo(80);
+            }];
+            
+            [self.titleLabel remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self).offset(15);
+                make.left.equalTo(self).offset(15);
+                make.bottom.equalTo(self.classifyLabel.top).offset(-5);
+                make.right.equalTo(self.demoImageView.left).offset(-15);
+            }];
+            
+            [self.classifyLabel remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self).offset(15);
+                make.bottom.equalTo(self).offset(-15);
+//                make.top.equalTo(self.titleLabel.bottom).offset(5);
+                make.right.equalTo(self.demoImageView.left).offset(-15);
+                
+            }];
+        }
+        
+        
+    }
+    else {
+        
+        [self.demoImageView remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self);
+            make.top.equalTo(self).offset(0);
+//            make.bottom.equalTo(self);
+            make.height.equalTo(0);
+            make.width.equalTo(0);
+        }];
+        
+        [self.titleLabel remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self).offset(15);
+            make.bottom.equalTo(self.classifyLabel.top).offset(-5);
+            make.left.equalTo(self).offset(15);
+            make.right.equalTo(self).offset(-15);
+        }];
+        
+        [self.classifyLabel remakeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(self.titleLabel.bottom).offset(5);
+            make.bottom.equalTo(self).offset(-15);
+            make.left.equalTo(self).offset(15);
+            make.right.equalTo(self.demoImageView.left).offset(-15);
+            make.height.equalTo(14);
+        }];
+    }
     
 }
 
