@@ -10,14 +10,16 @@
 #import "GKTodayCell.h"
 #import "GKTodayHeaderView.h"
 #import "GKTodayModel.h"
+#import "GKHistoryModel.h"
 
-@interface GKTodayVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface GKTodayVC ()<UITableViewDelegate,UITableViewDataSource,XLPhotoBrowserDelegate, XLPhotoBrowserDatasource>
 
 @property(strong, nonatomic) UILabel * titleLabel;//标题
 @property(strong, nonatomic) UITableView * table;
 
 @property(strong, nonatomic) NSMutableArray * data;//数据源
 @property(strong, nonatomic) NSString * girlURL;//妹子图
+@property(strong, nonatomic) NSArray * girlImgArray;
 @end
 
 @implementation GKTodayVC
@@ -30,8 +32,27 @@
     [self initUI];
     
     //网络请求
-    [self gankDayList];
-    [self gankTitle];
+    if (self.historyModel != nil) {
+        //历史干货
+        
+        //标题
+        self.titleLabel.text = self.historyModel.title;
+        
+        //计算标题文字高度
+        [self titleLablTextHeight];
+        
+        NSArray * historyDate = [self.historyModel.publishedAt componentsSeparatedByString:@"T"];
+        NSString * day = historyDate[0];
+        day = [day stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
+        [self todayGank:day];
+    }
+    else {
+        //今日干货 or 最新干货
+        [self gankTitle];
+        [self gankDayList];
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +64,7 @@
     
     //标题
     self.titleLabel = [[UILabel alloc] init];
+    self.titleLabel.numberOfLines = 0;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.backgroundColor = RGB_HEX(0xD7E9F7);
     self.titleLabel.textColor = RGB_HEX(0x61ABD4);
@@ -87,6 +109,14 @@
         }
         
     }];
+    
+    MJRefreshAutoNormalFooter * footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:nil];
+    footer.stateLabel.numberOfLines = 0;
+    footer.stateLabel.textColor = RGB_HEX(0xAEAEAE);
+    [footer setTitle:@"感谢所有默默付出的编辑们\n愿大家有美好一天" forState:MJRefreshStateNoMoreData];
+    self.table.mj_footer = footer;
+    [self.table.mj_footer endRefreshingWithNoMoreData];
+    
 }
 
 #pragma mark 网络请求
@@ -98,6 +128,9 @@
         if (error == nil) {
             NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
             self.titleLabel.text = [[jsonDict objectForKey:@"results"][0] objectForKey:@"title"];
+            
+            //计算标题文字高度
+            [self titleLablTextHeight];
         }
         else {
             
@@ -170,8 +203,9 @@
         
         if ([results.allKeys containsObject:@"福利"]) {
             
-            NSArray * girlImgArray = [results objectForKey:@"福利"];
-            self.girlURL = [girlImgArray[0] objectForKey:@"url"];
+            NSArray * girlImageArray = [results objectForKey:@"福利"];
+            self.girlImgArray = [NSArray arrayWithObject:[girlImageArray[0] objectForKey:@"url"]];
+            self.girlURL = [girlImageArray[0] objectForKey:@"url"];
         }
         
         self.data = [GKTodayModel mj_objectArrayWithKeyValuesArray:contentArray];
@@ -203,6 +237,14 @@ static NSString * headerViewStr = @"headerView";
     
     [headerView.girlImageView setImageWithURL:self.girlURL placeholderImage:nil];
     
+    @weakObj(self)
+    [headerView.girlImageView bk_whenTapped:^{
+        @strongObj(self)
+        
+        XLPhotoBrowser *browser = [XLPhotoBrowser showPhotoBrowserWithCurrentImageIndex:0 imageCount:1 datasource:self];
+        [browser setActionSheetWithTitle:nil delegate:self cancelButtonTitle:nil deleteButtonTitle:nil otherButtonTitles:@"保存图片",nil];
+    }];
+    
     return headerView;
 }
 
@@ -223,7 +265,7 @@ static NSString * cellStr = @"cell";
         cell = (GKTodayCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
     }
     
-    GKTodayModel * model = [self.data objectAtIndex:indexPath.row];
+    GKTodayModel * model = [self.data safeObjectAtIndex:indexPath.row];
     
     [cell setModel:model];
     
@@ -233,11 +275,46 @@ static NSString * cellStr = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    GKTodayModel * model = [self.data objectAtIndex:indexPath.row];
+    GKTodayModel * model = [self.data safeObjectAtIndex:indexPath.row];
     
     GKWebViewVC * vc = [[GKWebViewVC alloc] init];
     vc.url = model.url;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark 计算标题文字高度
+- (void)titleLablTextHeight {
+    
+    //计算文字高度
+    CGSize titleSize = [self.titleLabel.text boundingRectWithSize:CGSizeMake(kSCREENWIDTH, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.f]} context:nil].size;
+    
+    CGFloat height = titleSize.height > 33? titleSize.height + 12 : 33;
+    
+    [self.titleLabel remakeConstraints:^(MASConstraintMaker *make) {
+        if (@available(iOS 11.0, *)) {
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(0);
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft).offset(0);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(0);
+            make.height.equalTo(height);
+        } else {
+            // Fallback on earlier versions
+            make.top.left.right.equalTo(self.view);
+            make.height.equalTo(height);
+        }
+    }];
+}
+
+#pragma mark XLPhotoBrowserDatasource
+- (NSURL *)photoBrowser:(XLPhotoBrowser *)browser highQualityImageURLForIndex:(NSInteger)index
+{
+    return [NSURL URLWithString:self.girlImgArray[index]];
+}
+
+#pragma mark XLPhotoBrowserDelegate
+
+- (void)photoBrowser:(XLPhotoBrowser *)browser clickActionSheetIndex:(NSInteger)actionSheetindex currentImageIndex:(NSInteger)currentImageIndex
+{
+    [browser saveCurrentShowImage];
 }
 
 #pragma mark 懒加载

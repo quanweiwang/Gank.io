@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+@class GKHistoryModel;
 
 typedef enum : NSUInteger {
     GankTypeToday,//最新干货
@@ -17,4 +18,5 @@ typedef enum : NSUInteger {
 
 @property(assign, nonatomic) GankType type;//干货类型
 @property(strong, nonatomic) NSString * dateStr;//干货日期
+@property(strong, nonatomic) GKHistoryModel * historyModel;
 @end

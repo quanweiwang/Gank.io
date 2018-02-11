@@ -9,13 +9,15 @@
 #import "GKHistoryVC.h"
 #import "GKHistoryCell.h"
 #import "GKHistoryModel.h"
+#import "GKTodayVC.h"
 
 @interface GKHistoryVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong, nonatomic) UITableView * table;
 
 @property(strong, nonatomic) NSMutableArray * data;
-
+@property(assign, nonatomic) NSInteger page;//页数
+@property(assign, nonatomic) BOOL isEndDecelerating;//table是否滚动结束
 @end
 
 @implementation GKHistoryVC
@@ -26,6 +28,8 @@
     
     //初始化UI
     [self initUI];
+    //网络请求
+    [self gankHistoryWithReload:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +38,14 @@
 }
 
 - (void)initUI {
+    
+    self.page = 1;
+    self.isEndDecelerating = YES;
+    
+    UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"calendar_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
+        
+    }];
+    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     
     //table
     self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
@@ -58,17 +70,44 @@
         }
         
     }];
-}
-
-#pragma mark 网络请求
-- (void)gankHistory {
     
-    NSString * url = @"/api/history/content/20/1";
+    @weakObj(self)
+    self.table.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        @strongObj(self)
+        
+        self.page = 1;
+        [self gankHistoryWithReload:YES];
+    }];
+    
+    self.table.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        self.page = self.page + 1;
+        [self gankHistoryWithReload:NO];
+    }];
+}
+                                           
+#pragma mark 网络请求
+- (void)gankHistoryWithReload:(BOOL)reload {
+    
+    NSString * url = [NSString stringWithFormat:@"/api/history/content/20/%ld",(long)self.page];
     
     [GKNetwork getWithUrl:url completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         
         if (error == nil) {
+            NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
             
+            NSArray * resultsArray = [jsonDict objectForKey:@"results"];
+            MUL_ARRAY_ADD_OR_CREATE(self.data, [GKHistoryModel mj_objectArrayWithKeyValuesArray:resultsArray]);
+            
+            if (reload) {
+                [self.table.mj_header endRefreshing];
+            }
+            else {
+                [self.table.mj_footer endRefreshing];
+            }
+            
+            [self.table reloadData];
+            
+            NSLog(@"%@",jsonDict);
         }
         else {
             
@@ -83,7 +122,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.data.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -108,7 +147,9 @@ static NSString * cellStr = @"cell";
         cell = [(GKHistoryCell *)[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
     }
     
+    GKHistoryModel * model = [self.data safeObjectAtIndex:indexPath.row];
     
+    [cell setModel:model endDecelerating:self.isEndDecelerating];
     
     return cell;
 }
@@ -116,16 +157,27 @@ static NSString * cellStr = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    GKHistoryModel * model = [self.data safeObjectAtIndex:indexPath.row];
     
+    GKTodayVC * vc = [[GKTodayVC alloc] init];
+    vc.historyModel = model;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
-#pragma makr 懒加载
--(NSMutableArray *)data {
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     
-    if (_data == nil) {
-        _data = [NSMutableArray array];
-    }
-    return _data;
+    self.isEndDecelerating = NO;
+    NSLog(@"scrollViewWillBeginDragging-----");
+    [SDWebImageManager.sharedManager cancelAll];
+    [SDWebImageManager.sharedManager.imageCache clearMemory];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    self.isEndDecelerating = YES;
+    NSLog(@"scrollViewDidEndDecelerating-----");
+//    NSArray *visiblePaths = [self.table indexPathsForVisibleRows];
+    [self.table reloadData];
 }
 
 @end

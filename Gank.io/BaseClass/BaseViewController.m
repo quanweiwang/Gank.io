@@ -26,4 +26,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    NSLog(@"%@ 已销毁",NSStringFromClass([self class]));
+}
+
 @end

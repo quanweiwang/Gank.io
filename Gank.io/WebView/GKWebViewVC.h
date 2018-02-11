@@ -6,9 +6,9 @@
 //  Copyright © 2018年 王权伟. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface GKWebViewVC : UIViewController
+@interface GKWebViewVC : BaseViewController
 
 @property(strong, nonatomic)NSString * url;
 

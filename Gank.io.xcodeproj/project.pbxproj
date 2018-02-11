@@ -31,6 +31,25 @@
 		D79784A7202D910400B7913C /* GKTodayHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784A6202D910400B7913C /* GKTodayHeaderView.m */; };
 		D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784AA202D9A9E00B7913C /* GKNetwork.m */; };
 		D79784B0202DA6C300B7913C /* GKTodayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784AF202DA6C300B7913C /* GKTodayModel.m */; };
+		D7A66B2A202FDB7F00D25EA9 /* NSArray+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B29202FDB7F00D25EA9 /* NSArray+Util.m */; };
+		D7A66B4F2030145A00D25EA9 /* UIImage+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B2E2030145A00D25EA9 /* UIImage+XLExtension.m */; };
+		D7A66B502030145A00D25EA9 /* UIView+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B302030145A00D25EA9 /* UIView+XLExtension.m */; };
+		D7A66B512030145A00D25EA9 /* FSActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B342030145A00D25EA9 /* FSActionSheet.m */; };
+		D7A66B522030145A00D25EA9 /* FSActionSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B362030145A00D25EA9 /* FSActionSheetCell.m */; };
+		D7A66B532030145A00D25EA9 /* FSActionSheetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B382030145A00D25EA9 /* FSActionSheetConfig.m */; };
+		D7A66B542030145A00D25EA9 /* FSActionSheetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B3A2030145A00D25EA9 /* FSActionSheetItem.m */; };
+		D7A66B552030145A00D25EA9 /* FSActionSheet_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7A66B3C2030145A00D25EA9 /* FSActionSheet_cancel@2x.png */; };
+		D7A66B562030145A00D25EA9 /* FSActionSheet_cancel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7A66B3D2030145A00D25EA9 /* FSActionSheet_cancel@3x.png */; };
+		D7A66B572030145A00D25EA9 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B402030145A00D25EA9 /* TAAbstractDotView.m */; };
+		D7A66B582030145A00D25EA9 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B422030145A00D25EA9 /* TAAnimatedDotView.m */; };
+		D7A66B592030145A00D25EA9 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B442030145A00D25EA9 /* TADotView.m */; };
+		D7A66B5A2030145A00D25EA9 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B462030145A00D25EA9 /* TAPageControl.m */; };
+		D7A66B5B2030145A00D25EA9 /* XLPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B482030145A00D25EA9 /* XLPhotoBrowser.m */; };
+		D7A66B5C2030145A00D25EA9 /* XLProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B4C2030145A00D25EA9 /* XLProgressView.m */; };
+		D7A66B5D2030145A00D25EA9 /* XLZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B4E2030145A00D25EA9 /* XLZoomingScrollView.m */; };
+		D7A66B612030345C00D25EA9 /* GKWelfareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B602030345C00D25EA9 /* GKWelfareVC.m */; };
+		D7A66B672030357700D25EA9 /* GKWelfareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B662030357700D25EA9 /* GKWelfareCell.m */; };
+		D7A66B6A20303D9100D25EA9 /* GKWelfareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B6920303D9100D25EA9 /* GKWelfareModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +120,44 @@
 		D79784AA202D9A9E00B7913C /* GKNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKNetwork.m; sourceTree = "<group>"; };
 		D79784AE202DA6C300B7913C /* GKTodayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKTodayModel.h; sourceTree = "<group>"; };
 		D79784AF202DA6C300B7913C /* GKTodayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKTodayModel.m; sourceTree = "<group>"; };
+		D7A66B28202FDB7F00D25EA9 /* NSArray+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Util.h"; sourceTree = "<group>"; };
+		D7A66B29202FDB7F00D25EA9 /* NSArray+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Util.m"; sourceTree = "<group>"; };
+		D7A66B2D2030145A00D25EA9 /* UIImage+XLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XLExtension.h"; sourceTree = "<group>"; };
+		D7A66B2E2030145A00D25EA9 /* UIImage+XLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XLExtension.m"; sourceTree = "<group>"; };
+		D7A66B2F2030145A00D25EA9 /* UIView+XLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XLExtension.h"; sourceTree = "<group>"; };
+		D7A66B302030145A00D25EA9 /* UIView+XLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XLExtension.m"; sourceTree = "<group>"; };
+		D7A66B332030145A00D25EA9 /* FSActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheet.h; sourceTree = "<group>"; };
+		D7A66B342030145A00D25EA9 /* FSActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheet.m; sourceTree = "<group>"; };
+		D7A66B352030145A00D25EA9 /* FSActionSheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheetCell.h; sourceTree = "<group>"; };
+		D7A66B362030145A00D25EA9 /* FSActionSheetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheetCell.m; sourceTree = "<group>"; };
+		D7A66B372030145A00D25EA9 /* FSActionSheetConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheetConfig.h; sourceTree = "<group>"; };
+		D7A66B382030145A00D25EA9 /* FSActionSheetConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheetConfig.m; sourceTree = "<group>"; };
+		D7A66B392030145A00D25EA9 /* FSActionSheetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheetItem.h; sourceTree = "<group>"; };
+		D7A66B3A2030145A00D25EA9 /* FSActionSheetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheetItem.m; sourceTree = "<group>"; };
+		D7A66B3C2030145A00D25EA9 /* FSActionSheet_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FSActionSheet_cancel@2x.png"; sourceTree = "<group>"; };
+		D7A66B3D2030145A00D25EA9 /* FSActionSheet_cancel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FSActionSheet_cancel@3x.png"; sourceTree = "<group>"; };
+		D7A66B3F2030145A00D25EA9 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		D7A66B402030145A00D25EA9 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		D7A66B412030145A00D25EA9 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		D7A66B422030145A00D25EA9 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		D7A66B432030145A00D25EA9 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		D7A66B442030145A00D25EA9 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		D7A66B452030145A00D25EA9 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		D7A66B462030145A00D25EA9 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		D7A66B472030145A00D25EA9 /* XLPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPhotoBrowser.h; sourceTree = "<group>"; };
+		D7A66B482030145A00D25EA9 /* XLPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPhotoBrowser.m; sourceTree = "<group>"; };
+		D7A66B492030145A00D25EA9 /* XLPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		D7A66B4A2030145A00D25EA9 /* XLPhotoBrowserTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPhotoBrowserTypeDefine.h; sourceTree = "<group>"; };
+		D7A66B4B2030145A00D25EA9 /* XLProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLProgressView.h; sourceTree = "<group>"; };
+		D7A66B4C2030145A00D25EA9 /* XLProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLProgressView.m; sourceTree = "<group>"; };
+		D7A66B4D2030145A00D25EA9 /* XLZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLZoomingScrollView.h; sourceTree = "<group>"; };
+		D7A66B4E2030145A00D25EA9 /* XLZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLZoomingScrollView.m; sourceTree = "<group>"; };
+		D7A66B5F2030345C00D25EA9 /* GKWelfareVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWelfareVC.h; sourceTree = "<group>"; };
+		D7A66B602030345C00D25EA9 /* GKWelfareVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWelfareVC.m; sourceTree = "<group>"; };
+		D7A66B652030357700D25EA9 /* GKWelfareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWelfareCell.h; sourceTree = "<group>"; };
+		D7A66B662030357700D25EA9 /* GKWelfareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWelfareCell.m; sourceTree = "<group>"; };
+		D7A66B6820303D9100D25EA9 /* GKWelfareModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWelfareModel.h; sourceTree = "<group>"; };
+		D7A66B6920303D9100D25EA9 /* GKWelfareModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWelfareModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,10 +287,12 @@
 		D7665D9B202AA32800EF8B3A /* Gank.io */ = {
 			isa = PBXGroup;
 			children = (
+				D7A66B2B2030144E00D25EA9 /* Third */,
 				D61939BF202EA2BB0081CB68 /* BaseClass */,
 				D61939B9202EA0C00081CB68 /* WebView */,
 				D79784A8202D9A6F00B7913C /* Network */,
 				D79784A0202D8EC500B7913C /* Categories */,
+				D7A66B5E2030343300D25EA9 /* Welfare */,
 				D61FF05D202EE08B0084E9FA /* History */,
 				D797849D202D849B00B7913C /* Today */,
 				D7665D9C202AA32800EF8B3A /* AppDelegate.h */,
@@ -295,6 +354,7 @@
 		D79784A0202D8EC500B7913C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				D7A66B27202FDB4800D25EA9 /* Core */,
 				D79784A1202D8ECE00B7913C /* UIKit */,
 			);
 			path = Categories;
@@ -334,6 +394,129 @@
 			children = (
 				D79784AE202DA6C300B7913C /* GKTodayModel.h */,
 				D79784AF202DA6C300B7913C /* GKTodayModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D7A66B27202FDB4800D25EA9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D7A66B28202FDB7F00D25EA9 /* NSArray+Util.h */,
+				D7A66B29202FDB7F00D25EA9 /* NSArray+Util.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D7A66B2B2030144E00D25EA9 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				D7A66B2C2030145A00D25EA9 /* XLPhotoBrowser+CoderXL */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		D7A66B2C2030145A00D25EA9 /* XLPhotoBrowser+CoderXL */ = {
+			isa = PBXGroup;
+			children = (
+				D7A66B2D2030145A00D25EA9 /* UIImage+XLExtension.h */,
+				D7A66B2E2030145A00D25EA9 /* UIImage+XLExtension.m */,
+				D7A66B2F2030145A00D25EA9 /* UIView+XLExtension.h */,
+				D7A66B302030145A00D25EA9 /* UIView+XLExtension.m */,
+				D7A66B312030145A00D25EA9 /* Vender */,
+				D7A66B472030145A00D25EA9 /* XLPhotoBrowser.h */,
+				D7A66B482030145A00D25EA9 /* XLPhotoBrowser.m */,
+				D7A66B492030145A00D25EA9 /* XLPhotoBrowserConfig.h */,
+				D7A66B4A2030145A00D25EA9 /* XLPhotoBrowserTypeDefine.h */,
+				D7A66B4B2030145A00D25EA9 /* XLProgressView.h */,
+				D7A66B4C2030145A00D25EA9 /* XLProgressView.m */,
+				D7A66B4D2030145A00D25EA9 /* XLZoomingScrollView.h */,
+				D7A66B4E2030145A00D25EA9 /* XLZoomingScrollView.m */,
+			);
+			path = "XLPhotoBrowser+CoderXL";
+			sourceTree = "<group>";
+		};
+		D7A66B312030145A00D25EA9 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				D7A66B322030145A00D25EA9 /* FSActionSheet */,
+				D7A66B3E2030145A00D25EA9 /* PageControl */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		D7A66B322030145A00D25EA9 /* FSActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				D7A66B332030145A00D25EA9 /* FSActionSheet.h */,
+				D7A66B342030145A00D25EA9 /* FSActionSheet.m */,
+				D7A66B352030145A00D25EA9 /* FSActionSheetCell.h */,
+				D7A66B362030145A00D25EA9 /* FSActionSheetCell.m */,
+				D7A66B372030145A00D25EA9 /* FSActionSheetConfig.h */,
+				D7A66B382030145A00D25EA9 /* FSActionSheetConfig.m */,
+				D7A66B392030145A00D25EA9 /* FSActionSheetItem.h */,
+				D7A66B3A2030145A00D25EA9 /* FSActionSheetItem.m */,
+				D7A66B3B2030145A00D25EA9 /* FSActionSheetResources */,
+			);
+			path = FSActionSheet;
+			sourceTree = "<group>";
+		};
+		D7A66B3B2030145A00D25EA9 /* FSActionSheetResources */ = {
+			isa = PBXGroup;
+			children = (
+				D7A66B3C2030145A00D25EA9 /* FSActionSheet_cancel@2x.png */,
+				D7A66B3D2030145A00D25EA9 /* FSActionSheet_cancel@3x.png */,
+			);
+			path = FSActionSheetResources;
+			sourceTree = "<group>";
+		};
+		D7A66B3E2030145A00D25EA9 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				D7A66B3F2030145A00D25EA9 /* TAAbstractDotView.h */,
+				D7A66B402030145A00D25EA9 /* TAAbstractDotView.m */,
+				D7A66B412030145A00D25EA9 /* TAAnimatedDotView.h */,
+				D7A66B422030145A00D25EA9 /* TAAnimatedDotView.m */,
+				D7A66B432030145A00D25EA9 /* TADotView.h */,
+				D7A66B442030145A00D25EA9 /* TADotView.m */,
+				D7A66B452030145A00D25EA9 /* TAPageControl.h */,
+				D7A66B462030145A00D25EA9 /* TAPageControl.m */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
+		D7A66B5E2030343300D25EA9 /* Welfare */ = {
+			isa = PBXGroup;
+			children = (
+				D7A66B642030347700D25EA9 /* Model */,
+				D7A66B632030346C00D25EA9 /* View */,
+				D7A66B622030346400D25EA9 /* ViewController */,
+			);
+			path = Welfare;
+			sourceTree = "<group>";
+		};
+		D7A66B622030346400D25EA9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D7A66B5F2030345C00D25EA9 /* GKWelfareVC.h */,
+				D7A66B602030345C00D25EA9 /* GKWelfareVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D7A66B632030346C00D25EA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7A66B652030357700D25EA9 /* GKWelfareCell.h */,
+				D7A66B662030357700D25EA9 /* GKWelfareCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D7A66B642030347700D25EA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D7A66B6820303D9100D25EA9 /* GKWelfareModel.h */,
+				D7A66B6920303D9100D25EA9 /* GKWelfareModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -449,8 +632,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7665DA9202AA32800EF8B3A /* LaunchScreen.storyboard in Resources */,
+				D7A66B552030145A00D25EA9 /* FSActionSheet_cancel@2x.png in Resources */,
 				D7665DA6202AA32800EF8B3A /* Assets.xcassets in Resources */,
 				D7665DA4202AA32800EF8B3A /* Main.storyboard in Resources */,
+				D7A66B562030145A00D25EA9 /* FSActionSheet_cancel@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,22 +732,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A66B522030145A00D25EA9 /* FSActionSheetCell.m in Sources */,
+				D7A66B502030145A00D25EA9 /* UIView+XLExtension.m in Sources */,
 				D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */,
+				D7A66B5C2030145A00D25EA9 /* XLProgressView.m in Sources */,
 				D7665DD0202AAC7B00EF8B3A /* GKTabBarController.m in Sources */,
+				D7A66B2A202FDB7F00D25EA9 /* NSArray+Util.m in Sources */,
+				D7A66B542030145A00D25EA9 /* FSActionSheetItem.m in Sources */,
+				D7A66B672030357700D25EA9 /* GKWelfareCell.m in Sources */,
+				D7A66B572030145A00D25EA9 /* TAAbstractDotView.m in Sources */,
 				D7665DAC202AA32800EF8B3A /* main.m in Sources */,
+				D7A66B5B2030145A00D25EA9 /* XLPhotoBrowser.m in Sources */,
 				D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */,
+				D7A66B532030145A00D25EA9 /* FSActionSheetConfig.m in Sources */,
 				D61939BC202EA0E20081CB68 /* GKWebViewVC.m in Sources */,
 				D61FF05C202EDE420084E9FA /* BaseViewController.m in Sources */,
 				D7665DD3202AD50B00EF8B3A /* GKTodayVC.m in Sources */,
 				D61939C2202EA2E60081CB68 /* BaseNavigationController.m in Sources */,
 				D79784A7202D910400B7913C /* GKTodayHeaderView.m in Sources */,
+				D7A66B6A20303D9100D25EA9 /* GKWelfareModel.m in Sources */,
 				D61939B8202E98240081CB68 /* UIImageView+Util.m in Sources */,
 				D61FF060202EE0C10084E9FA /* GKHistoryVC.m in Sources */,
 				D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */,
+				D7A66B512030145A00D25EA9 /* FSActionSheet.m in Sources */,
+				D7A66B592030145A00D25EA9 /* TADotView.m in Sources */,
 				D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */,
+				D7A66B5D2030145A00D25EA9 /* XLZoomingScrollView.m in Sources */,
+				D7A66B5A2030145A00D25EA9 /* TAPageControl.m in Sources */,
+				D7A66B612030345C00D25EA9 /* GKWelfareVC.m in Sources */,
 				D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */,
 				D61FF066202EE1AA0084E9FA /* GKHistoryCell.m in Sources */,
+				D7A66B582030145A00D25EA9 /* TAAnimatedDotView.m in Sources */,
 				D61FF069202EF0400084E9FA /* GKHistoryModel.m in Sources */,
+				D7A66B4F2030145A00D25EA9 /* UIImage+XLExtension.m in Sources */,
 				D79784B0202DA6C300B7913C /* GKTodayModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

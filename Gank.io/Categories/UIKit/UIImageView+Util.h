@@ -10,6 +10,8 @@
 
 @interface UIImageView (Util)
 
-- (void)setImageWithURL:(NSString *)url placeholderImage:(UIImage *)placeholderImage;
+- (void)setImageWithURL:(NSString *_Nullable)url placeholderImage:(UIImage *_Nullable)placeholderImage;
+
+- (void)setImageWithURL:(NSString *_Nullable)url placeholderImage:(UIImage *_Nullable)placeholderImage completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 @end

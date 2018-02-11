@@ -17,6 +17,15 @@
     NSString * urlString = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     [self sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:placeholderImage];
+    
+    
+}
+
+- (void)setImageWithURL:(NSString *)url placeholderImage:(UIImage *)placeholderImage completed:(nullable SDExternalCompletionBlock)completedBlock {
+    
+    NSString * urlString = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [self sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:nil completed:completedBlock];
 }
 
 @end

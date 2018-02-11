@@ -16,4 +16,15 @@
 #define RGB_HEX(V)        [UIColor colorWithHex:V]
 #define RGBA_HEX(V, A)    [UIColor colorWithHex:V alpha:A]
 
+#pragma mark - 强引用转弱引用 -
+#define weakObj(o) try{}@finally{} __weak typeof(o) o##Weak = o;
+#define strongObj(o) autoreleasepool{} __strong typeof(o) o = o##Weak;
+
+//数组
+#define MUL_ARRAY_ADD_OR_CREATE(arrayDes, arraySrc) if (reload) {\
+arrayDes = [NSMutableArray arrayWithArray:arraySrc];\
+}else{\
+[arrayDes addObjectsFromArray:arraySrc];\
+}
+
 #endif /* GKMacro_h */

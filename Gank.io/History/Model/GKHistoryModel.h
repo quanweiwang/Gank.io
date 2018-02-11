@@ -16,5 +16,6 @@
 @property(strong, nonatomic) NSString * rand_id;
 @property(strong, nonatomic) NSString * title;
 @property(strong, nonatomic) NSString * updated_at;
+@property(copy, nonatomic) NSArray * imageArray;
 
 @end

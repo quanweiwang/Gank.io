@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class GKHistoryModel;
 
 @interface GKHistoryCell : UITableViewCell
+
+- (void)setModel:(GKHistoryModel *)model endDecelerating:(BOOL)endDecelerating;
 
 @end
