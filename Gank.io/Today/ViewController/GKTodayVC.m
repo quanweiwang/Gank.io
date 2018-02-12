@@ -19,7 +19,6 @@
 
 @property(strong, nonatomic) NSMutableArray * data;//数据源
 @property(strong, nonatomic) NSString * girlURL;//妹子图
-@property(strong, nonatomic) NSArray * girlImgArray;
 @end
 
 @implementation GKTodayVC
@@ -61,6 +60,11 @@
 }
 
 - (void)initUI {
+    
+    UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"refresh_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
+        
+    }];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     
     //标题
     self.titleLabel = [[UILabel alloc] init];
@@ -151,6 +155,9 @@
             NSArray * dayArray = [jsonDict objectForKey:@"results"];
             if (dayArray.count > 0) {
                 NSString * day = dayArray[0];
+                
+                self.title = day;
+                
                 day = [day stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
                 
                 [self todayGank:day];
@@ -204,7 +211,6 @@
         if ([results.allKeys containsObject:@"福利"]) {
             
             NSArray * girlImageArray = [results objectForKey:@"福利"];
-            self.girlImgArray = [NSArray arrayWithObject:[girlImageArray[0] objectForKey:@"url"]];
             self.girlURL = [girlImageArray[0] objectForKey:@"url"];
         }
         
@@ -307,7 +313,7 @@ static NSString * cellStr = @"cell";
 #pragma mark XLPhotoBrowserDatasource
 - (NSURL *)photoBrowser:(XLPhotoBrowser *)browser highQualityImageURLForIndex:(NSInteger)index
 {
-    return [NSURL URLWithString:self.girlImgArray[index]];
+    return [NSURL URLWithString:self.girlURL];
 }
 
 #pragma mark XLPhotoBrowserDelegate

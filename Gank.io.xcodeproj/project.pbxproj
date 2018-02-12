@@ -16,6 +16,7 @@
 		D61FF060202EE0C10084E9FA /* GKHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF05F202EE0C10084E9FA /* GKHistoryVC.m */; };
 		D61FF066202EE1AA0084E9FA /* GKHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF065202EE1AA0084E9FA /* GKHistoryCell.m */; };
 		D61FF069202EF0400084E9FA /* GKHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF068202EF0400084E9FA /* GKHistoryModel.m */; };
+		D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D73B439E20317B70009A4F7D /* GKDiscoverVC.m */; };
 		D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665D9D202AA32800EF8B3A /* AppDelegate.m */; };
 		D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DA0202AA32800EF8B3A /* ViewController.m */; };
 		D7665DA4202AA32800EF8B3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7665DA2202AA32800EF8B3A /* Main.storyboard */; };
@@ -88,6 +89,8 @@
 		D61FF065202EE1AA0084E9FA /* GKHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKHistoryCell.m; sourceTree = "<group>"; };
 		D61FF067202EF0400084E9FA /* GKHistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKHistoryModel.h; sourceTree = "<group>"; };
 		D61FF068202EF0400084E9FA /* GKHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKHistoryModel.m; sourceTree = "<group>"; };
+		D73B439D20317B70009A4F7D /* GKDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverVC.h; sourceTree = "<group>"; };
+		D73B439E20317B70009A4F7D /* GKDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverVC.m; sourceTree = "<group>"; };
 		D7665D99202AA32800EF8B3A /* Gank.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gank.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7665D9C202AA32800EF8B3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7665D9D202AA32800EF8B3A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -262,6 +265,39 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D73B439920317B20009A4F7D /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				D73B439C20317B3F009A4F7D /* Model */,
+				D73B439B20317B3A009A4F7D /* View */,
+				D73B439A20317B32009A4F7D /* ViewController */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		D73B439A20317B32009A4F7D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D73B439D20317B70009A4F7D /* GKDiscoverVC.h */,
+				D73B439E20317B70009A4F7D /* GKDiscoverVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D73B439B20317B3A009A4F7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D73B439C20317B3F009A4F7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D7665D90202AA32800EF8B3A = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +323,7 @@
 		D7665D9B202AA32800EF8B3A /* Gank.io */ = {
 			isa = PBXGroup;
 			children = (
+				D73B439920317B20009A4F7D /* Discover */,
 				D7A66B2B2030144E00D25EA9 /* Third */,
 				D61939BF202EA2BB0081CB68 /* BaseClass */,
 				D61939B9202EA0C00081CB68 /* WebView */,
@@ -754,6 +791,7 @@
 				D61939B8202E98240081CB68 /* UIImageView+Util.m in Sources */,
 				D61FF060202EE0C10084E9FA /* GKHistoryVC.m in Sources */,
 				D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */,
+				D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */,
 				D7A66B512030145A00D25EA9 /* FSActionSheet.m in Sources */,
 				D7A66B592030145A00D25EA9 /* TADotView.m in Sources */,
 				D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */,

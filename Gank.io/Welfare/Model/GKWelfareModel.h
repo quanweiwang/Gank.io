@@ -14,4 +14,5 @@
 @property(strong, nonatomic) NSString *url;
 @property(strong, nonatomic) NSString *who;
 @property(assign, nonatomic) NSInteger imageHeight;
+@property(strong, nonatomic) UIImage * image;
 @end

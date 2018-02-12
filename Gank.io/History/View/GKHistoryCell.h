@@ -11,6 +11,6 @@
 
 @interface GKHistoryCell : UITableViewCell
 
-- (void)setModel:(GKHistoryModel *)model endDecelerating:(BOOL)endDecelerating;
+- (void)setModel:(GKHistoryModel *)model;
 
 @end

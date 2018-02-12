@@ -19,6 +19,15 @@
     // Do any additional setup after loading the view.
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    if (self.navigationController.viewControllers.count > 1) {
+        UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"back_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }];
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

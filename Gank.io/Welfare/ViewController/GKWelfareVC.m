@@ -10,9 +10,9 @@
 #import "GKWelfareCell.h"
 #import "GKWelfareModel.h"
 
-@interface GKWelfareVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface GKWelfareVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,XLPhotoBrowserDelegate, XLPhotoBrowserDatasource>
 
-@property(strong, nonatomic) UITableView * table;
+@property(strong, nonatomic) UICollectionView * coll;
 
 @property(strong, nonatomic) NSMutableArray * data;
 @property(assign, nonatomic) NSInteger page;//页数
@@ -39,17 +39,18 @@
     
     self.page = 1;
     
-    //table
-    self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    self.table.delegate = self;
-    self.table.dataSource = self;
-    self.table.estimatedSectionHeaderHeight = 0;
-    self.table.estimatedSectionFooterHeight = 0;
-    self.table.estimatedRowHeight = 108;
-    [self.table registerClass:[GKWelfareCell class] forCellReuseIdentifier:@"cell"];
-    [self.view addSubview:self.table];
+    //coll
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    self.coll = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    self.coll.backgroundColor = [UIColor whiteColor];
+    self.coll.delegate = self;
+    self.coll.dataSource = self;
+    [self.coll registerClass:[GKWelfareCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.view addSubview:self.coll];
+
     
-    [self.table makeConstraints:^(MASConstraintMaker *make) {
+    [self.coll makeConstraints:^(MASConstraintMaker *make) {
         
         if (@available(iOS 11.0, *)) {
             make.top.equalTo(self.view.safeAreaLayoutGuideTop).offset(0);
@@ -64,14 +65,14 @@
     }];
     
     @weakObj(self)
-    self.table.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.coll.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongObj(self)
         
         self.page = 1;
         [self welfareGankWithReload:YES];
     }];
     
-    self.table.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+    self.coll.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         self.page = self.page + 1;
         [self welfareGankWithReload:NO];
     }];
@@ -91,13 +92,13 @@
             MUL_ARRAY_ADD_OR_CREATE(self.data, [GKWelfareModel mj_objectArrayWithKeyValuesArray:resultsArray]);
             
             if (reload) {
-                [self.table.mj_header endRefreshing];
+                [self.coll.mj_header endRefreshing];
             }
             else {
-                [self.table.mj_footer endRefreshing];
+                [self.coll.mj_footer endRefreshing];
             }
             
-            [self.table reloadData];
+            [self.coll reloadData];
             
             NSLog(@"%@",jsonDict);
         }
@@ -108,36 +109,19 @@
     
 }
 
-#pragma mark tableView相关
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#pragma mark collectionView相关
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.data.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return UITableViewAutomaticDimension;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0.001f;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.001f;
-}
-
 static NSString * cellStr = @"cell";
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    GKWelfareCell * cell = [tableView dequeueReusableCellWithIdentifier:cellStr forIndexPath:indexPath];
-    
-    if (cell == nil) {
-        cell = [(GKWelfareCell *)[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
-    }
+    GKWelfareCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellStr forIndexPath:indexPath];
     
     GKWelfareModel * model = [self.data safeObjectAtIndex:indexPath.row];
     
@@ -146,26 +130,48 @@ static NSString * cellStr = @"cell";
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    return CGSizeMake((kSCREENWIDTH - 30) * 0.5, 211);
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    
-    
-    NSLog(@"scrollViewWillBeginDragging-----");
-    [SDWebImageManager.sharedManager cancelAll];
-    [SDWebImageManager.sharedManager.imageCache clearMemory];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+//设置每个item的UIEdgeInsets
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
+    return UIEdgeInsetsMake(10, 10, 10, 10);
+}
+
+//设置每个item水平间距
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 10;
+}
+
+//设置每个item垂直间距
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 10;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"scrollViewDidEndDecelerating-----");
-    //    NSArray *visiblePaths = [self.table indexPathsForVisibleRows];
-    [self.table reloadData];
+    XLPhotoBrowser *browser = [XLPhotoBrowser showPhotoBrowserWithCurrentImageIndex:indexPath.row imageCount:self.data.count datasource:self];
+    browser.pageControlStyle = XLPhotoBrowserPageControlStyleNone;
+    [browser setActionSheetWithTitle:nil delegate:self cancelButtonTitle:nil deleteButtonTitle:nil otherButtonTitles:@"保存图片",nil];
+}
+
+#pragma mark XLPhotoBrowserDatasource
+- (NSURL *)photoBrowser:(XLPhotoBrowser *)browser highQualityImageURLForIndex:(NSInteger)index
+{
+    GKWelfareModel * model = [self.data safeObjectAtIndex:index];
+    return [NSURL URLWithString:model.url];
+}
+
+#pragma mark XLPhotoBrowserDelegate
+
+- (void)photoBrowser:(XLPhotoBrowser *)browser clickActionSheetIndex:(NSInteger)actionSheetindex currentImageIndex:(NSInteger)currentImageIndex
+{
+    [browser saveCurrentShowImage];
 }
 
 @end

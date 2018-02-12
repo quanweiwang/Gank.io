@@ -102,7 +102,7 @@
     
 }
 
-- (void)setModel:(GKHistoryModel *)model endDecelerating:(BOOL)endDecelerating {
+- (void)setModel:(GKHistoryModel *)model{
     
     //标题
     self.titleLabel.text = model.title;
@@ -116,12 +116,10 @@
         imageView.hidden = YES;
     }
     
-    if (endDecelerating == YES) {
-        for (int i = 0; i < self.imageViewArray.count; i++) {
-            UIImageView * imgView = [self.imageViewArray safeObjectAtIndex:i];
-            imgView.hidden = NO;
-            [imgView setImageWithURL:[model.imageArray safeObjectAtIndex:i] placeholderImage:nil];
-        }
+    for (int i = 0; i < self.imageViewArray.count; i++) {
+        UIImageView * imgView = [self.imageViewArray safeObjectAtIndex:i];
+        imgView.hidden = NO;
+        [imgView setImageWithURL:[model.imageArray safeObjectAtIndex:i] placeholderImage:nil];
     }
     
     //发布日期
@@ -164,8 +162,8 @@
                 NSLog(@"正确解析出来的SRC为：%@", src);
                 if (src.length > 0) {
                     NSLog(@"%f",kSCREENWIDTH);
-                    int imageWidth = (int)((kSCREENWIDTH*2)-70)/3;
-                    src = [src stringByReplacingOccurrencesOfString:@"imageView2/2/w/460" withString:[NSString stringWithFormat:@"imageView2/0/w/%d/h/150",imageWidth]];
+                    int imageWidth = (int)((kSCREENWIDTH)-70)/3;
+                    src = [src stringByReplacingOccurrencesOfString:@"imageView2/2/w/460" withString:[NSString stringWithFormat:@"imageMogr2/thumbnail/%dx/format/jpg",imageWidth]];
                     [imageUrlArray addObject:src];
                 }
             }

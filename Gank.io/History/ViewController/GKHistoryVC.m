@@ -17,7 +17,7 @@
 
 @property(strong, nonatomic) NSMutableArray * data;
 @property(assign, nonatomic) NSInteger page;//页数
-@property(assign, nonatomic) BOOL isEndDecelerating;//table是否滚动结束
+
 @end
 
 @implementation GKHistoryVC
@@ -40,7 +40,6 @@
 - (void)initUI {
     
     self.page = 1;
-    self.isEndDecelerating = YES;
     
     UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"calendar_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
         
@@ -149,7 +148,7 @@ static NSString * cellStr = @"cell";
     
     GKHistoryModel * model = [self.data safeObjectAtIndex:indexPath.row];
     
-    [cell setModel:model endDecelerating:self.isEndDecelerating];
+    [cell setModel:model];
     
     return cell;
 }
@@ -162,22 +161,6 @@ static NSString * cellStr = @"cell";
     GKTodayVC * vc = [[GKTodayVC alloc] init];
     vc.historyModel = model;
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    
-    self.isEndDecelerating = NO;
-    NSLog(@"scrollViewWillBeginDragging-----");
-    [SDWebImageManager.sharedManager cancelAll];
-    [SDWebImageManager.sharedManager.imageCache clearMemory];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    self.isEndDecelerating = YES;
-    NSLog(@"scrollViewDidEndDecelerating-----");
-//    NSArray *visiblePaths = [self.table indexPathsForVisibleRows];
-    [self.table reloadData];
 }
 
 @end

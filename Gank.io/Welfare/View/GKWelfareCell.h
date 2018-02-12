@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class GKWelfareModel;
 
-@interface GKWelfareCell : UITableViewCell
+@interface GKWelfareCell : UICollectionViewCell
 
 - (void)setModel:(GKWelfareModel *)model;
 
