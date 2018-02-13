@@ -10,6 +10,7 @@
 #import "GKHistoryCell.h"
 #import "GKHistoryModel.h"
 #import "GKTodayVC.h"
+#import "GKHistoryDateVC.h"
 
 @interface GKHistoryVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -41,7 +42,12 @@
     
     self.page = 1;
     
+    @weakObj(self)
     UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"calendar_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
+        
+        @strongObj(self)
+        GKHistoryDateVC * vc = [[GKHistoryDateVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
         
     }];
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
@@ -70,7 +76,6 @@
         
     }];
     
-    @weakObj(self)
     self.table.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongObj(self)
         

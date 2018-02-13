@@ -51,6 +51,7 @@
 		D7A66B612030345C00D25EA9 /* GKWelfareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B602030345C00D25EA9 /* GKWelfareVC.m */; };
 		D7A66B672030357700D25EA9 /* GKWelfareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B662030357700D25EA9 /* GKWelfareCell.m */; };
 		D7A66B6A20303D9100D25EA9 /* GKWelfareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B6920303D9100D25EA9 /* GKWelfareModel.m */; };
+		D7B831022032797B007F908D /* GKHistoryDateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B831012032797B007F908D /* GKHistoryDateVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,8 @@
 		D7A66B662030357700D25EA9 /* GKWelfareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWelfareCell.m; sourceTree = "<group>"; };
 		D7A66B6820303D9100D25EA9 /* GKWelfareModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWelfareModel.h; sourceTree = "<group>"; };
 		D7A66B6920303D9100D25EA9 /* GKWelfareModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWelfareModel.m; sourceTree = "<group>"; };
+		D7B831002032797B007F908D /* GKHistoryDateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKHistoryDateVC.h; sourceTree = "<group>"; };
+		D7B831012032797B007F908D /* GKHistoryDateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKHistoryDateVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +246,8 @@
 			children = (
 				D61FF05E202EE0C10084E9FA /* GKHistoryVC.h */,
 				D61FF05F202EE0C10084E9FA /* GKHistoryVC.m */,
+				D7B831002032797B007F908D /* GKHistoryDateVC.h */,
+				D7B831012032797B007F908D /* GKHistoryDateVC.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -788,6 +793,7 @@
 				D61939C2202EA2E60081CB68 /* BaseNavigationController.m in Sources */,
 				D79784A7202D910400B7913C /* GKTodayHeaderView.m in Sources */,
 				D7A66B6A20303D9100D25EA9 /* GKWelfareModel.m in Sources */,
+				D7B831022032797B007F908D /* GKHistoryDateVC.m in Sources */,
 				D61939B8202E98240081CB68 /* UIImageView+Util.m in Sources */,
 				D61FF060202EE0C10084E9FA /* GKHistoryVC.m in Sources */,
 				D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */,
