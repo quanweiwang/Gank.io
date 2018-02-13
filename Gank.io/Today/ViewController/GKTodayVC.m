@@ -61,10 +61,12 @@
 
 - (void)initUI {
     
-    UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"refresh_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
-        
-    }];
-    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    if (self.navigationController.viewControllers.count == 1) {
+        UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"refresh_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
+            
+        }];
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    }
     
     //标题
     self.titleLabel = [[UILabel alloc] init];
