@@ -34,6 +34,7 @@
 - (void)dealloc {
     
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+    [self.webView removeObserver:self forKeyPath:@"title"];
     
     if (self.webView.scrollView.delegate) {
         self.webView.scrollView.delegate = nil;
@@ -64,6 +65,7 @@
     
     self.webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:wkWebConfig];
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+    [self.webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
     [self.view addSubview:self.webView];
     
     [self.webView makeConstraints:^(MASConstraintMaker *make) {
@@ -91,6 +93,7 @@
 
 // 计算wkWebView进度条
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
     if (object == self.webView && [keyPath isEqualToString:@"estimatedProgress"]) {
         CGFloat newprogress = [[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
         if (newprogress == 1) {
@@ -100,6 +103,9 @@
             self.progressView.hidden = NO;
             [self.progressView setProgress:newprogress animated:YES];
         }
+    }
+    else if (object == self.webView && [keyPath isEqualToString:@"title"]) {
+        self.title = self.webView.title;
     }
 }
 

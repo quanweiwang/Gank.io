@@ -7,6 +7,7 @@
 //
 
 #import "GKHistoryDateVC.h"
+#import "GKTodayVC.h"
 
 @interface GKHistoryDateVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -107,12 +108,14 @@ static NSString * cellStr = @"cell";
     
     cell.textLabel.text = [self.data safeObjectAtIndex:indexPath.row];
     
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     
 }
 
