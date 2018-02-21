@@ -34,6 +34,8 @@
 
 - (void)initUI {
     
+    self.title = @"日期";
+    
     //table
     self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     self.table.delegate = self;
@@ -116,7 +118,10 @@ static NSString * cellStr = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
+    GKTodayVC * vc = [[GKTodayVC alloc] init];
+    vc.type = GankTypeHistory;
+    vc.dateStr = [self.data safeObjectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark 懒加载

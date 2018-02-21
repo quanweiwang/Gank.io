@@ -164,6 +164,7 @@ static NSString * cellStr = @"cell";
     GKHistoryModel * model = [self.data safeObjectAtIndex:indexPath.row];
     
     GKTodayVC * vc = [[GKTodayVC alloc] init];
+    vc.type = GankTypeHistory;
     vc.historyModel = model;
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -31,19 +31,30 @@
     [self initUI];
     
     //网络请求
-    if (self.historyModel != nil) {
+    if (self.type == GankTypeHistory) {
+       
         //历史干货
-        
-        //标题
-        self.titleLabel.text = self.historyModel.title;
-        
-        //计算标题文字高度
-        [self titleLablTextHeight];
-        
-        NSArray * historyDate = [self.historyModel.publishedAt componentsSeparatedByString:@"T"];
-        NSString * day = historyDate[0];
-        day = [day stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
-        [self todayGank:day];
+        if (self.dateStr != nil) {
+            
+            //这里是日期页面跳过来的
+            NSString * day = [self.dateStr stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
+            [self todayGank:day];
+            
+            self.title = self.dateStr;
+        }
+        else {
+            //这里是历史页面跳过来的
+            //标题
+            self.titleLabel.text = self.historyModel.title;
+            
+            //计算标题文字高度
+            [self titleLablTextHeight];
+            
+            NSArray * historyDate = [self.historyModel.publishedAt componentsSeparatedByString:@"T"];
+            NSString * day = historyDate[0];
+            day = [day stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
+            [self todayGank:day];
+        }
     }
     else {
         //今日干货 or 最新干货
@@ -76,19 +87,21 @@
     self.titleLabel.textColor = RGB_HEX(0x61ABD4);
     self.titleLabel.font = [UIFont systemFontOfSize:14.f];
     [self.view addSubview:self.titleLabel];
-    
-    [self.titleLabel makeConstraints:^(MASConstraintMaker *make) {
-        if (@available(iOS 11.0, *)) {
-            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(0);
-            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft).offset(0);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(0);
-            make.height.equalTo(33);
-        } else {
-            // Fallback on earlier versions
-            make.top.left.right.equalTo(self.view);
-            make.height.equalTo(33);
-        }
-    }];
+    if (self.dateStr == nil) {
+        //日期为空时显示标题，否则匹配标题数据量太大，浪费流量
+        [self.titleLabel makeConstraints:^(MASConstraintMaker *make) {
+            if (@available(iOS 11.0, *)) {
+                make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(0);
+                make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft).offset(0);
+                make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(0);
+                make.height.equalTo(33);
+            } else {
+                // Fallback on earlier versions
+                make.top.left.right.equalTo(self.view);
+                make.height.equalTo(33);
+            }
+        }];
+    }
     
     //table
     self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
