@@ -36,4 +36,15 @@
     }];
 }
 
+- (void)setSelected:(BOOL)selected {
+    [super setSelected:selected];
+    
+    if (selected) {
+        self.titleLabel.textColor = RGB_HEX(0xD33E42);
+    }
+    else {
+        self.titleLabel.textColor = [UIColor blackColor];
+    }
+}
+
 @end

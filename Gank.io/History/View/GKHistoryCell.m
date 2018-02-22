@@ -159,9 +159,7 @@
             if (loc != NSNotFound) {
                 src = [src substringToIndex:loc];
                 
-                NSLog(@"正确解析出来的SRC为：%@", src);
                 if (src.length > 0) {
-                    NSLog(@"%f",kSCREENWIDTH);
                     int imageWidth = (int)((kSCREENWIDTH)-70)/3;
                     src = [src stringByReplacingOccurrencesOfString:@"imageView2/2/w/460" withString:[NSString stringWithFormat:@"imageMogr2/thumbnail/%dx/format/jpg",imageWidth]];
                     [imageUrlArray addObject:src];

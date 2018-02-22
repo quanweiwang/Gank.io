@@ -14,10 +14,7 @@
 
 - (void)setImageWithURL:(NSString *)url placeholderImage:(UIImage *)placeholderImage {
     
-    NSString * urlString = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    [self sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:placeholderImage];
-    
+    [self setImageWithURL:url placeholderImage:placeholderImage completed:nil];
     
 }
 
@@ -25,7 +22,17 @@
     
     NSString * urlString = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    [self sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:nil completed:completedBlock];
+    @weakObj(self)
+    [self sd_setImageWithURL:[NSURL URLWithString:urlString] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        @strongObj(self)
+        if ([image isGIF]) {
+            self.image = [UIImage imageWithGifFristFrame:image];
+        }
+        else {
+            self.image = image;
+        }
+    }];
+    
 }
 
 @end

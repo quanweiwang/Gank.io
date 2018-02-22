@@ -7,10 +7,11 @@
 //
 
 #import "GKTabBarController.h"
+#import "BaseNavigationController.h"
 
 @interface GKTabBarController()
 
-@property(strong, nonatomic) NSArray * tabBarTitleArray;
+@property(strong, nonatomic) NSMutableArray * tabBarTitleArray;
 
 @end
 
@@ -18,6 +19,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tabBar.translucent = NO;
+    self.tabBar.backgroundColor = [UIColor whiteColor];
+    
+    self.tabBar.tintColor = RGB_HEX(0xD33E42);
+    
+    @weakObj(self)
+    [self.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        @strongObj(self)
+        UITabBarItem *item = obj.tabBarItem;
+        
+        NSDictionary * dic = [self.tabBarTitleArray safeObjectAtIndex:idx];
+        
+        item.image = [UIImage imageNamed:[dic objectForKey:@"Image"]];
+        item.selectedImage = [UIImage imageNamed:[dic objectForKey:@"Image"]];
+        item.title = [dic objectForKey:@"Title"];
+
+    }];
+    
 }
 
 - (void)dealloc
@@ -30,10 +51,32 @@
 }
 
 #pragma mark:- 懒加载
-- (NSArray *)tabBarTitleArray {
+- (NSMutableArray *)tabBarTitleArray {
     
     if (_tabBarTitleArray == nil) {
-        _tabBarTitleArray = [NSArray arrayWithObjects:@"Today",@"2",@"3", nil];
+        
+        _tabBarTitleArray = [NSMutableArray array];
+        
+        [_tabBarTitleArray addObject:@{
+                                       @"Title" : @"Today",
+                                       @"Image" : @"cool_icon",
+                                       }];
+        
+        [_tabBarTitleArray addObject:@{
+                                       @"Title" : @"历史",
+                                       @"Image" : @"crazy_icon",
+                                       }];
+        
+        [_tabBarTitleArray addObject:@{
+                                       @"Title" : @"Today",
+                                       @"Image" : @"cool_icon",
+                                       }];
+        
+        [_tabBarTitleArray addObject:@{
+                                       @"Title" : @"萌妹子",
+                                       @"Image" : @"in_love_icon",
+                                       }];
+        
     }
     
     return _tabBarTitleArray;

@@ -30,6 +30,10 @@
 		D7665DD0202AAC7B00EF8B3A /* GKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DCF202AAC7B00EF8B3A /* GKTabBarController.m */; };
 		D7665DD3202AD50B00EF8B3A /* GKTodayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DD2202AD50B00EF8B3A /* GKTodayVC.m */; };
 		D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DD6202AD95100EF8B3A /* GKTodayCell.m */; };
+		D77952A0203E9E6000AF0023 /* GKDiscoverListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D779529F203E9E6000AF0023 /* GKDiscoverListVC.m */; };
+		D77952A3203EA1C700AF0023 /* GKDiscoverListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D77952A2203EA1C700AF0023 /* GKDiscoverListCell.m */; };
+		D77952A8203EA48C00AF0023 /* GKDiscoverListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D77952A7203EA48C00AF0023 /* GKDiscoverListModel.m */; };
+		D77952B5203EC76F00AF0023 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D77952B4203EC76F00AF0023 /* UIImage+Util.m */; };
 		D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784A3202D8EE900B7913C /* UIColor+Util.m */; };
 		D79784A7202D910400B7913C /* GKTodayHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784A6202D910400B7913C /* GKTodayHeaderView.m */; };
 		D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784AA202D9A9E00B7913C /* GKNetwork.m */; };
@@ -121,6 +125,14 @@
 		D7665DD4202AD59100EF8B3A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D7665DD5202AD95100EF8B3A /* GKTodayCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKTodayCell.h; sourceTree = "<group>"; };
 		D7665DD6202AD95100EF8B3A /* GKTodayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKTodayCell.m; sourceTree = "<group>"; };
+		D779529E203E9E6000AF0023 /* GKDiscoverListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverListVC.h; sourceTree = "<group>"; };
+		D779529F203E9E6000AF0023 /* GKDiscoverListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverListVC.m; sourceTree = "<group>"; };
+		D77952A1203EA1C700AF0023 /* GKDiscoverListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverListCell.h; sourceTree = "<group>"; };
+		D77952A2203EA1C700AF0023 /* GKDiscoverListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverListCell.m; sourceTree = "<group>"; };
+		D77952A6203EA48C00AF0023 /* GKDiscoverListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverListModel.h; sourceTree = "<group>"; };
+		D77952A7203EA48C00AF0023 /* GKDiscoverListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverListModel.m; sourceTree = "<group>"; };
+		D77952B3203EC76F00AF0023 /* UIImage+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Util.h"; sourceTree = "<group>"; };
+		D77952B4203EC76F00AF0023 /* UIImage+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Util.m"; sourceTree = "<group>"; };
 		D797849F202D88E700B7913C /* GKMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKMacro.h; sourceTree = "<group>"; };
 		D79784A2202D8EE900B7913C /* UIColor+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
 		D79784A3202D8EE900B7913C /* UIColor+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
@@ -222,6 +234,8 @@
 			children = (
 				D60B6ED72035379900061AE6 /* GKDiscoverCell.h */,
 				D60B6ED82035379900061AE6 /* GKDiscoverCell.m */,
+				D77952A1203EA1C700AF0023 /* GKDiscoverListCell.h */,
+				D77952A2203EA1C700AF0023 /* GKDiscoverListCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -288,6 +302,7 @@
 		D73B439920317B20009A4F7D /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				D77952A5203EA47900AF0023 /* Model */,
 				D60B6ED62035377700061AE6 /* View */,
 				D73B439A20317B32009A4F7D /* ViewController */,
 			);
@@ -299,6 +314,8 @@
 			children = (
 				D73B439D20317B70009A4F7D /* GKDiscoverVC.h */,
 				D73B439E20317B70009A4F7D /* GKDiscoverVC.m */,
+				D779529E203E9E6000AF0023 /* GKDiscoverListVC.h */,
+				D779529F203E9E6000AF0023 /* GKDiscoverListVC.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -372,6 +389,15 @@
 			path = Gank.ioUITests;
 			sourceTree = "<group>";
 		};
+		D77952A5203EA47900AF0023 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D77952A6203EA48C00AF0023 /* GKDiscoverListModel.h */,
+				D77952A7203EA48C00AF0023 /* GKDiscoverListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D797849D202D849B00B7913C /* Today */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +435,8 @@
 				D79784A3202D8EE900B7913C /* UIColor+Util.m */,
 				D61939B6202E98240081CB68 /* UIImageView+Util.h */,
 				D61939B7202E98240081CB68 /* UIImageView+Util.m */,
+				D77952B3203EC76F00AF0023 /* UIImage+Util.h */,
+				D77952B4203EC76F00AF0023 /* UIImage+Util.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -742,6 +770,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
@@ -755,6 +784,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
@@ -780,6 +810,8 @@
 				D7A66B502030145A00D25EA9 /* UIView+XLExtension.m in Sources */,
 				D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */,
 				D60B6EDC20353B1A00061AE6 /* NSString+Util.m in Sources */,
+				D77952A8203EA48C00AF0023 /* GKDiscoverListModel.m in Sources */,
+				D77952B5203EC76F00AF0023 /* UIImage+Util.m in Sources */,
 				D7A66B5C2030145A00D25EA9 /* XLProgressView.m in Sources */,
 				D7665DD0202AAC7B00EF8B3A /* GKTabBarController.m in Sources */,
 				D7A66B2A202FDB7F00D25EA9 /* NSArray+Util.m in Sources */,
@@ -811,6 +843,8 @@
 				D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */,
 				D61FF066202EE1AA0084E9FA /* GKHistoryCell.m in Sources */,
 				D7A66B582030145A00D25EA9 /* TAAnimatedDotView.m in Sources */,
+				D77952A0203E9E6000AF0023 /* GKDiscoverListVC.m in Sources */,
+				D77952A3203EA1C700AF0023 /* GKDiscoverListCell.m in Sources */,
 				D61FF069202EF0400084E9FA /* GKHistoryModel.m in Sources */,
 				D7A66B4F2030145A00D25EA9 /* UIImage+XLExtension.m in Sources */,
 				D79784B0202DA6C300B7913C /* GKTodayModel.m in Sources */,

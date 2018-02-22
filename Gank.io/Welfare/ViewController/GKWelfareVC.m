@@ -37,6 +37,8 @@
 
 - (void)initUI {
     
+    self.title = @"萌妹子";
+    
     self.page = 1;
     
     //coll
@@ -83,7 +85,7 @@
     
     NSString * url = [NSString stringWithFormat:@"/api/data/福利/20/%ld",(long)self.page];
     
-    [GKNetwork getWithUrl:url completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [GKNetwork getWithUrl:url showLoadding:reload completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         
         if (error == nil) {
             NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];

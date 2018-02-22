@@ -65,7 +65,7 @@
 - (void)gankDayList {
     
     NSString * url = @"/api/day/history";
-    [GKNetwork getWithUrl:url completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [GKNetwork getWithUrl:url showLoadding:YES completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         
         NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
         

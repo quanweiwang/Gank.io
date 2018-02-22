@@ -8,10 +8,13 @@
 
 #import "GKDiscoverVC.h"
 #import "GKDiscoverCell.h"
+#import "GKDiscoverListVC.h"
 
 @interface GKDiscoverVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property(strong, nonatomic) UICollectionView * coll;
+@property(strong, nonatomic) UIScrollView * mainScrollView;//内容视图
 @property(strong, nonatomic) NSArray * cellTitleArray;
+@property(strong, nonatomic) NSArray * typeArray;//数据类型
 @end
 
 @implementation GKDiscoverVC
@@ -40,6 +43,7 @@
     self.coll.showsHorizontalScrollIndicator = NO;
     self.coll.delegate = self;
     self.coll.dataSource = self;
+    [self.coll selectItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     [self.coll registerClass:[GKDiscoverCell class] forCellWithReuseIdentifier:@"cell"];
     [self.view addSubview:self.coll];
     
@@ -58,6 +62,25 @@
         
     }];
     
+    self.mainScrollView = [[UIScrollView alloc] init];
+    self.mainScrollView.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:self.mainScrollView];
+    
+    [self.mainScrollView makeConstraints:^(MASConstraintMaker *make) {
+        if (@available(iOS 11.0, *)) {
+            make.top.equalTo(self.coll.bottom).offset(1);
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft).offset(0);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(0);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(0);
+            self.mainScrollView.contentSize = CGSizeMake(kSCREENWIDTH*8,self.mainScrollView.bounds.size.height);
+        } else {
+            // Fallback on earlier versions
+            make.left.right.equalTo(self.view);
+            make.top.equalTo(self.coll.bottom).offset(1);
+            make.bottom.equalTo(self.view);
+        }
+    }];
+    self.mainScrollView.contentSize = CGSizeMake(kSCREENWIDTH*8,self.mainScrollView.bounds.size.height);
 }
 
 #pragma mark collectionView相关
@@ -106,17 +129,31 @@ static NSString * cellStr = @"cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+    
+    [self.mainScrollView setContentOffset:CGPointMake(kSCREENWIDTH*indexPath.row, 0) animated:YES];
+    
 }
+
 
 #pragma mark 懒加载
 - (NSArray *)cellTitleArray {
     
     if (_cellTitleArray == nil) {
         
-        _cellTitleArray = [NSArray arrayWithObjects:@"推荐",@"Android",@"iOS",@"前端",@"扩展资源",@"瞎推荐",@"App",@"休息视频", nil];
+        _cellTitleArray = [NSArray arrayWithObjects:@"猜你喜欢",@"Android",@"iOS",@"前端",@"扩展资源",@"瞎推荐",@"App",@"休息视频", nil];
     }
     
     return _cellTitleArray;
+}
+
+- (NSArray *)typeArray {
+    
+    if (_typeArray == nil) {
+        _typeArray = [NSArray arrayWithObjects:@"all",@"Android",@"iOS",@"前端",@"扩展资源",@"瞎推荐",@"App",@"休息视频", nil];
+    }
+    
+    return _typeArray;
 }
 
 @end

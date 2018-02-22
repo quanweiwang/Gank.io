@@ -40,7 +40,7 @@
             NSString * day = [self.dateStr stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
             [self todayGank:day];
             
-            self.title = self.dateStr;
+            self.navigationItem.title = self.dateStr;
         }
         else {
             //这里是历史页面跳过来的
@@ -142,7 +142,7 @@
 - (void)gankTitle {
     
     NSString * url = @"/api/history/content/1/1";
-    [GKNetwork getWithUrl:url completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [GKNetwork getWithUrl:url showLoadding:NO completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         
         if (error == nil) {
             NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
@@ -162,7 +162,7 @@
 - (void)gankDayList {
     
     NSString * url = @"/api/day/history";
-    [GKNetwork getWithUrl:url completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [GKNetwork getWithUrl:url showLoadding:NO completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         
         NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
         
@@ -171,7 +171,7 @@
             if (dayArray.count > 0) {
                 NSString * day = dayArray[0];
                 
-                self.title = day;
+                self.navigationItem.title = day;
                 
                 day = [day stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
                 
@@ -187,7 +187,7 @@
     
     NSString * url = [NSString stringWithFormat:@"/api/day/%@",day];
     
-    [GKNetwork getWithUrl:url completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [GKNetwork getWithUrl:url showLoadding:YES completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         
         NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
         NSLog(@"%@",jsonDict);

@@ -16,6 +16,7 @@ target "Gank.io" do
 	pod 'TZImagePickerController', '~> 1.9.8'
 	pod 'WRNavigationBar', '~> 1.1.0'
 	pod 'MJExtension', '~> 3.0.13'
-	pod 'XLPhotoBrowser+CoderXL', '~> 1.2.0'
+	pod 'FLAnimatedImage', '~> 1.0.12'
+	pod 'SDWebImage/GIF'
 end
 

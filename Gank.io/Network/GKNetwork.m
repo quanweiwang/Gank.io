@@ -8,6 +8,7 @@
 
 #import "GKNetwork.h"
 #import <AFNetworking/AFNetworking.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface GKNetwork ()
 
@@ -31,16 +32,27 @@
 //    [request setHTTPBody:postBody];
 }
 
-+ (void)getWithUrl:(NSString *)url completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
++ (void)getWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[[NSString stringWithFormat:@"http://gank.io/%@",url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
-    [GKNetwork handleRequest:request completionHandler:completionHandler];
+    [GKNetwork handleRequest:request showLoadding:(BOOL)showLoadding completionHandler:completionHandler];
 }
 
-+ (void)handleRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
++ (void)handleRequest:(NSURLRequest *)request showLoadding:(BOOL)showLoadding completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
     
-    NSURLSessionDataTask *dataTask = [getSessionManager() dataTaskWithRequest:request completionHandler:completionHandler];
+    MBProgressHUD * hud;
+    
+    if (showLoadding) {
+        hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].delegate.window animated:YES];
+    }
+    
+    NSURLSessionDataTask *dataTask = [getSessionManager() dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        
+        completionHandler(response,responseObject,error);
+        //hud 隐藏
+        [hud hideAnimated:YES];
+    }];
     
     [dataTask resume];
     
