@@ -9,7 +9,7 @@
 #import "GKWebViewVC.h"
 #import <WebKit/WebKit.h>
 
-@interface GKWebViewVC ()
+@interface GKWebViewVC ()<WKNavigationDelegate>
 @property (strong, nonatomic) WKWebView * webView;
 @property (nonatomic, strong) UIProgressView *progressView;
 @end
@@ -40,6 +40,7 @@
         self.webView.scrollView.delegate = nil;
     }
     if (self.webView) {
+        self.webView.navigationDelegate = nil;
         self.webView = nil;
     }
 }
@@ -64,6 +65,7 @@
     wkWebConfig.userContentController = wkUController;
     
     self.webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:wkWebConfig];
+    self.webView.navigationDelegate = self;
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     [self.webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
     [self.view addSubview:self.webView];
@@ -91,6 +93,20 @@
     }];
 }
 
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    
+    NSURL *URL = navigationAction.request.URL;
+    if ([[URL absoluteString] containsString:@"www.wangquanwei.com"]) {
+        
+        NSDictionary * dic = [self dictionaryWithUrl:URL];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNotification object:nil userInfo:dic];
+        decisionHandler(WKNavigationActionPolicyCancel);
+        [self.navigationController popViewControllerAnimated:YES];
+        return;
+    }
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+
 // 计算wkWebView进度条
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     
@@ -108,5 +124,24 @@
         self.title = self.webView.title;
     }
 }
+
+- (NSMutableDictionary *)dictionaryWithUrl:(NSURL*)url {
+    
+    NSString * urlString = [[url query] isEqualToString:@""] ? [url absoluteString] : [url query];
+    
+    urlString = [urlString stringByReplacingOccurrencesOfString:@"http://www.wangquanwei.com/?" withString:@""];
+    
+    NSMutableDictionary *queryStringDictionary = [[NSMutableDictionary alloc] init];
+    
+    NSArray *urlComponents = [urlString componentsSeparatedByString:@"&"];
+    
+    for (NSString *keyValuePair in urlComponents)
+    {
+        NSRange range=[keyValuePair rangeOfString:@"="];
+        [queryStringDictionary setObject:range.length>0?[keyValuePair substringFromIndex:range.location+1]:@"" forKey:(range.length?[keyValuePair substringToIndex:range.location]:keyValuePair)];
+    }
+    return queryStringDictionary;
+}
+
 
 @end

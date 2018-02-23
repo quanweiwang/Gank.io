@@ -28,6 +28,7 @@
 #import "GKMacro.h"
 #import "GKNetwork.h"
 #import "GKWebViewVC.h"
+#import "GKUserManager.h"
 
 //Categories
 #import "UIColor+Util.h"

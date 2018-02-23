@@ -20,6 +20,7 @@
     
     //UIGestureRecognizerDelegate
     self.interactivePopGestureRecognizer.delegate = self;
+    self.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {

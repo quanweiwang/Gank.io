@@ -19,6 +19,9 @@
 		D61FF066202EE1AA0084E9FA /* GKHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF065202EE1AA0084E9FA /* GKHistoryCell.m */; };
 		D61FF069202EF0400084E9FA /* GKHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF068202EF0400084E9FA /* GKHistoryModel.m */; };
 		D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D73B439E20317B70009A4F7D /* GKDiscoverVC.m */; };
+		D7550EF7203FA50800023A89 /* GKMyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF6203FA50800023A89 /* GKMyVC.m */; };
+		D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF9203FAE8000023A89 /* GKDonateVC.m */; };
+		D7550F0120400EC700023A89 /* GKUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550F0020400EC700023A89 /* GKUserManager.m */; };
 		D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665D9D202AA32800EF8B3A /* AppDelegate.m */; };
 		D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DA0202AA32800EF8B3A /* ViewController.m */; };
 		D7665DA4202AA32800EF8B3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7665DA2202AA32800EF8B3A /* Main.storyboard */; };
@@ -102,6 +105,12 @@
 		D61FF068202EF0400084E9FA /* GKHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKHistoryModel.m; sourceTree = "<group>"; };
 		D73B439D20317B70009A4F7D /* GKDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverVC.h; sourceTree = "<group>"; };
 		D73B439E20317B70009A4F7D /* GKDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverVC.m; sourceTree = "<group>"; };
+		D7550EF5203FA50800023A89 /* GKMyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKMyVC.h; sourceTree = "<group>"; };
+		D7550EF6203FA50800023A89 /* GKMyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKMyVC.m; sourceTree = "<group>"; };
+		D7550EF8203FAE8000023A89 /* GKDonateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDonateVC.h; sourceTree = "<group>"; };
+		D7550EF9203FAE8000023A89 /* GKDonateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDonateVC.m; sourceTree = "<group>"; };
+		D7550EFF20400EC700023A89 /* GKUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKUserManager.h; sourceTree = "<group>"; };
+		D7550F0020400EC700023A89 /* GKUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKUserManager.m; sourceTree = "<group>"; };
 		D7665D99202AA32800EF8B3A /* Gank.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gank.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7665D9C202AA32800EF8B3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7665D9D202AA32800EF8B3A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -320,6 +329,50 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		D7550EF1203FA4CE00023A89 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				D7550EF4203FA4EC00023A89 /* View */,
+				D7550EF3203FA4E700023A89 /* Model */,
+				D7550EF2203FA4DD00023A89 /* ViewController */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		D7550EF2203FA4DD00023A89 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D7550EF5203FA50800023A89 /* GKMyVC.h */,
+				D7550EF6203FA50800023A89 /* GKMyVC.m */,
+				D7550EF8203FAE8000023A89 /* GKDonateVC.h */,
+				D7550EF9203FAE8000023A89 /* GKDonateVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D7550EF3203FA4E700023A89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D7550EF4203FA4EC00023A89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D7550EFE20400EA600023A89 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D7550EFF20400EC700023A89 /* GKUserManager.h */,
+				D7550F0020400EC700023A89 /* GKUserManager.m */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
 		D7665D90202AA32800EF8B3A = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +398,7 @@
 		D7665D9B202AA32800EF8B3A /* Gank.io */ = {
 			isa = PBXGroup;
 			children = (
+				D7550EFE20400EA600023A89 /* UserInfo */,
 				D7A66B2B2030144E00D25EA9 /* Third */,
 				D61939BF202EA2BB0081CB68 /* BaseClass */,
 				D61939B9202EA0C00081CB68 /* WebView */,
@@ -354,6 +408,7 @@
 				D7A66B5E2030343300D25EA9 /* Welfare */,
 				D61FF05D202EE08B0084E9FA /* History */,
 				D797849D202D849B00B7913C /* Today */,
+				D7550EF1203FA4CE00023A89 /* My */,
 				D7665D9C202AA32800EF8B3A /* AppDelegate.h */,
 				D7665D9D202AA32800EF8B3A /* AppDelegate.m */,
 				D7665D9F202AA32800EF8B3A /* ViewController.h */,
@@ -806,6 +861,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7550F0120400EC700023A89 /* GKUserManager.m in Sources */,
 				D7A66B522030145A00D25EA9 /* FSActionSheetCell.m in Sources */,
 				D7A66B502030145A00D25EA9 /* UIView+XLExtension.m in Sources */,
 				D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */,
@@ -831,6 +887,7 @@
 				D7B831022032797B007F908D /* GKHistoryDateVC.m in Sources */,
 				D61939B8202E98240081CB68 /* UIImageView+Util.m in Sources */,
 				D60B6ED92035379900061AE6 /* GKDiscoverCell.m in Sources */,
+				D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */,
 				D61FF060202EE0C10084E9FA /* GKHistoryVC.m in Sources */,
 				D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */,
 				D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */,
@@ -841,6 +898,7 @@
 				D7A66B5A2030145A00D25EA9 /* TAPageControl.m in Sources */,
 				D7A66B612030345C00D25EA9 /* GKWelfareVC.m in Sources */,
 				D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */,
+				D7550EF7203FA50800023A89 /* GKMyVC.m in Sources */,
 				D61FF066202EE1AA0084E9FA /* GKHistoryCell.m in Sources */,
 				D7A66B582030145A00D25EA9 /* TAAnimatedDotView.m in Sources */,
 				D77952A0203E9E6000AF0023 /* GKDiscoverListVC.m in Sources */,

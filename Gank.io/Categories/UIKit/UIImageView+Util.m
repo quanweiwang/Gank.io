@@ -21,17 +21,21 @@
 - (void)setImageWithURL:(NSString *)url placeholderImage:(UIImage *)placeholderImage completed:(nullable SDExternalCompletionBlock)completedBlock {
     
     NSString * urlString = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    self.image = placeholderImage;
     
-    @weakObj(self)
-    [self sd_setImageWithURL:[NSURL URLWithString:urlString] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        @strongObj(self)
-        if ([image isGIF]) {
-            self.image = [UIImage imageWithGifFristFrame:image];
-        }
-        else {
-            self.image = image;
-        }
-    }];
+    if (url != nil) {
+        
+        @weakObj(self)
+        [self sd_setImageWithURL:[NSURL URLWithString:urlString] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            @strongObj(self)
+            if ([image isGIF]) {
+                self.image = [UIImage imageWithGifFristFrame:image];
+            }
+            else {
+                self.image = image;
+            }
+        }];
+    }
     
 }
 

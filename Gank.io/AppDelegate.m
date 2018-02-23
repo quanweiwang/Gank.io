@@ -24,6 +24,8 @@
     [WRNavigationBar wr_setDefaultNavBarTintColor:[UIColor whiteColor]];
     // 设置导航栏标题默认颜色
     [WRNavigationBar wr_setDefaultNavBarTitleColor:[UIColor whiteColor]];
+    // 设置状态栏标题白色
+    [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
     
     return YES;
 }

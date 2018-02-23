@@ -9,8 +9,14 @@
 #ifndef GKMacro_h
 #define GKMacro_h
 
+#define kLoginNotification @"kLoginNotification"
+
 #define kSCREENWIDTH ([UIScreen mainScreen].bounds.size.width)
 #define kSCREENHEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+#define kISIphoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size))
+#define kStatusBarHeight (kISIphoneX?(44.f):(20.f))
+#define kNavigationAndStatusBarHeight (kStatusBarHeight + 44.f)
 
 //颜色
 #define RGB_HEX(V)        [UIColor colorWithHex:V]

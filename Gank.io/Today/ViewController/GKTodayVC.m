@@ -74,7 +74,8 @@
     
     if (self.navigationController.viewControllers.count == 1) {
         UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"refresh_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
-            
+            [self gankTitle];
+            [self gankDayList];
         }];
         self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     }
@@ -164,18 +165,23 @@
     NSString * url = @"/api/day/history";
     [GKNetwork getWithUrl:url showLoadding:NO completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         
-        NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-        
-        if ([[jsonDict objectForKey:@"error"] integerValue] == 0) {
-            NSArray * dayArray = [jsonDict objectForKey:@"results"];
-            if (dayArray.count > 0) {
-                NSString * day = dayArray[0];
-                
-                self.navigationItem.title = day;
-                
-                day = [day stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
-                
-                [self todayGank:day];
+        if (error) {
+            
+        }
+        else {
+            NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+            
+            if ([[jsonDict objectForKey:@"error"] integerValue] == 0) {
+                NSArray * dayArray = [jsonDict objectForKey:@"results"];
+                if (dayArray.count > 0) {
+                    NSString * day = dayArray[0];
+                    
+                    self.navigationItem.title = day;
+                    
+                    day = [day stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
+                    
+                    [self todayGank:day];
+                }
             }
         }
         

@@ -21,7 +21,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     if (self.navigationController.viewControllers.count > 1) {
-        UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"back_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
+        UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"return_black"] style:UIBarButtonItemStyleDone handler:^(id sender) {
             
             [self.navigationController popViewControllerAnimated:YES];
             

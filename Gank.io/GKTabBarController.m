@@ -77,6 +77,11 @@
                                        @"Image" : @"in_love_icon",
                                        }];
         
+        [_tabBarTitleArray addObject:@{
+                                       @"Title" : @"我的",
+                                       @"Image" : @"devil_icon"
+                                       }];
+        
     }
     
     return _tabBarTitleArray;
