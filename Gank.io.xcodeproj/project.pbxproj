@@ -332,8 +332,6 @@
 		D7550EF1203FA4CE00023A89 /* My */ = {
 			isa = PBXGroup;
 			children = (
-				D7550EF4203FA4EC00023A89 /* View */,
-				D7550EF3203FA4E700023A89 /* Model */,
 				D7550EF2203FA4DD00023A89 /* ViewController */,
 			);
 			path = My;
@@ -348,20 +346,6 @@
 				D7550EF9203FAE8000023A89 /* GKDonateVC.m */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		D7550EF3203FA4E700023A89 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D7550EF4203FA4EC00023A89 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D7550EFE20400EA600023A89 /* UserInfo */ = {

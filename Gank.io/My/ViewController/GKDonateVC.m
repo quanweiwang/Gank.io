@@ -57,7 +57,7 @@
     }];
     
     self.titleLabel = [[UILabel alloc] init];
-    self.titleLabel.text = @"捐赠 · 支付宝";
+    self.titleLabel.text = @"打赏 · 支付宝";
     self.titleLabel.font = [UIFont boldSystemFontOfSize:34.f];
     self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -120,7 +120,7 @@
     self.leftBtn.layer.masksToBounds = YES;
     self.leftBtn.backgroundColor = [UIColor whiteColor];
     self.leftBtn.titleLabel.font = [UIFont systemFontOfSize:14.f];
-    [self.leftBtn setTitle:@"捐赠 · 代码家" forState:UIControlStateNormal];
+    [self.leftBtn setTitle:@"打赏 · 代码家" forState:UIControlStateNormal];
     [self.leftBtn setTitleColor:RGB_HEX(0x2F2F2F) forState:UIControlStateNormal];
     [self.view addSubview:self.leftBtn];
     
@@ -140,7 +140,7 @@
     self.rightBtn.layer.cornerRadius = 8.f;
     self.rightBtn.layer.masksToBounds = YES;
     self.rightBtn.backgroundColor = [UIColor whiteColor];
-    [self.rightBtn setTitle:@"捐赠 · App作者" forState:UIControlStateNormal];
+    [self.rightBtn setTitle:@"打赏 · App作者" forState:UIControlStateNormal];
     [self.rightBtn setTitleColor:RGB_HEX(0x2F2F2F) forState:UIControlStateNormal];
     [self.view addSubview:self.rightBtn];
     
@@ -157,7 +157,7 @@
     
     self.subTitleLabel = [[UILabel alloc] init];
     self.subTitleLabel.numberOfLines = 2;
-    self.subTitleLabel.text = @"支付宝扫一扫，或者点击\"捐赠\"\n您的点滴支持，是我们最大动力";
+    self.subTitleLabel.text = @"支付宝扫一扫，或者点击\"打赏\"\n您的点滴支持，是我们最大动力";
     self.subTitleLabel.font = [UIFont boldSystemFontOfSize:17.f];
     self.subTitleLabel.textColor = [UIColor whiteColor];
     self.subTitleLabel.textAlignment = NSTextAlignmentCenter;

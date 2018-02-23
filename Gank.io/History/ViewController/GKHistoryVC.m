@@ -40,17 +40,19 @@
 
 - (void)initUI {
     
+    self.navigationItem.title = @"历史的车轮";
+    
     self.page = 1;
     
     @weakObj(self)
-    UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"calendar_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
-        
-        @strongObj(self)
-        GKHistoryDateVC * vc = [[GKHistoryDateVC alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-        
-    }];
-    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+//    UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"calendar_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
+//        
+//        @strongObj(self)
+//        GKHistoryDateVC * vc = [[GKHistoryDateVC alloc] init];
+//        [self.navigationController pushViewController:vc animated:YES];
+//        
+//    }];
+//    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     
     //table
     self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];

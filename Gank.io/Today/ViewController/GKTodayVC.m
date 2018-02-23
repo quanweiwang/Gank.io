@@ -15,6 +15,7 @@
 @interface GKTodayVC ()<UITableViewDelegate,UITableViewDataSource,XLPhotoBrowserDelegate, XLPhotoBrowserDatasource>
 
 @property(strong, nonatomic) UILabel * titleLabel;//标题
+@property(strong, nonatomic) UILabel * navTitleLabel;
 @property(strong, nonatomic) UITableView * table;
 
 @property(strong, nonatomic) NSMutableArray * data;//数据源
@@ -40,7 +41,7 @@
             NSString * day = [self.dateStr stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
             [self todayGank:day];
             
-            self.navigationItem.title = self.dateStr;
+            self.navTitleLabel.text = self.dateStr;
         }
         else {
             //这里是历史页面跳过来的
@@ -72,13 +73,30 @@
 
 - (void)initUI {
     
+    @weakObj(self)
     if (self.navigationController.viewControllers.count == 1) {
         UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"refresh_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
+            
+            @strongObj(self)
             [self gankTitle];
             [self gankDayList];
         }];
         self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     }
+    
+    UIView * navTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 120, 44)];
+    
+    UIImageView * logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 100, 28)];
+    logoImageView.image = [UIImage imageNamed:@"logo"];
+    [navTitleView addSubview:logoImageView];
+    
+    self.navTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 28, 120, 14)];
+    self.navTitleLabel.textAlignment = NSTextAlignmentCenter;
+    self.navTitleLabel.textColor = [UIColor whiteColor];
+    self.navTitleLabel.font = [UIFont systemFontOfSize:12.f];
+    [navTitleView addSubview:self.navTitleLabel];
+    
+    self.navigationItem.titleView = navTitleView;
     
     //标题
     self.titleLabel = [[UILabel alloc] init];
@@ -176,7 +194,7 @@
                 if (dayArray.count > 0) {
                     NSString * day = dayArray[0];
                     
-                    self.navigationItem.title = day;
+                    self.navTitleLabel.text = day;
                     
                     day = [day stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
                     

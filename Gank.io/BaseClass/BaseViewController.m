@@ -20,9 +20,10 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    @weakObj(self)
     if (self.navigationController.viewControllers.count > 1) {
         UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"return_black"] style:UIBarButtonItemStyleDone handler:^(id sender) {
-            
+            @strongObj(self)
             [self.navigationController popViewControllerAnimated:YES];
             
         }];
