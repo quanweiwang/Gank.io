@@ -34,6 +34,8 @@
 		D7665DD3202AD50B00EF8B3A /* GKTodayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DD2202AD50B00EF8B3A /* GKTodayVC.m */; };
 		D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DD6202AD95100EF8B3A /* GKTodayCell.m */; };
 		D77052832041042C005C9268 /* NSDictionary+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D77052822041042C005C9268 /* NSDictionary+Util.m */; };
+		D770528620413E98005C9268 /* GKSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D770528520413E98005C9268 /* GKSettingVC.m */; };
+		D770528A2041418D005C9268 /* GKGankTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D77052892041418D005C9268 /* GKGankTypeVC.m */; };
 		D77952A0203E9E6000AF0023 /* GKDiscoverListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D779529F203E9E6000AF0023 /* GKDiscoverListVC.m */; };
 		D77952A3203EA1C700AF0023 /* GKDiscoverListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D77952A2203EA1C700AF0023 /* GKDiscoverListCell.m */; };
 		D77952A8203EA48C00AF0023 /* GKDiscoverListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D77952A7203EA48C00AF0023 /* GKDiscoverListModel.m */; };
@@ -137,6 +139,10 @@
 		D7665DD6202AD95100EF8B3A /* GKTodayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKTodayCell.m; sourceTree = "<group>"; };
 		D77052812041042C005C9268 /* NSDictionary+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Util.h"; sourceTree = "<group>"; };
 		D77052822041042C005C9268 /* NSDictionary+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Util.m"; sourceTree = "<group>"; };
+		D770528420413E98005C9268 /* GKSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKSettingVC.h; sourceTree = "<group>"; };
+		D770528520413E98005C9268 /* GKSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKSettingVC.m; sourceTree = "<group>"; };
+		D77052882041418D005C9268 /* GKGankTypeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKGankTypeVC.h; sourceTree = "<group>"; };
+		D77052892041418D005C9268 /* GKGankTypeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKGankTypeVC.m; sourceTree = "<group>"; };
 		D779529E203E9E6000AF0023 /* GKDiscoverListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverListVC.h; sourceTree = "<group>"; };
 		D779529F203E9E6000AF0023 /* GKDiscoverListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverListVC.m; sourceTree = "<group>"; };
 		D77952A1203EA1C700AF0023 /* GKDiscoverListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverListCell.h; sourceTree = "<group>"; };
@@ -347,6 +353,10 @@
 				D7550EF6203FA50800023A89 /* GKMyVC.m */,
 				D7550EF8203FAE8000023A89 /* GKDonateVC.h */,
 				D7550EF9203FAE8000023A89 /* GKDonateVC.m */,
+				D770528420413E98005C9268 /* GKSettingVC.h */,
+				D770528520413E98005C9268 /* GKSettingVC.m */,
+				D77052882041418D005C9268 /* GKGankTypeVC.h */,
+				D77052892041418D005C9268 /* GKGankTypeVC.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -863,6 +873,7 @@
 				D7A66B542030145A00D25EA9 /* FSActionSheetItem.m in Sources */,
 				D7A66B672030357700D25EA9 /* GKWelfareCell.m in Sources */,
 				D7A66B572030145A00D25EA9 /* TAAbstractDotView.m in Sources */,
+				D770528620413E98005C9268 /* GKSettingVC.m in Sources */,
 				D7665DAC202AA32800EF8B3A /* main.m in Sources */,
 				D7A66B5B2030145A00D25EA9 /* XLPhotoBrowser.m in Sources */,
 				D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */,
@@ -888,6 +899,7 @@
 				D7A66B5A2030145A00D25EA9 /* TAPageControl.m in Sources */,
 				D7A66B612030345C00D25EA9 /* GKWelfareVC.m in Sources */,
 				D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */,
+				D770528A2041418D005C9268 /* GKGankTypeVC.m in Sources */,
 				D7550EF7203FA50800023A89 /* GKMyVC.m in Sources */,
 				D61FF066202EE1AA0084E9FA /* GKHistoryCell.m in Sources */,
 				D7A66B582030145A00D25EA9 /* TAAnimatedDotView.m in Sources */,

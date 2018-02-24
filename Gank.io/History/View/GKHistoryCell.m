@@ -52,12 +52,13 @@
     [self addSubview:self.titleLabel];
     
     self.moreBtn = [[UIButton alloc] init];
-    [self.moreBtn setImage:[UIImage imageNamed:@"more_icon"] forState:UIControlStateNormal];
+    self.moreBtn.tintColor = RGB_HEX(0xAEAEAE);
+    [self.moreBtn setImage:[[UIImage imageNamed:@"share_black"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [self addSubview:self.moreBtn];
     
     [self.moreBtn makeConstraints:^(MASConstraintMaker *make) {
 //        make.left.equalTo(self).offset(15);
-        make.right.equalTo(self).offset(-10);
+        make.right.equalTo(self).offset(0);
         make.bottom.equalTo(self).offset(-5);
         make.height.equalTo(30);
         make.width.equalTo(60);
