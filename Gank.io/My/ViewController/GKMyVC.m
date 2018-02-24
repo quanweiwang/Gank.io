@@ -9,6 +9,7 @@
 #import "GKMyVC.h"
 #import "GKDonateVC.h"
 #import "GKWebViewVC.h"
+#import "GKSettingVC.h"
 
 @interface GKMyVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong, nonatomic) UITableView * table;

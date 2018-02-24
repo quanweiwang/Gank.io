@@ -18,6 +18,24 @@
 		D61FF060202EE0C10084E9FA /* GKHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF05F202EE0C10084E9FA /* GKHistoryVC.m */; };
 		D61FF066202EE1AA0084E9FA /* GKHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF065202EE1AA0084E9FA /* GKHistoryCell.m */; };
 		D61FF069202EF0400084E9FA /* GKHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FF068202EF0400084E9FA /* GKHistoryModel.m */; };
+		D64A816F20419DF900B81645 /* NSString+Trochilus.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A814D20419DF800B81645 /* NSString+Trochilus.m */; };
+		D64A817020419DF900B81645 /* NSDate+Trochilus.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A814E20419DF800B81645 /* NSDate+Trochilus.m */; };
+		D64A817120419DF900B81645 /* NSMutableArray+Trochilus.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A814F20419DF800B81645 /* NSMutableArray+Trochilus.m */; };
+		D64A817220419DF900B81645 /* UIPasteboard+Trochilus.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A815420419DF800B81645 /* UIPasteboard+Trochilus.m */; };
+		D64A817320419DF900B81645 /* NSMutableDictionary+TrochilusShare.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A815820419DF800B81645 /* NSMutableDictionary+TrochilusShare.m */; };
+		D64A817420419DF900B81645 /* NSData+Trochilus.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A815920419DF800B81645 /* NSData+Trochilus.m */; };
+		D64A817520419DF900B81645 /* UIApplication+Trochilus.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A815A20419DF800B81645 /* UIApplication+Trochilus.m */; };
+		D64A817620419DF900B81645 /* NSMutableDictionary+TrochilusInit.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A815B20419DF800B81645 /* NSMutableDictionary+TrochilusInit.m */; };
+		D64A817720419DF900B81645 /* Trochilus+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A815D20419DF800B81645 /* Trochilus+Runtime.m */; };
+		D64A817820419DF900B81645 /* NSMutableDictionary+TrochilusPay.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A815E20419DF800B81645 /* NSMutableDictionary+TrochilusPay.m */; };
+		D64A817920419DF900B81645 /* TWeChatPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A816020419DF800B81645 /* TWeChatPlatform.m */; };
+		D64A817A20419DF900B81645 /* TPlatformKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A816120419DF800B81645 /* TPlatformKeys.m */; };
+		D64A817B20419DF900B81645 /* TUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A816420419DF800B81645 /* TUser.m */; };
+		D64A817C20419DF900B81645 /* TAliPayPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A816520419DF800B81645 /* TAliPayPlatform.m */; };
+		D64A817D20419DF900B81645 /* TWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A816920419DF900B81645 /* TWebViewVC.m */; };
+		D64A817E20419DF900B81645 /* TQQPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A816A20419DF900B81645 /* TQQPlatform.m */; };
+		D64A817F20419DF900B81645 /* TSinaWeiBoPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A816B20419DF900B81645 /* TSinaWeiBoPlatform.m */; };
+		D64A818020419DF900B81645 /* Trochilus.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A816E20419DF900B81645 /* Trochilus.m */; };
 		D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D73B439E20317B70009A4F7D /* GKDiscoverVC.m */; };
 		D7550EF7203FA50800023A89 /* GKMyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF6203FA50800023A89 /* GKMyVC.m */; };
 		D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF9203FAE8000023A89 /* GKDonateVC.m */; };
@@ -106,6 +124,43 @@
 		D61FF065202EE1AA0084E9FA /* GKHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKHistoryCell.m; sourceTree = "<group>"; };
 		D61FF067202EF0400084E9FA /* GKHistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKHistoryModel.h; sourceTree = "<group>"; };
 		D61FF068202EF0400084E9FA /* GKHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKHistoryModel.m; sourceTree = "<group>"; };
+		D64A814820419DF800B81645 /* Trochilus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trochilus.h; sourceTree = "<group>"; };
+		D64A814920419DF800B81645 /* TTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTypeDefine.h; sourceTree = "<group>"; };
+		D64A814B20419DF800B81645 /* NSData+Trochilus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Trochilus.h"; sourceTree = "<group>"; };
+		D64A814C20419DF800B81645 /* NSMutableDictionary+TrochilusShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+TrochilusShare.h"; sourceTree = "<group>"; };
+		D64A814D20419DF800B81645 /* NSString+Trochilus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Trochilus.m"; sourceTree = "<group>"; };
+		D64A814E20419DF800B81645 /* NSDate+Trochilus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Trochilus.m"; sourceTree = "<group>"; };
+		D64A814F20419DF800B81645 /* NSMutableArray+Trochilus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Trochilus.m"; sourceTree = "<group>"; };
+		D64A815020419DF800B81645 /* NSMutableDictionary+TrochilusInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+TrochilusInit.h"; sourceTree = "<group>"; };
+		D64A815120419DF800B81645 /* UIApplication+Trochilus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Trochilus.h"; sourceTree = "<group>"; };
+		D64A815220419DF800B81645 /* NSMutableDictionary+TrochilusPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+TrochilusPay.h"; sourceTree = "<group>"; };
+		D64A815320419DF800B81645 /* Trochilus+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Trochilus+Runtime.h"; sourceTree = "<group>"; };
+		D64A815420419DF800B81645 /* UIPasteboard+Trochilus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPasteboard+Trochilus.m"; sourceTree = "<group>"; };
+		D64A815520419DF800B81645 /* NSMutableArray+Trochilus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Trochilus.h"; sourceTree = "<group>"; };
+		D64A815620419DF800B81645 /* NSDate+Trochilus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Trochilus.h"; sourceTree = "<group>"; };
+		D64A815720419DF800B81645 /* NSString+Trochilus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Trochilus.h"; sourceTree = "<group>"; };
+		D64A815820419DF800B81645 /* NSMutableDictionary+TrochilusShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+TrochilusShare.m"; sourceTree = "<group>"; };
+		D64A815920419DF800B81645 /* NSData+Trochilus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Trochilus.m"; sourceTree = "<group>"; };
+		D64A815A20419DF800B81645 /* UIApplication+Trochilus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Trochilus.m"; sourceTree = "<group>"; };
+		D64A815B20419DF800B81645 /* NSMutableDictionary+TrochilusInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+TrochilusInit.m"; sourceTree = "<group>"; };
+		D64A815C20419DF800B81645 /* UIPasteboard+Trochilus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPasteboard+Trochilus.h"; sourceTree = "<group>"; };
+		D64A815D20419DF800B81645 /* Trochilus+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Trochilus+Runtime.m"; sourceTree = "<group>"; };
+		D64A815E20419DF800B81645 /* NSMutableDictionary+TrochilusPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+TrochilusPay.m"; sourceTree = "<group>"; };
+		D64A816020419DF800B81645 /* TWeChatPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWeChatPlatform.m; sourceTree = "<group>"; };
+		D64A816120419DF800B81645 /* TPlatformKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPlatformKeys.m; sourceTree = "<group>"; };
+		D64A816220419DF800B81645 /* TQQPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQQPlatform.h; sourceTree = "<group>"; };
+		D64A816320419DF800B81645 /* TWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWebViewVC.h; sourceTree = "<group>"; };
+		D64A816420419DF800B81645 /* TUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUser.m; sourceTree = "<group>"; };
+		D64A816520419DF800B81645 /* TAliPayPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAliPayPlatform.m; sourceTree = "<group>"; };
+		D64A816620419DF800B81645 /* TSinaWeiBoPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSinaWeiBoPlatform.h; sourceTree = "<group>"; };
+		D64A816720419DF900B81645 /* TPlatformKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPlatformKeys.h; sourceTree = "<group>"; };
+		D64A816820419DF900B81645 /* TWeChatPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWeChatPlatform.h; sourceTree = "<group>"; };
+		D64A816920419DF900B81645 /* TWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWebViewVC.m; sourceTree = "<group>"; };
+		D64A816A20419DF900B81645 /* TQQPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQQPlatform.m; sourceTree = "<group>"; };
+		D64A816B20419DF900B81645 /* TSinaWeiBoPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSinaWeiBoPlatform.m; sourceTree = "<group>"; };
+		D64A816C20419DF900B81645 /* TAliPayPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAliPayPlatform.h; sourceTree = "<group>"; };
+		D64A816D20419DF900B81645 /* TUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUser.h; sourceTree = "<group>"; };
+		D64A816E20419DF900B81645 /* Trochilus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trochilus.m; sourceTree = "<group>"; };
 		D73B439D20317B70009A4F7D /* GKDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverVC.h; sourceTree = "<group>"; };
 		D73B439E20317B70009A4F7D /* GKDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverVC.m; sourceTree = "<group>"; };
 		D7550EF5203FA50800023A89 /* GKMyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKMyVC.h; sourceTree = "<group>"; };
@@ -315,6 +370,66 @@
 				D61FF065202EE1AA0084E9FA /* GKHistoryCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D64A814720419DF800B81645 /* Trochilus */ = {
+			isa = PBXGroup;
+			children = (
+				D64A814820419DF800B81645 /* Trochilus.h */,
+				D64A816E20419DF900B81645 /* Trochilus.m */,
+				D64A814920419DF800B81645 /* TTypeDefine.h */,
+				D64A814A20419DF800B81645 /* Category */,
+				D64A815F20419DF800B81645 /* ThirdPlatform */,
+			);
+			path = Trochilus;
+			sourceTree = "<group>";
+		};
+		D64A814A20419DF800B81645 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D64A814B20419DF800B81645 /* NSData+Trochilus.h */,
+				D64A814C20419DF800B81645 /* NSMutableDictionary+TrochilusShare.h */,
+				D64A814D20419DF800B81645 /* NSString+Trochilus.m */,
+				D64A814E20419DF800B81645 /* NSDate+Trochilus.m */,
+				D64A814F20419DF800B81645 /* NSMutableArray+Trochilus.m */,
+				D64A815020419DF800B81645 /* NSMutableDictionary+TrochilusInit.h */,
+				D64A815120419DF800B81645 /* UIApplication+Trochilus.h */,
+				D64A815220419DF800B81645 /* NSMutableDictionary+TrochilusPay.h */,
+				D64A815320419DF800B81645 /* Trochilus+Runtime.h */,
+				D64A815420419DF800B81645 /* UIPasteboard+Trochilus.m */,
+				D64A815520419DF800B81645 /* NSMutableArray+Trochilus.h */,
+				D64A815620419DF800B81645 /* NSDate+Trochilus.h */,
+				D64A815720419DF800B81645 /* NSString+Trochilus.h */,
+				D64A815820419DF800B81645 /* NSMutableDictionary+TrochilusShare.m */,
+				D64A815920419DF800B81645 /* NSData+Trochilus.m */,
+				D64A815A20419DF800B81645 /* UIApplication+Trochilus.m */,
+				D64A815B20419DF800B81645 /* NSMutableDictionary+TrochilusInit.m */,
+				D64A815C20419DF800B81645 /* UIPasteboard+Trochilus.h */,
+				D64A815D20419DF800B81645 /* Trochilus+Runtime.m */,
+				D64A815E20419DF800B81645 /* NSMutableDictionary+TrochilusPay.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		D64A815F20419DF800B81645 /* ThirdPlatform */ = {
+			isa = PBXGroup;
+			children = (
+				D64A816720419DF900B81645 /* TPlatformKeys.h */,
+				D64A816120419DF800B81645 /* TPlatformKeys.m */,
+				D64A816820419DF900B81645 /* TWeChatPlatform.h */,
+				D64A816020419DF800B81645 /* TWeChatPlatform.m */,
+				D64A816C20419DF900B81645 /* TAliPayPlatform.h */,
+				D64A816520419DF800B81645 /* TAliPayPlatform.m */,
+				D64A816620419DF800B81645 /* TSinaWeiBoPlatform.h */,
+				D64A816B20419DF900B81645 /* TSinaWeiBoPlatform.m */,
+				D64A816320419DF800B81645 /* TWebViewVC.h */,
+				D64A816920419DF900B81645 /* TWebViewVC.m */,
+				D64A816220419DF800B81645 /* TQQPlatform.h */,
+				D64A816A20419DF900B81645 /* TQQPlatform.m */,
+				D64A816D20419DF900B81645 /* TUser.h */,
+				D64A816420419DF800B81645 /* TUser.m */,
+			);
+			path = ThirdPlatform;
 			sourceTree = "<group>";
 		};
 		D73B439920317B20009A4F7D /* Discover */ = {
@@ -536,6 +651,7 @@
 		D7A66B2B2030144E00D25EA9 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				D64A814720419DF800B81645 /* Trochilus */,
 				D7A66B2C2030145A00D25EA9 /* XLPhotoBrowser+CoderXL */,
 			);
 			path = Third;
@@ -863,6 +979,7 @@
 				D7550F0120400EC700023A89 /* GKUserManager.m in Sources */,
 				D7A66B522030145A00D25EA9 /* FSActionSheetCell.m in Sources */,
 				D7A66B502030145A00D25EA9 /* UIView+XLExtension.m in Sources */,
+				D64A818020419DF900B81645 /* Trochilus.m in Sources */,
 				D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */,
 				D60B6EDC20353B1A00061AE6 /* NSString+Util.m in Sources */,
 				D77952A8203EA48C00AF0023 /* GKDiscoverListModel.m in Sources */,
@@ -873,7 +990,9 @@
 				D7A66B542030145A00D25EA9 /* FSActionSheetItem.m in Sources */,
 				D7A66B672030357700D25EA9 /* GKWelfareCell.m in Sources */,
 				D7A66B572030145A00D25EA9 /* TAAbstractDotView.m in Sources */,
+				D64A817520419DF900B81645 /* UIApplication+Trochilus.m in Sources */,
 				D770528620413E98005C9268 /* GKSettingVC.m in Sources */,
+				D64A817020419DF900B81645 /* NSDate+Trochilus.m in Sources */,
 				D7665DAC202AA32800EF8B3A /* main.m in Sources */,
 				D7A66B5B2030145A00D25EA9 /* XLPhotoBrowser.m in Sources */,
 				D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */,
@@ -885,28 +1004,43 @@
 				D61939C2202EA2E60081CB68 /* BaseNavigationController.m in Sources */,
 				D79784A7202D910400B7913C /* GKTodayHeaderView.m in Sources */,
 				D7A66B6A20303D9100D25EA9 /* GKWelfareModel.m in Sources */,
+				D64A817A20419DF900B81645 /* TPlatformKeys.m in Sources */,
+				D64A817D20419DF900B81645 /* TWebViewVC.m in Sources */,
+				D64A817120419DF900B81645 /* NSMutableArray+Trochilus.m in Sources */,
 				D7B831022032797B007F908D /* GKHistoryDateVC.m in Sources */,
 				D61939B8202E98240081CB68 /* UIImageView+Util.m in Sources */,
+				D64A817C20419DF900B81645 /* TAliPayPlatform.m in Sources */,
 				D60B6ED92035379900061AE6 /* GKDiscoverCell.m in Sources */,
 				D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */,
+				D64A817E20419DF900B81645 /* TQQPlatform.m in Sources */,
 				D61FF060202EE0C10084E9FA /* GKHistoryVC.m in Sources */,
+				D64A817920419DF900B81645 /* TWeChatPlatform.m in Sources */,
+				D64A817420419DF900B81645 /* NSData+Trochilus.m in Sources */,
 				D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */,
+				D64A817320419DF900B81645 /* NSMutableDictionary+TrochilusShare.m in Sources */,
 				D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */,
 				D7A66B512030145A00D25EA9 /* FSActionSheet.m in Sources */,
 				D7A66B592030145A00D25EA9 /* TADotView.m in Sources */,
 				D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */,
 				D7A66B5D2030145A00D25EA9 /* XLZoomingScrollView.m in Sources */,
 				D7A66B5A2030145A00D25EA9 /* TAPageControl.m in Sources */,
+				D64A817820419DF900B81645 /* NSMutableDictionary+TrochilusPay.m in Sources */,
 				D7A66B612030345C00D25EA9 /* GKWelfareVC.m in Sources */,
+				D64A817620419DF900B81645 /* NSMutableDictionary+TrochilusInit.m in Sources */,
 				D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */,
 				D770528A2041418D005C9268 /* GKGankTypeVC.m in Sources */,
 				D7550EF7203FA50800023A89 /* GKMyVC.m in Sources */,
 				D61FF066202EE1AA0084E9FA /* GKHistoryCell.m in Sources */,
 				D7A66B582030145A00D25EA9 /* TAAnimatedDotView.m in Sources */,
 				D77952A0203E9E6000AF0023 /* GKDiscoverListVC.m in Sources */,
+				D64A817B20419DF900B81645 /* TUser.m in Sources */,
 				D77952A3203EA1C700AF0023 /* GKDiscoverListCell.m in Sources */,
 				D61FF069202EF0400084E9FA /* GKHistoryModel.m in Sources */,
 				D7A66B4F2030145A00D25EA9 /* UIImage+XLExtension.m in Sources */,
+				D64A816F20419DF900B81645 /* NSString+Trochilus.m in Sources */,
+				D64A817F20419DF900B81645 /* TSinaWeiBoPlatform.m in Sources */,
+				D64A817720419DF900B81645 /* Trochilus+Runtime.m in Sources */,
+				D64A817220419DF900B81645 /* UIPasteboard+Trochilus.m in Sources */,
 				D79784B0202DA6C300B7913C /* GKTodayModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

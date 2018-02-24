@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSMutableDictionary+TrochilusInit.h"
 
 @interface AppDelegate ()
 
@@ -28,6 +29,31 @@
     [WRNavigationBar wr_setDefaultNavBarTitleColor:[UIColor whiteColor]];
     // 设置状态栏标题白色
     [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [Trochilus registerActivePlatforms:@[@(TPlatformTypeQQ),@(TPlatformTypeWechat),@(TPlatformTypeSinaWeibo)] onConfiguration:^(TPlatformType platformType, NSMutableDictionary *appInfo) {
+        
+        switch (platformType) {
+                
+            case TPlatformTypeQQ:
+            {
+                [appInfo TSetupQQByAppId:@"" appKey:@"" authType:@"" useTIM:YES];
+            }
+                break;
+            case TPlatformTypeWechat:
+            {
+                [appInfo TSetupWeChatByAppId:@"" appSecret:@""];
+            }
+                break;
+            case TPlatformTypeSinaWeibo:
+            {
+                [appInfo TSetupSinaWeiboByAppKey:@"" appSecret:@"" redirectUri:@"" authType:@""];
+            }
+                break;
+            default:
+                break;
+        }
+        
+    }];
     
     return YES;
 }

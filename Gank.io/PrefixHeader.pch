@@ -39,4 +39,6 @@
 #import "NSString+Util.h"
 #import "NSDictionary+Util.h"
 
+#import "Trochilus.h"
+
 #endif /* PrefixHeader_pch */

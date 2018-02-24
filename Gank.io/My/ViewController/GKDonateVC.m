@@ -125,7 +125,8 @@
     [self.view addSubview:self.leftBtn];
     
     [self.leftBtn bk_whenTapped:^{
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"alipay://QR.ALIPAY.COM/FKX02434Q0KYRKIN7ZMLFB"]];
+        
+        [Trochilus awardToAliPayQRCodeUrl:@"https://QR.ALIPAY.COM/FKX02434Q0KYRKIN7ZMLFB"];
     }];
     
     [self.leftBtn makeConstraints:^(MASConstraintMaker *make) {
@@ -145,7 +146,8 @@
     [self.view addSubview:self.rightBtn];
     
     [self.rightBtn bk_whenTapped:^{
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"alipay://qr.alipay.com/fkx09273vwyvsorrwvamhe2"]];
+        
+        [Trochilus awardToAliPayQRCodeUrl:@"https://qr.alipay.com/fkx09273vwyvsorrwvamhe2"];
     }];
     
     [self.rightBtn makeConstraints:^(MASConstraintMaker *make) {
