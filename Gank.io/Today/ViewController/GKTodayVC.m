@@ -53,6 +53,8 @@
             
             NSArray * historyDate = [self.historyModel.publishedAt componentsSeparatedByString:@"T"];
             NSString * day = historyDate[0];
+            self.navTitleLabel.text = day;
+            
             day = [day stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
             [self todayGank:day];
         }

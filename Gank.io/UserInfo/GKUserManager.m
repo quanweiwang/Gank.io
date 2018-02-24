@@ -68,7 +68,10 @@ static GKUserManager * _instance = nil;
     return [userDefaults objectForKey:@"userInfo"];
 }
 
-
++ (void)loginOut {
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults removeObjectForKey:@"userInfo"];
+}
 
 - (NSString *)avatar_url {
     return _avatar_url;

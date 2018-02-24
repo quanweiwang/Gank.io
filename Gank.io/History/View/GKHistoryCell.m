@@ -15,6 +15,7 @@
 @property(strong, nonatomic)UIView * imgSuperView;//imageView 容器视图
 @property(strong, nonatomic)UILabel * dataLabel;//发布日期
 @property(strong, nonatomic)NSMutableArray * imageViewArray;
+@property(strong, nonatomic)UIButton * moreBtn;//更多按钮
 @end
 
 @implementation GKHistoryCell
@@ -50,10 +51,17 @@
     self.titleLabel.numberOfLines = 0;
     [self addSubview:self.titleLabel];
     
-    //图片父视图
-    self.imgSuperView = [[UIView alloc] init];
-    self.imgSuperView.clipsToBounds = YES;
-    [self addSubview:self.imgSuperView];
+    self.moreBtn = [[UIButton alloc] init];
+    [self.moreBtn setImage:[UIImage imageNamed:@"more_icon"] forState:UIControlStateNormal];
+    [self addSubview:self.moreBtn];
+    
+    [self.moreBtn makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self).offset(15);
+        make.right.equalTo(self).offset(-10);
+        make.bottom.equalTo(self).offset(-5);
+        make.height.equalTo(30);
+        make.width.equalTo(60);
+    }];
     
     //发布日期
     self.dataLabel = [[UILabel alloc] init];
@@ -64,14 +72,19 @@
     [self.dataLabel makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(15);
         make.right.equalTo(self).offset(-10);
-        make.bottom.equalTo(self).offset(-10);
+        make.centerY.equalTo(self.moreBtn);
         make.height.equalTo(14);
     }];
+    
+    //图片父视图
+    self.imgSuperView = [[UIView alloc] init];
+    self.imgSuperView.clipsToBounds = YES;
+    [self addSubview:self.imgSuperView];
     
     [self.imgSuperView makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(15);
         make.right.equalTo(self).offset(-10);
-        make.bottom.equalTo(self.dataLabel.top).offset(-5);
+        make.bottom.equalTo(self.moreBtn.top).offset(-5);
         make.height.equalTo(75);
     }];
     

@@ -150,7 +150,7 @@
         }
         else {
             NSString * param = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            NSDictionary * dic = [self dictionaryWithString:param];
+            NSDictionary * dic = [NSDictionary dictionaryWithString:param];
             
             [self githubUserInfoWithAccessToken:[dic objectForKey:@"access_token"]];
         }
@@ -192,6 +192,8 @@
             
             [userDefaults setObject:[jsonMutableDict copy] forKey:@"userInfo"];
             [userDefaults synchronize];
+            
+            [self.table reloadData];
         }
         
     }];
@@ -199,15 +201,19 @@
 
 #pragma mark UITableView相关
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    if ([GKUserManager isLogin]) {
+        return 3;
+    }
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (section == 0) {
-        return 1;
+    if (section == 1) {
+        return 3;
     }
-    return 3;
+    return 1;
 }
 
 static NSString * cellStr = @"cell";
@@ -223,7 +229,17 @@ static NSString * cellStr = @"cell";
     cell.textLabel.textColor = RGB_HEX(0x2F2F2F);
     cell.textLabel.font = [UIFont systemFontOfSize:14.f];
     
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (indexPath.section != 2) {
+        
+        cell.textLabel.textAlignment = NSTextAlignmentLeft;
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    else {
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
@@ -242,6 +258,16 @@ static NSString * cellStr = @"cell";
     if (indexPath.section == 0) {
         GKDonateVC * vc = [[GKDonateVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.section == 2) {
+        
+        //退出登录
+        [GKUserManager loginOut];
+        self.headImageView.userInteractionEnabled = YES;
+        self.headImageView.image = [UIImage imageNamed:@"GitHub_icon"];
+        self.nickLabel.userInteractionEnabled = YES;
+        self.nickLabel.text = @"点击登录";
+        [tableView reloadData];
     }
 }
 
@@ -262,25 +288,10 @@ static NSString * cellStr = @"cell";
         
         [_cellTitleArray addObject:@[@"打赏作者"]];
         [_cellTitleArray addObject:@[@"我要爆料",@"用户反馈",@"系统设置"]];
-        
+        [_cellTitleArray addObject:@[@"退出登录"]];
     }
     
     return _cellTitleArray;
 }
-
-- (NSDictionary *)dictionaryWithString:(NSString*)string {
-    
-    NSMutableDictionary *queryStringDictionary = [[NSMutableDictionary alloc] init];
-    
-    NSArray *urlComponents = [string componentsSeparatedByString:@"&"];
-    
-    for (NSString *keyValuePair in urlComponents)
-    {
-        NSRange range=[keyValuePair rangeOfString:@"="];
-        [queryStringDictionary setObject:range.length>0?[keyValuePair substringFromIndex:range.location+1]:@"" forKey:(range.length?[keyValuePair substringToIndex:range.location]:keyValuePair)];
-    }
-    return queryStringDictionary;
-}
-
 
 @end

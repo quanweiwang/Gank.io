@@ -36,5 +36,6 @@
 #import "UIImage+Util.h"
 #import "NSArray+Util.h"
 #import "NSString+Util.h"
+#import "NSDictionary+Util.h"
 
 #endif /* PrefixHeader_pch */

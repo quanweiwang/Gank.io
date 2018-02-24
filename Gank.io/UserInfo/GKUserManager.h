@@ -15,6 +15,7 @@
 
 + (instancetype)shareInstance;
 + (BOOL)isLogin;
++ (void)loginOut;
 
 - (BOOL)safeUserInfoWithDictionary:(NSDictionary *)dic;
 

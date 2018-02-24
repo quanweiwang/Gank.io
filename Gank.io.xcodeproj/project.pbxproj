@@ -33,6 +33,7 @@
 		D7665DD0202AAC7B00EF8B3A /* GKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DCF202AAC7B00EF8B3A /* GKTabBarController.m */; };
 		D7665DD3202AD50B00EF8B3A /* GKTodayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DD2202AD50B00EF8B3A /* GKTodayVC.m */; };
 		D7665DD7202AD95100EF8B3A /* GKTodayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DD6202AD95100EF8B3A /* GKTodayCell.m */; };
+		D77052832041042C005C9268 /* NSDictionary+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D77052822041042C005C9268 /* NSDictionary+Util.m */; };
 		D77952A0203E9E6000AF0023 /* GKDiscoverListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D779529F203E9E6000AF0023 /* GKDiscoverListVC.m */; };
 		D77952A3203EA1C700AF0023 /* GKDiscoverListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D77952A2203EA1C700AF0023 /* GKDiscoverListCell.m */; };
 		D77952A8203EA48C00AF0023 /* GKDiscoverListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D77952A7203EA48C00AF0023 /* GKDiscoverListModel.m */; };
@@ -134,6 +135,8 @@
 		D7665DD4202AD59100EF8B3A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D7665DD5202AD95100EF8B3A /* GKTodayCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKTodayCell.h; sourceTree = "<group>"; };
 		D7665DD6202AD95100EF8B3A /* GKTodayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKTodayCell.m; sourceTree = "<group>"; };
+		D77052812041042C005C9268 /* NSDictionary+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Util.h"; sourceTree = "<group>"; };
+		D77052822041042C005C9268 /* NSDictionary+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Util.m"; sourceTree = "<group>"; };
 		D779529E203E9E6000AF0023 /* GKDiscoverListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverListVC.h; sourceTree = "<group>"; };
 		D779529F203E9E6000AF0023 /* GKDiscoverListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverListVC.m; sourceTree = "<group>"; };
 		D77952A1203EA1C700AF0023 /* GKDiscoverListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverListCell.h; sourceTree = "<group>"; };
@@ -514,6 +517,8 @@
 				D7A66B29202FDB7F00D25EA9 /* NSArray+Util.m */,
 				D60B6EDA20353B1A00061AE6 /* NSString+Util.h */,
 				D60B6EDB20353B1A00061AE6 /* NSString+Util.m */,
+				D77052812041042C005C9268 /* NSDictionary+Util.h */,
+				D77052822041042C005C9268 /* NSDictionary+Util.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -861,6 +866,7 @@
 				D7665DAC202AA32800EF8B3A /* main.m in Sources */,
 				D7A66B5B2030145A00D25EA9 /* XLPhotoBrowser.m in Sources */,
 				D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */,
+				D77052832041042C005C9268 /* NSDictionary+Util.m in Sources */,
 				D7A66B532030145A00D25EA9 /* FSActionSheetConfig.m in Sources */,
 				D61939BC202EA0E20081CB68 /* GKWebViewVC.m in Sources */,
 				D61FF05C202EDE420084E9FA /* BaseViewController.m in Sources */,
@@ -1053,14 +1059,16 @@
 			baseConfigurationReference = 600C5F304B24BA741E369A45 /* Pods-Gank.io.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89BZ957YW3;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Gank.io/PrefixHeader.pch";
 				INFOPLIST_FILE = Gank.io/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wangquanwei.Gank-io";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangquanwei.Gank-io0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1070,14 +1078,16 @@
 			baseConfigurationReference = 84D05CFF2E60B0548D03A34E /* Pods-Gank.io.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89BZ957YW3;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Gank.io/PrefixHeader.pch";
 				INFOPLIST_FILE = Gank.io/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wangquanwei.Gank-io";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangquanwei.Gank-io0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
