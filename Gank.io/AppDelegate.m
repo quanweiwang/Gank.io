@@ -18,6 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [self reachabilityNetworkStatus];
+    
     // 设置导航栏默认的背景颜色
     [WRNavigationBar wr_setDefaultNavBarBarTintColor:RGB_HEX(0xD33E42)];
     // 设置导航栏所有按钮的默认颜色
@@ -57,5 +59,38 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)reachabilityNetworkStatus{
+    
+    if (!self.manager) {
+        self.manager = [AFNetworkReachabilityManager sharedManager];
+    }
+    
+    [self.manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown: //未识别的网络
+            {
+                UIAlertView *alert = [UIAlertView bk_alertViewWithTitle:@"未识别网络"];
+                [alert show];
+//                DLog(@"---未识别网络---");
+            }
+                break;
+            case AFNetworkReachabilityStatusNotReachable: //网络未连接
+            {
+                //网络未连接 跳转到登录页
+//                [Utils alertWithNetworkIsNotConnected];
+            }
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN: //移动网络
+            case AFNetworkReachabilityStatusReachableViaWiFi: //无线网络
+                break;
+            default:
+                break;
+        }
+    }];
+    
+    //开始监听
+    [self.manager startMonitoring];
+}
 
 @end

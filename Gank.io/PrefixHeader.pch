@@ -24,6 +24,7 @@
 #import "XLPhotoBrowser.h"
 #import <SDWebImage/SDWebImageManager.h>
 #import "WRNavigationBar.h"
+#import <AFNetworking/AFNetworking.h>
 
 #import "GKMacro.h"
 #import "GKNetwork.h"
