@@ -262,7 +262,7 @@ static NSString * const kFSActionSheetCellIdentifier = @"kFSActionSheetCellIdent
 }
 
 // 隐藏
-- (void)hideWithCompletion:(void(^)())completion {
+- (void)hideWithCompletion:(void(^)(void))completion {
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         _backView.alpha   = 0;
         CGRect newFrame   = self.frame;
