@@ -39,6 +39,8 @@
 		D64A81812041B49900B81645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7665DA7202AA32800EF8B3A /* LaunchScreen.storyboard */; };
 		D64A81842041B71000B81645 /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A81822041B71000B81645 /* loading@2x.png */; };
 		D64A81852041B71000B81645 /* loading@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A81832041B71000B81645 /* loading@3x.png */; };
+		D6C383C2204427DC00CC9AEE /* GKShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C383C1204427DC00CC9AEE /* GKShareVC.m */; };
+		D6C383C720442B0E00CC9AEE /* GKShareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C383C620442B0E00CC9AEE /* GKShareCell.m */; };
 		D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D73B439E20317B70009A4F7D /* GKDiscoverVC.m */; };
 		D7550EF7203FA50800023A89 /* GKMyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF6203FA50800023A89 /* GKMyVC.m */; };
 		D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF9203FAE8000023A89 /* GKDonateVC.m */; };
@@ -165,6 +167,10 @@
 		D64A816E20419DF900B81645 /* Trochilus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trochilus.m; sourceTree = "<group>"; };
 		D64A81822041B71000B81645 /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
 		D64A81832041B71000B81645 /* loading@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@3x.png"; sourceTree = "<group>"; };
+		D6C383C0204427DC00CC9AEE /* GKShareVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKShareVC.h; sourceTree = "<group>"; };
+		D6C383C1204427DC00CC9AEE /* GKShareVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKShareVC.m; sourceTree = "<group>"; };
+		D6C383C520442B0E00CC9AEE /* GKShareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKShareCell.h; sourceTree = "<group>"; };
+		D6C383C620442B0E00CC9AEE /* GKShareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKShareCell.m; sourceTree = "<group>"; };
 		D73B439D20317B70009A4F7D /* GKDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverVC.h; sourceTree = "<group>"; };
 		D73B439E20317B70009A4F7D /* GKDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverVC.m; sourceTree = "<group>"; };
 		D7550EF5203FA50800023A89 /* GKMyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKMyVC.h; sourceTree = "<group>"; };
@@ -436,6 +442,33 @@
 			path = ThirdPlatform;
 			sourceTree = "<group>";
 		};
+		D6C383BF204427A400CC9AEE /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				D6C383C420442AE800CC9AEE /* ViewController */,
+				D6C383C320442AE200CC9AEE /* View */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		D6C383C320442AE200CC9AEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6C383C520442B0E00CC9AEE /* GKShareCell.h */,
+				D6C383C620442B0E00CC9AEE /* GKShareCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6C383C420442AE800CC9AEE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D6C383C0204427DC00CC9AEE /* GKShareVC.h */,
+				D6C383C1204427DC00CC9AEE /* GKShareVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		D73B439920317B20009A4F7D /* Discover */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +547,7 @@
 		D7665D9B202AA32800EF8B3A /* Gank.io */ = {
 			isa = PBXGroup;
 			children = (
+				D6C383BF204427A400CC9AEE /* Share */,
 				D64A81822041B71000B81645 /* loading@2x.png */,
 				D64A81832041B71000B81645 /* loading@3x.png */,
 				D7550EFE20400EA600023A89 /* UserInfo */,
@@ -993,6 +1027,7 @@
 				D77952A8203EA48C00AF0023 /* GKDiscoverListModel.m in Sources */,
 				D77952B5203EC76F00AF0023 /* UIImage+Util.m in Sources */,
 				D7A66B5C2030145A00D25EA9 /* XLProgressView.m in Sources */,
+				D6C383C2204427DC00CC9AEE /* GKShareVC.m in Sources */,
 				D7665DD0202AAC7B00EF8B3A /* GKTabBarController.m in Sources */,
 				D7A66B2A202FDB7F00D25EA9 /* NSArray+Util.m in Sources */,
 				D7A66B542030145A00D25EA9 /* FSActionSheetItem.m in Sources */,
@@ -1020,6 +1055,7 @@
 				D64A817C20419DF900B81645 /* TAliPayPlatform.m in Sources */,
 				D60B6ED92035379900061AE6 /* GKDiscoverCell.m in Sources */,
 				D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */,
+				D6C383C720442B0E00CC9AEE /* GKShareCell.m in Sources */,
 				D64A817E20419DF900B81645 /* TQQPlatform.m in Sources */,
 				D61FF060202EE0C10084E9FA /* GKHistoryVC.m in Sources */,
 				D64A817920419DF900B81645 /* TWeChatPlatform.m in Sources */,

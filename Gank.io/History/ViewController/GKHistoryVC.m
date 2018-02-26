@@ -11,6 +11,7 @@
 #import "GKHistoryModel.h"
 #import "GKTodayVC.h"
 #import "GKHistoryDateVC.h"
+#import "GKShareVC.h"
 
 @interface GKHistoryVC ()<UITableViewDelegate,UITableViewDataSource>
 
