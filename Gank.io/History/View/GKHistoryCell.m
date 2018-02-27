@@ -15,7 +15,7 @@
 @property(strong, nonatomic)UIView * imgSuperView;//imageView 容器视图
 @property(strong, nonatomic)UILabel * dataLabel;//发布日期
 @property(strong, nonatomic)NSMutableArray * imageViewArray;
-@property(strong, nonatomic)UIButton * moreBtn;//更多按钮
+
 @end
 
 @implementation GKHistoryCell

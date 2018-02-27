@@ -12,6 +12,9 @@
 @interface GKShareVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property(strong, nonatomic) UICollectionView * coll;
 @property(strong, nonatomic) NSArray * data;
+@property(strong, nonatomic) UIView * backgroundView;
+@property(strong, nonatomic) UIView * bottomView;
+@property(strong, nonatomic) UIButton * cancelBtn;
 @end
 
 @implementation GKShareVC
@@ -21,6 +24,13 @@
     // Do any additional setup after loading the view.
     
     [self initUI];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self show];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +39,67 @@
 }
 
 - (void)initUI {
+    
+    self.view.backgroundColor = [UIColor clearColor];
+    
+    self.backgroundView = [[UIView alloc] init];
+    self.backgroundView.backgroundColor = [UIColor blackColor];
+    self.backgroundView.alpha = 0.7f;
+    [self.view addSubview:self.backgroundView];
+    
+    [self.backgroundView makeConstraints:^(MASConstraintMaker *make) {
+        if (@available(iOS 11.0, *)) {
+            make.left.equalTo(self.view.safeAreaLayoutGuideLeft).offset(0);
+            make.right.equalTo(self.view.safeAreaLayoutGuideRight).offset(0);
+            make.bottom.equalTo(self.view.safeAreaLayoutGuideBottom).offset(0);
+            make.top.equalTo(self.view.safeAreaLayoutGuideTop).offset(0);
+        } else {
+            // Fallback on earlier versions
+            make.top.left.bottom.right.equalTo(self.view);
+        }
+        
+    }];
+    
+    self.bottomView = [[UIView alloc] init];
+    self.bottomView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    [self.view addSubview:self.bottomView];
+    
+    [self.bottomView makeConstraints:^(MASConstraintMaker *make) {
+        if (@available(iOS 11.0, *)) {
+            make.left.equalTo(self.view.safeAreaLayoutGuideLeft).offset(0);
+            make.right.equalTo(self.view.safeAreaLayoutGuideRight).offset(0);
+            make.bottom.equalTo(self.view.safeAreaLayoutGuideBottom).offset(200);
+            make.height.equalTo(200);
+        } else {
+            // Fallback on earlier versions
+            make.left.right.equalTo(self.view);
+            make.height.equalTo(200);
+            make.bottom.equalTo(self.view).offset(200);
+        }
+        
+    }];
+    
+    self.cancelBtn = [[UIButton alloc] init];
+    self.cancelBtn.backgroundColor = [UIColor whiteColor];
+    [self.cancelBtn setTitleColor:RGB_HEX(0x2F2F2F) forState:UIControlStateNormal];
+    [self.cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [self.bottomView addSubview:self.cancelBtn];
+    
+    [self.cancelBtn makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo(self.bottomView).offset(0);
+        make.right.equalTo(self.bottomView).offset(0);
+        make.bottom.equalTo(self.bottomView).offset(0);
+        make.height.equalTo(44);
+        
+    }];
+    
+    @weakObj(self)
+    [self.cancelBtn bk_whenTapped:^{
+        @strongObj(self)
+        
+        [self hidden];
+    }];
     
     //coll
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -41,17 +112,9 @@
     [self.view addSubview:self.coll];
     
     [self.coll makeConstraints:^(MASConstraintMaker *make) {
-        
-        if (@available(iOS 11.0, *)) {
-            make.top.equalTo(self.view.safeAreaLayoutGuideTop).offset(0);
-            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft).offset(0);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(0);
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(0);
-        } else {
-            // Fallback on earlier versions
-            make.top.left.bottom.right.equalTo(self.view);
-        }
-        
+ 
+        make.top.left.right.equalTo(self.bottomView);
+        make.bottom.equalTo(self.cancelBtn.top).offset(-1);
     }];
     
 }
@@ -71,14 +134,19 @@ static NSString * cellStr = @"cell";
     GKShareCell * cell = (GKShareCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellStr forIndexPath:indexPath];
     
     NSDictionary * dic = [self.data safeObjectAtIndex:indexPath.row];
+    
+    //图标
     cell.iconImageView.image = [UIImage imageNamed:dic[@"icon"]];
+    
+    //标题
+    cell.titleLabel.text = dic[@"title"];
     
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    return CGSizeMake(45, 45);
+    return CGSizeMake((kSCREENWIDTH-60)/5, 145);
 }
 
 //设置每个item的UIEdgeInsets
@@ -102,7 +170,43 @@ static NSString * cellStr = @"cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
-#pragma 懒加载
+#pragma mark 动画
+- (void)show {
+    
+    [self.bottomView updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view);
+    }];
+    
+    [UIView animateWithDuration:0.25f animations:^{
+        
+        [self.view layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)hidden {
+    
+    [self.bottomView updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).offset(200);
+    }];
+    
+    [UIView animateWithDuration:0.25f animations:^{
+        
+        [self.view layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    [self hidden];
+}
+
+#pragma mark 懒加载
 - (NSArray *)data {
     if (_data == nil) {
         _data = [NSArray arrayWithObjects:@{

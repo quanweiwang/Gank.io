@@ -11,6 +11,8 @@
 
 @interface GKHistoryCell : UITableViewCell
 
+@property(strong, nonatomic)UIButton * moreBtn;//更多按钮
+
 - (void)setModel:(GKHistoryModel *)model;
 
 @end

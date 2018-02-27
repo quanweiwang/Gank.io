@@ -32,8 +32,20 @@
     [self addSubview:self.iconImageView];
     
     [self.iconImageView makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self);
+        make.centerX.equalTo(self);
+        make.centerY.equalTo(self).offset(-13);
         make.width.height.equalTo(45);
+    }];
+    
+    self.titleLabel = [[UILabel alloc] init];
+    self.titleLabel.font = [UIFont systemFontOfSize:14.f];
+    self.titleLabel.textColor = RGB_HEX(0x2F2F2F);
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:self.titleLabel];
+    
+    [self.titleLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self);
+        make.top.equalTo(self.iconImageView.bottom).offset(5);
     }];
     
     

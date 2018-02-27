@@ -46,14 +46,14 @@
     self.page = 1;
     
     @weakObj(self)
-//    UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"calendar_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
-//        
-//        @strongObj(self)
-//        GKHistoryDateVC * vc = [[GKHistoryDateVC alloc] init];
-//        [self.navigationController pushViewController:vc animated:YES];
-//        
-//    }];
-//    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+    UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"calendar_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
+        
+        @strongObj(self)
+        GKHistoryDateVC * vc = [[GKHistoryDateVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }];
+    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     
     //table
     self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
@@ -155,6 +155,16 @@ static NSString * cellStr = @"cell";
     }
     
     GKHistoryModel * model = [self.data safeObjectAtIndex:indexPath.row];
+    
+    @weakObj(self)
+    [cell.moreBtn bk_whenTapped:^{
+        @strongObj(self)
+        GKShareVC * shareVC = [[GKShareVC alloc] init];
+        shareVC.providesPresentationContextTransitionStyle = YES;
+        shareVC.definesPresentationContext = YES;
+        shareVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        [self.tabBarController presentViewController:shareVC animated:NO completion:nil];
+    }];
     
     [cell setModel:model];
     
