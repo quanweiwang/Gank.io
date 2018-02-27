@@ -11,7 +11,7 @@
 
 @interface GKShareVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property(strong, nonatomic) UICollectionView * coll;
-@property(strong, nonatomic) NSArray * data;
+@property(strong, nonatomic) NSMutableArray * data;
 @property(strong, nonatomic) UIView * backgroundView;
 @property(strong, nonatomic) UIView * bottomView;
 @property(strong, nonatomic) UIButton * cancelBtn;
@@ -194,7 +194,14 @@ static NSString * cellStr = @"cell";
 - (void)show {
     
     [self.bottomView updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view);
+        
+        if (@available(iOS 11.0, *)) {
+            make.bottom.equalTo(self.view.safeAreaLayoutGuideBottom).offset(0);
+        } else {
+            // Fallback on earlier versions
+            make.bottom.equalTo(self.view);
+        }
+        
     }];
     
     [UIView animateWithDuration:0.25f animations:^{
@@ -209,7 +216,12 @@ static NSString * cellStr = @"cell";
 - (void)hidden {
     
     [self.bottomView updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view).offset(200);
+        if (@available(iOS 11.0, *)) {
+            make.bottom.equalTo(self.view.safeAreaLayoutGuideBottom).offset(200);
+        } else {
+            // Fallback on earlier versions
+            make.bottom.equalTo(self.view).offset(200);
+        }
     }];
     
     [UIView animateWithDuration:0.25f animations:^{
@@ -227,28 +239,45 @@ static NSString * cellStr = @"cell";
 }
 
 #pragma mark 懒加载
-- (NSArray *)data {
+- (NSMutableArray *)data {
     if (_data == nil) {
-        _data = [NSArray arrayWithObjects:@{
-                                            @"icon":@"qq_icon",
-                                            @"title":@"QQ"
-                                            },
-                                            @{
-                                              @"icon":@"qzone_icon",
-                                              @"title":@"Qzone"
-                                            },
-                                            @{
-                                              @"icon":@"wechat_icon",
-                                              @"title":@"微信"
-                                            },
-                                            @{
-                                              @"icon":@"wechat_friend_icon",
-                                              @"title":@"朋友圈"
-                                            },
-                                            @{
-                                              @"icon":@"weibo_icon",
-                                              @"title":@"微博"
-                                            }, nil];
+        
+        _data = [NSMutableArray array];
+        
+        if ([Trochilus isQQInstalled] || [Trochilus isTIMInstalled]) {
+            
+            [_data addObject:@{
+                               @"icon":@"qq_icon",
+                               @"title":@"QQ"
+                               }];
+            
+            [_data addObject:@{
+                               @"icon":@"qzone_icon",
+                               @"title":@"Qzone"
+                               }];
+        }
+        
+        if ([Trochilus isWeChatInstalled]) {
+            
+            [_data addObject:@{
+                               @"icon":@"wechat_icon",
+                               @"title":@"微信"
+                               }];
+            
+            [_data addObject:@{
+                               @"icon":@"wechat_friend_icon",
+                               @"title":@"朋友圈"
+                               }];
+            
+        }
+        
+        if ([Trochilus isSinaWeiBoInstalled]) {
+            [_data addObject:@{
+                               @"icon":@"weibo_icon",
+                               @"title":@"微博"
+                               }];
+        }
+        
     }
     
     return _data;
