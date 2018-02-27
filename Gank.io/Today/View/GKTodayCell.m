@@ -96,7 +96,7 @@
     //图片
     if (model.images.count > 0) {
 
-        [self.demoImageView setImageWithURL:model.images[0] placeholderImage:nil];
+        [self.demoImageView setImageWithURL:model.images[0] placeholderImage:[UIImage imageNamed:@"placeholder"]];
         
         if (model.textHeight == 0) {
             //缓存文字高度

@@ -21,7 +21,6 @@
                     <connections>
                         <segue destination="WBV-PF-2ju" kind="relationship" relationship="viewControllers" id="SjG-xQ-snt"/>
                         <segue destination="tkk-8r-bd7" kind="relationship" relationship="viewControllers" id="Map-nR-9RT"/>
-                        <segue destination="2vi-qQ-ZOR" kind="relationship" relationship="viewControllers" id="fiB-Hl-jyL"/>
                         <segue destination="lsL-BI-W2T" kind="relationship" relationship="viewControllers" id="AaL-HC-Q04"/>
                         <segue destination="iDS-Wp-qdu" kind="relationship" relationship="viewControllers" id="bDV-de-ILx"/>
                     </connections>

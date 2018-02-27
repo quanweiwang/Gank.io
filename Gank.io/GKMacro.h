@@ -18,6 +18,9 @@
 #define kStatusBarHeight (kISIphoneX?(44.f):(20.f))
 #define kNavigationAndStatusBarHeight (kStatusBarHeight + 44.f)
 
+//app信息
+#define kAPP_VERSION         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
 //颜色
 #define RGB_HEX(V)        [UIColor colorWithHex:V]
 #define RGBA_HEX(V, A)    [UIColor colorWithHex:V alpha:A]

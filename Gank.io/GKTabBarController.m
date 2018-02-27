@@ -67,10 +67,10 @@
                                        @"Image" : @"crazy_icon",
                                        }];
         
-        [_tabBarTitleArray addObject:@{
-                                       @"Title" : @"Today",
-                                       @"Image" : @"cool_icon",
-                                       }];
+//        [_tabBarTitleArray addObject:@{
+//                                       @"Title" : @"Today",
+//                                       @"Image" : @"cool_icon",
+//                                       }];
         
         [_tabBarTitleArray addObject:@{
                                        @"Title" : @"萌妹子",

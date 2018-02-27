@@ -19,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //初始化UI
+    [self initUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,7 +31,7 @@
 
 - (void)initUI {
     
-    @weakObj(self)
+    self.title = @"设置";
     
     self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     self.table.delegate = self;
@@ -57,16 +60,13 @@
 #pragma mark UITableView相关
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    if ([GKUserManager isLogin]) {
-        return 3;
-    }
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if (section == 1) {
-        return 3;
+        return 2;
     }
     return 1;
 }
@@ -74,27 +74,34 @@
 static NSString * cellStr = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellStr forIndexPath:indexPath];
-    
+    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellStr];
     }
     
     cell.textLabel.text = [[self.cellTitleArray safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
     cell.textLabel.textColor = RGB_HEX(0x2F2F2F);
     cell.textLabel.font = [UIFont systemFontOfSize:14.f];
     
-    if (indexPath.section != 2) {
+    cell.detailTextLabel.text = @"";
+    
+    NSString * titleStr = [[self.cellTitleArray safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    if ([titleStr isEqualToString:@"清除缓存"]) {
         
-        cell.textLabel.textAlignment = NSTextAlignmentLeft;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2fM",[[SDImageCache sharedImageCache] getSize] / 1024.0 / 1024.0];
         
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    else {
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    else if ([titleStr isEqualToString:@"当前版本"]) {
+        cell.detailTextLabel.text = kAPP_VERSION;
         
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    
+    
+
     
     return cell;
 }
@@ -110,7 +117,19 @@ static NSString * cellStr = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    NSString * titleStr = [[self.cellTitleArray safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
     
+    if ([titleStr isEqualToString:@"清除缓存"]) {
+        
+        @weakObj(tableView)
+        [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+            @strongObj(tableView)
+            [tableView reloadData];
+        }];
+    }
+    else if ([titleStr isEqualToString:@"关于今日干货"]) {
+        
+    }
 }
 
 #pragma mark 懒加载

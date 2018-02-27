@@ -233,12 +233,11 @@ static NSString * cellStr = @"cell";
     if (indexPath.section != 2) {
         
         cell.textLabel.textAlignment = NSTextAlignmentLeft;
-        
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     else {
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        
+        cell.textLabel.textColor = RGB_HEX(0xD33E42);
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
@@ -256,12 +255,23 @@ static NSString * cellStr = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.section == 0) {
+    NSString * titleStr = [[self.cellTitleArray safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
+    
+    if ([titleStr isEqualToString:@"打赏作者"]) {
         GKDonateVC * vc = [[GKDonateVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
-    else if (indexPath.section == 2) {
+    else if ([titleStr isEqualToString:@"干货爆料"]) {
         
+    }
+    else if ([titleStr isEqualToString:@"用户反馈"]) {
+        
+    }
+    else if ([titleStr isEqualToString:@"系统设置"]) {
+        GKSettingVC * vc = [[GKSettingVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if ([titleStr isEqualToString:@"退出登录"]) {
         //退出登录
         [GKUserManager loginOut];
         self.headImageView.userInteractionEnabled = YES;
@@ -270,6 +280,7 @@ static NSString * cellStr = @"cell";
         self.nickLabel.text = @"点击登录";
         [tableView reloadData];
     }
+    
 }
 
 #pragma mark 通知
@@ -288,7 +299,7 @@ static NSString * cellStr = @"cell";
         _cellTitleArray = [NSMutableArray array];
         
         [_cellTitleArray addObject:@[@"打赏作者"]];
-        [_cellTitleArray addObject:@[@"我要爆料",@"用户反馈",@"系统设置"]];
+        [_cellTitleArray addObject:@[@"干货爆料",@"用户反馈",@"系统设置"]];
         [_cellTitleArray addObject:@[@"退出登录"]];
     }
     
