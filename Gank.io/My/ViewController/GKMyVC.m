@@ -203,18 +203,24 @@
 #pragma mark UITableView相关
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    if ([GKUserManager isLogin]) {
-        return 3;
+    //默认一组
+    NSInteger section = 1;
+    
+    if ([Trochilus isAliPayInstalled]) {
+        //有安装支付宝 显示打赏分组
+        section = section + 1;
     }
-    return 2;
+    if ([GKUserManager isLogin]) {
+        //有登录账号 显示退出登录分组
+        section = section + 1;
+    }
+    return section;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (section == 1) {
-        return 3;
-    }
-    return 1;
+    NSArray * sectionArray = [self.cellTitleArray safeObjectAtIndex:section];
+    return sectionArray.count;
 }
 
 static NSString * cellStr = @"cell";
@@ -226,20 +232,20 @@ static NSString * cellStr = @"cell";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
     }
     
-    cell.textLabel.text = [[self.cellTitleArray safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
-    cell.textLabel.textColor = RGB_HEX(0x2F2F2F);
-    cell.textLabel.font = [UIFont systemFontOfSize:14.f];
-    
-    if (indexPath.section != 2) {
-        
-        cell.textLabel.textAlignment = NSTextAlignmentLeft;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    else {
+    NSString * titleStr = [[self.cellTitleArray safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
+    if ([titleStr isEqualToString:@"退出登录"]) {
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         cell.textLabel.textColor = RGB_HEX(0xD33E42);
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    else {
+        cell.textLabel.textColor = RGB_HEX(0x2F2F2F);
+        cell.textLabel.textAlignment = NSTextAlignmentLeft;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    cell.textLabel.text = titleStr;
+    cell.textLabel.font = [UIFont systemFontOfSize:14.f];
+    
     
     return cell;
 }
@@ -298,7 +304,9 @@ static NSString * cellStr = @"cell";
     if (_cellTitleArray == nil) {
         _cellTitleArray = [NSMutableArray array];
         
-        [_cellTitleArray addObject:@[@"打赏作者"]];
+        if ([Trochilus isAliPayInstalled]) {
+            [_cellTitleArray addObject:@[@"打赏作者"]];
+        }
         [_cellTitleArray addObject:@[@"干货爆料",@"用户反馈",@"系统设置"]];
         [_cellTitleArray addObject:@[@"退出登录"]];
     }

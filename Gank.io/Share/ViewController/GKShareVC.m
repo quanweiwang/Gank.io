@@ -146,7 +146,7 @@ static NSString * cellStr = @"cell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    return CGSizeMake((kSCREENWIDTH-60)/5, 145);
+    return CGSizeMake((kSCREENWIDTH-60)/5, 135);
 }
 
 //设置每个item的UIEdgeInsets
@@ -168,6 +168,26 @@ static NSString * cellStr = @"cell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == 0) {
+        
+    }
+    else if (indexPath.row == 2) {
+        
+    }
+    else if (indexPath.row == 3) {
+        
+    }
+    else if (indexPath.row == 4) {
+        
+    }
+    else if (indexPath.row == 5) {
+        
+    }
+    
+//    [Trochilus share:(TPlatformType) parameters:<#(NSMutableDictionary *)#> onStateChanged:^(TResponseState state, NSDictionary *userData, NSError *error) {
+//
+//    }];
 }
 
 #pragma mark 动画
