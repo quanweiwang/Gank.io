@@ -60,7 +60,7 @@
     self.versionLabel.font = [UIFont systemFontOfSize:12.f];
     self.versionLabel.textAlignment = NSTextAlignmentCenter;
     self.versionLabel.textColor = RGB_HEX(0xAEAEAE);
-    self.versionLabel.text = kAPP_VERSION;
+    self.versionLabel.text = [NSString stringWithFormat:@"版本号: V%@",kAPP_VERSION];
     [self addSubview:self.versionLabel];
     
     [self.versionLabel makeConstraints:^(MASConstraintMaker *make) {

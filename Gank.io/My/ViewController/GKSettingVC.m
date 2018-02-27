@@ -125,7 +125,7 @@ static NSString * cellStr = @"cell";
             [tableView reloadData];
         }];
     }
-    else if ([titleStr isEqualToString:@"关于今日干货"]) {
+    else if ([titleStr isEqualToString:@"关于"]) {
         GKAbout * vc = [[GKAbout alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -138,7 +138,7 @@ static NSString * cellStr = @"cell";
         _cellTitleArray = [NSMutableArray array];
         
         [_cellTitleArray addObject:@[@"清除缓存"]];
-        [_cellTitleArray addObject:@[@"当前版本",@"关于今日干货"]];
+        [_cellTitleArray addObject:@[@"当前版本",@"关于"]];
     
     }
     
