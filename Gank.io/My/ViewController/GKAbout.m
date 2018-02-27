@@ -1,21 +1,22 @@
 //
-//  GKSettingVC.m
+//  GKAbout.m
 //  Gank.io
 //
-//  Created by 王权伟 on 2018/2/24.
+//  Created by 王权伟 on 2018/2/27.
 //  Copyright © 2018年 王权伟. All rights reserved.
 //
 
-#import "GKSettingVC.h"
 #import "GKAbout.h"
+#import "GKAboutHeaderView.h"
+#import "GKCopyreaderVC.h"
 
-@interface GKSettingVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface GKAbout ()<UITableViewDelegate,UITableViewDataSource>
+@property(strong, nonatomic)UITableView * table;
+@property(strong, nonatomic)NSArray * cellTitleArray;
 
-@property(strong, nonatomic) NSMutableArray * cellTitleArray;
-@property(strong, nonatomic) UITableView * table;
 @end
 
-@implementation GKSettingVC
+@implementation GKAbout
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,16 +32,17 @@
 }
 
 - (void)initUI {
-    
-    self.title = @"设置";
+
+    self.title = @"关于";
     
     self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     self.table.delegate = self;
     self.table.dataSource = self;
-    self.table.estimatedSectionHeaderHeight = 0;
+    self.table.estimatedSectionHeaderHeight = 200;
     self.table.estimatedSectionFooterHeight = 0;
     self.table.estimatedRowHeight = 44;
     [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.table registerClass:[GKAboutHeaderView class] forHeaderFooterViewReuseIdentifier:@"headerView"];
     [self.view addSubview:self.table];
     
     [self.table makeConstraints:^(MASConstraintMaker *make) {
@@ -52,7 +54,8 @@
             make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(0);
         } else {
             // Fallback on earlier versions
-            make.top.left.bottom.right.equalTo(self.view);
+            make.left.bottom.right.equalTo(self.view);
+            make.top.equalTo(self.view);
         }
         
     }];
@@ -61,51 +64,45 @@
 #pragma mark UITableView相关
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (section == 1) {
-        return 2;
-    }
-    return 1;
+    return self.cellTitleArray.count;
 }
 
 static NSString * cellStr = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellStr forIndexPath:indexPath];
+    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellStr];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
     }
     
-    cell.textLabel.text = [[self.cellTitleArray safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.cellTitleArray safeObjectAtIndex:indexPath.row];
     cell.textLabel.textColor = RGB_HEX(0x2F2F2F);
     cell.textLabel.font = [UIFont systemFontOfSize:14.f];
     
-    cell.detailTextLabel.text = @"";
-    
-    NSString * titleStr = [[self.cellTitleArray safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
-    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    if ([titleStr isEqualToString:@"清除缓存"]) {
-        
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2fM",[[SDImageCache sharedImageCache] getSize] / 1024.0 / 1024.0];
-        
-    }
-    else if ([titleStr isEqualToString:@"当前版本"]) {
-        cell.detailTextLabel.text = kAPP_VERSION;
-        
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
     
     return cell;
 }
 
+static NSString * headerViewStr = @"headerView";
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    GKAboutHeaderView * headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerViewStr];
+    if (headerView == nil) {
+        headerView = [(GKAboutHeaderView *)[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:headerViewStr];
+    }
+    
+    return headerView;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 20;
+    return 200;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -114,32 +111,19 @@ static NSString * cellStr = @"cell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    NSString * titleStr = [[self.cellTitleArray safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
-    
-    if ([titleStr isEqualToString:@"清除缓存"]) {
-        
-        @weakObj(tableView)
-        [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
-            @strongObj(tableView)
-            [tableView reloadData];
-        }];
-    }
-    else if ([titleStr isEqualToString:@"关于今日干货"]) {
-        GKAbout * vc = [[GKAbout alloc] init];
+
+    if (indexPath.row == 0) {
+        GKCopyreaderVC * vc = [[GKCopyreaderVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
+    
 }
 
-#pragma mark 懒加载
-- (NSMutableArray *)cellTitleArray {
+#pragma makr 懒加载
+- (NSArray *)cellTitleArray {
     
     if (_cellTitleArray == nil) {
-        _cellTitleArray = [NSMutableArray array];
-        
-        [_cellTitleArray addObject:@[@"清除缓存"]];
-        [_cellTitleArray addObject:@[@"当前版本",@"关于今日干货"]];
-    
+        _cellTitleArray = [NSArray arrayWithObjects:@"We are 伐~木~累~",@"开源框架", nil];
     }
     
     return _cellTitleArray;

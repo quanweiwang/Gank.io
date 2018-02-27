@@ -20,6 +20,7 @@
 
 //app信息
 #define kAPP_VERSION         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define kAPP_NAME            [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
 
 //颜色
 #define RGB_HEX(V)        [UIColor colorWithHex:V]

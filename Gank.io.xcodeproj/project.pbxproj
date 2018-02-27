@@ -39,6 +39,9 @@
 		D64A81812041B49900B81645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7665DA7202AA32800EF8B3A /* LaunchScreen.storyboard */; };
 		D64A81842041B71000B81645 /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A81822041B71000B81645 /* loading@2x.png */; };
 		D64A81852041B71000B81645 /* loading@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A81832041B71000B81645 /* loading@3x.png */; };
+		D6C28CBD2045900C00E6F4DC /* GKAbout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C28CBC2045900C00E6F4DC /* GKAbout.m */; };
+		D6C28CC1204594BA00E6F4DC /* GKAboutHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C28CC0204594BA00E6F4DC /* GKAboutHeaderView.m */; };
+		D6C28CC420459C7600E6F4DC /* GKCopyreaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C28CC320459C7600E6F4DC /* GKCopyreaderVC.m */; };
 		D6C383C2204427DC00CC9AEE /* GKShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C383C1204427DC00CC9AEE /* GKShareVC.m */; };
 		D6C383C720442B0E00CC9AEE /* GKShareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C383C620442B0E00CC9AEE /* GKShareCell.m */; };
 		D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D73B439E20317B70009A4F7D /* GKDiscoverVC.m */; };
@@ -167,6 +170,12 @@
 		D64A816E20419DF900B81645 /* Trochilus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trochilus.m; sourceTree = "<group>"; };
 		D64A81822041B71000B81645 /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
 		D64A81832041B71000B81645 /* loading@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@3x.png"; sourceTree = "<group>"; };
+		D6C28CBB2045900C00E6F4DC /* GKAbout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKAbout.h; sourceTree = "<group>"; };
+		D6C28CBC2045900C00E6F4DC /* GKAbout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKAbout.m; sourceTree = "<group>"; };
+		D6C28CBF204594BA00E6F4DC /* GKAboutHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKAboutHeaderView.h; sourceTree = "<group>"; };
+		D6C28CC0204594BA00E6F4DC /* GKAboutHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKAboutHeaderView.m; sourceTree = "<group>"; };
+		D6C28CC220459C7600E6F4DC /* GKCopyreaderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKCopyreaderVC.h; sourceTree = "<group>"; };
+		D6C28CC320459C7600E6F4DC /* GKCopyreaderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKCopyreaderVC.m; sourceTree = "<group>"; };
 		D6C383C0204427DC00CC9AEE /* GKShareVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKShareVC.h; sourceTree = "<group>"; };
 		D6C383C1204427DC00CC9AEE /* GKShareVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKShareVC.m; sourceTree = "<group>"; };
 		D6C383C520442B0E00CC9AEE /* GKShareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKShareCell.h; sourceTree = "<group>"; };
@@ -442,6 +451,15 @@
 			path = ThirdPlatform;
 			sourceTree = "<group>";
 		};
+		D6C28CBE2045949F00E6F4DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6C28CBF204594BA00E6F4DC /* GKAboutHeaderView.h */,
+				D6C28CC0204594BA00E6F4DC /* GKAboutHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D6C383BF204427A400CC9AEE /* Share */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +511,7 @@
 		D7550EF1203FA4CE00023A89 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				D6C28CBE2045949F00E6F4DC /* View */,
 				D7550EF2203FA4DD00023A89 /* ViewController */,
 			);
 			path = My;
@@ -509,6 +528,10 @@
 				D770528520413E98005C9268 /* GKSettingVC.m */,
 				D77052882041418D005C9268 /* GKGankTypeVC.h */,
 				D77052892041418D005C9268 /* GKGankTypeVC.m */,
+				D6C28CBB2045900C00E6F4DC /* GKAbout.h */,
+				D6C28CBC2045900C00E6F4DC /* GKAbout.m */,
+				D6C28CC220459C7600E6F4DC /* GKCopyreaderVC.h */,
+				D6C28CC320459C7600E6F4DC /* GKCopyreaderVC.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1030,6 +1053,7 @@
 				D6C383C2204427DC00CC9AEE /* GKShareVC.m in Sources */,
 				D7665DD0202AAC7B00EF8B3A /* GKTabBarController.m in Sources */,
 				D7A66B2A202FDB7F00D25EA9 /* NSArray+Util.m in Sources */,
+				D6C28CC420459C7600E6F4DC /* GKCopyreaderVC.m in Sources */,
 				D7A66B542030145A00D25EA9 /* FSActionSheetItem.m in Sources */,
 				D7A66B672030357700D25EA9 /* GKWelfareCell.m in Sources */,
 				D7A66B572030145A00D25EA9 /* TAAbstractDotView.m in Sources */,
@@ -1041,6 +1065,7 @@
 				D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */,
 				D77052832041042C005C9268 /* NSDictionary+Util.m in Sources */,
 				D7A66B532030145A00D25EA9 /* FSActionSheetConfig.m in Sources */,
+				D6C28CC1204594BA00E6F4DC /* GKAboutHeaderView.m in Sources */,
 				D61939BC202EA0E20081CB68 /* GKWebViewVC.m in Sources */,
 				D61FF05C202EDE420084E9FA /* BaseViewController.m in Sources */,
 				D7665DD3202AD50B00EF8B3A /* GKTodayVC.m in Sources */,
@@ -1078,6 +1103,7 @@
 				D7A66B582030145A00D25EA9 /* TAAnimatedDotView.m in Sources */,
 				D77952A0203E9E6000AF0023 /* GKDiscoverListVC.m in Sources */,
 				D64A817B20419DF900B81645 /* TUser.m in Sources */,
+				D6C28CBD2045900C00E6F4DC /* GKAbout.m in Sources */,
 				D77952A3203EA1C700AF0023 /* GKDiscoverListCell.m in Sources */,
 				D61FF069202EF0400084E9FA /* GKHistoryModel.m in Sources */,
 				D7A66B4F2030145A00D25EA9 /* UIImage+XLExtension.m in Sources */,
