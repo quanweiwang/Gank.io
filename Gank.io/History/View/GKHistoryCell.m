@@ -55,6 +55,10 @@
     self.moreBtn.tintColor = RGB_HEX(0xAEAEAE);
     [self.moreBtn setImage:[[UIImage imageNamed:@"share_black"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [self addSubview:self.moreBtn];
+    self.moreBtn.hidden = YES;
+    if ([Trochilus isQQInstalled] || [Trochilus isWeChatInstalled] || [Trochilus isSinaWeiBoInstalled]) {
+        self.moreBtn.hidden = NO;
+    }
     
     [self.moreBtn makeConstraints:^(MASConstraintMaker *make) {
 //        make.left.equalTo(self).offset(15);

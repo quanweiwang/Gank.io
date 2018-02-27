@@ -14,7 +14,9 @@
 
 - (void)setImageWithURL:(NSString *)url placeholderImage:(UIImage *)placeholderImage {
     
-    [self setImageWithURL:url placeholderImage:placeholderImage completed:nil];
+    NSString * urlString = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [self sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:placeholderImage];
     
 }
 
