@@ -94,7 +94,14 @@ static NSString * cellStr = @"cell";
     NSDictionary * dic = [[self.data safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
     [cell setModelWithDic:dic];
     
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if ([dic[@"uid"] isEqualToString:@""]) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    
     
     return cell;
 }
@@ -121,6 +128,17 @@ static NSString * cellStr = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    NSDictionary * dic = [[self.data safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
+    
+    [self openWeiBoWithUid:dic[@"uid"]];
+}
+
+#pragma makr 打开微博
+- (void)openWeiBoWithUid:(NSString *)uid {
+    
+    if ([uid isEqualToString:@""] == NO) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sinaweibo://userinfo?uid=%@",uid]]];
+    }
 }
 
 #pragma makr 懒加载
