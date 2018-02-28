@@ -183,6 +183,7 @@
 		D6C383C620442B0E00CC9AEE /* GKShareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKShareCell.m; sourceTree = "<group>"; };
 		D7171C4620465A8C00517B50 /* GKCopyreaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKCopyreaderCell.h; sourceTree = "<group>"; };
 		D7171C4720465A8C00517B50 /* GKCopyreaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKCopyreaderCell.m; sourceTree = "<group>"; };
+		D7171C4920467CF600517B50 /* Gank.io.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gank.io.entitlements; sourceTree = "<group>"; };
 		D73B439D20317B70009A4F7D /* GKDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverVC.h; sourceTree = "<group>"; };
 		D73B439E20317B70009A4F7D /* GKDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverVC.m; sourceTree = "<group>"; };
 		D7550EF5203FA50800023A89 /* GKMyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKMyVC.h; sourceTree = "<group>"; };
@@ -575,6 +576,7 @@
 		D7665D9B202AA32800EF8B3A /* Gank.io */ = {
 			isa = PBXGroup;
 			children = (
+				D7171C4920467CF600517B50 /* Gank.io.entitlements */,
 				D6C383BF204427A400CC9AEE /* Share */,
 				D64A81822041B71000B81645 /* loading@2x.png */,
 				D64A81832041B71000B81645 /* loading@3x.png */,
@@ -903,6 +905,11 @@
 					D7665D98202AA32800EF8B3A = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					D7665DB0202AA32800EF8B3A = {
 						CreatedOnToolsVersion = 9.2;
@@ -1281,6 +1288,7 @@
 			baseConfigurationReference = 600C5F304B24BA741E369A45 /* Pods-Gank.io.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Gank.io/Gank.io.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 433U67TR43;
@@ -1300,6 +1308,7 @@
 			baseConfigurationReference = 84D05CFF2E60B0548D03A34E /* Pods-Gank.io.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Gank.io/Gank.io.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 433U67TR43;

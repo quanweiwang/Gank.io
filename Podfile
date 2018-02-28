@@ -18,6 +18,6 @@ target "Gank.io" do
 	pod 'MJExtension', '~> 3.0.13'
 	pod 'FLAnimatedImage', '~> 1.0.12'
 	pod 'SDWebImage/GIF'
-
+	pod 'JPush', '3.0.8'
 end
 

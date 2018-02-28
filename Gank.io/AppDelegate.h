@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 @class AFNetworkReachabilityManager;
 
+static NSString *appKey = @"4f6bb56e120cd51c8b544866";
+static NSString *channel = @"App Store";
+static BOOL isProduction = FALSE;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
