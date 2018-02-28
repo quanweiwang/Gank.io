@@ -94,7 +94,7 @@ static NSString * cellStr = @"cell";
     NSDictionary * dic = [[self.data safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
     [cell setModelWithDic:dic];
     
-    if ([dic[@"uid"] isEqualToString:@""]) {
+    if ([dic[@"uid"] isEqualToString:@""] || [Trochilus isSinaWeiBoInstalled] == NO) {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     else {
@@ -128,9 +128,12 @@ static NSString * cellStr = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSDictionary * dic = [[self.data safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
+    if ([Trochilus isSinaWeiBoInstalled]) {
+        NSDictionary * dic = [[self.data safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
+        
+        [self openWeiBoWithUid:dic[@"uid"]];
+    }
     
-    [self openWeiBoWithUid:dic[@"uid"]];
 }
 
 #pragma makr 打开微博
