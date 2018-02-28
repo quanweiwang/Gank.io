@@ -44,6 +44,7 @@
 		D6C28CC420459C7600E6F4DC /* GKCopyreaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C28CC320459C7600E6F4DC /* GKCopyreaderVC.m */; };
 		D6C383C2204427DC00CC9AEE /* GKShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C383C1204427DC00CC9AEE /* GKShareVC.m */; };
 		D6C383C720442B0E00CC9AEE /* GKShareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C383C620442B0E00CC9AEE /* GKShareCell.m */; };
+		D7171C4820465A8C00517B50 /* GKCopyreaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7171C4720465A8C00517B50 /* GKCopyreaderCell.m */; };
 		D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D73B439E20317B70009A4F7D /* GKDiscoverVC.m */; };
 		D7550EF7203FA50800023A89 /* GKMyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF6203FA50800023A89 /* GKMyVC.m */; };
 		D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF9203FAE8000023A89 /* GKDonateVC.m */; };
@@ -180,6 +181,8 @@
 		D6C383C1204427DC00CC9AEE /* GKShareVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKShareVC.m; sourceTree = "<group>"; };
 		D6C383C520442B0E00CC9AEE /* GKShareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKShareCell.h; sourceTree = "<group>"; };
 		D6C383C620442B0E00CC9AEE /* GKShareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKShareCell.m; sourceTree = "<group>"; };
+		D7171C4620465A8C00517B50 /* GKCopyreaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKCopyreaderCell.h; sourceTree = "<group>"; };
+		D7171C4720465A8C00517B50 /* GKCopyreaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKCopyreaderCell.m; sourceTree = "<group>"; };
 		D73B439D20317B70009A4F7D /* GKDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverVC.h; sourceTree = "<group>"; };
 		D73B439E20317B70009A4F7D /* GKDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverVC.m; sourceTree = "<group>"; };
 		D7550EF5203FA50800023A89 /* GKMyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKMyVC.h; sourceTree = "<group>"; };
@@ -456,6 +459,8 @@
 			children = (
 				D6C28CBF204594BA00E6F4DC /* GKAboutHeaderView.h */,
 				D6C28CC0204594BA00E6F4DC /* GKAboutHeaderView.m */,
+				D7171C4620465A8C00517B50 /* GKCopyreaderCell.h */,
+				D7171C4720465A8C00517B50 /* GKCopyreaderCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1110,6 +1115,7 @@
 				D64A816F20419DF900B81645 /* NSString+Trochilus.m in Sources */,
 				D64A817F20419DF900B81645 /* TSinaWeiBoPlatform.m in Sources */,
 				D64A817720419DF900B81645 /* Trochilus+Runtime.m in Sources */,
+				D7171C4820465A8C00517B50 /* GKCopyreaderCell.m in Sources */,
 				D64A817220419DF900B81645 /* UIPasteboard+Trochilus.m in Sources */,
 				D79784B0202DA6C300B7913C /* GKTodayModel.m in Sources */,
 			);
