@@ -8,6 +8,7 @@
 
 #import "GKAbout.h"
 #import "GKAboutHeaderView.h"
+#import "GKAboutFooterView.h"
 #import "GKCopyreaderVC.h"
 
 @interface GKAbout ()<UITableViewDelegate,UITableViewDataSource>
@@ -39,10 +40,11 @@
     self.table.delegate = self;
     self.table.dataSource = self;
     self.table.estimatedSectionHeaderHeight = 200;
-    self.table.estimatedSectionFooterHeight = 0;
+    self.table.estimatedSectionFooterHeight = 200;
     self.table.estimatedRowHeight = 44;
     [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.table registerClass:[GKAboutHeaderView class] forHeaderFooterViewReuseIdentifier:@"headerView"];
+    [self.table registerClass:[GKAboutFooterView class] forHeaderFooterViewReuseIdentifier:@"footerView"];
     [self.view addSubview:self.table];
     
     [self.table makeConstraints:^(MASConstraintMaker *make) {
@@ -101,12 +103,24 @@ static NSString * headerViewStr = @"headerView";
     return headerView;
 }
 
+static NSString * footerViewStr = @"footerView";
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    
+    GKAboutFooterView * footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:footerViewStr];
+    if (footerView == nil) {
+        footerView = [(GKAboutFooterView *)[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:headerViewStr];
+    }
+    
+    return footerView;
+    
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 200;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.0001f;
+    return 200;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

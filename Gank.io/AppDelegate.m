@@ -52,7 +52,7 @@
                 break;
             case TPlatformTypeSinaWeibo:
             {
-                [appInfo TSetupSinaWeiboByAppKey:@"" appSecret:@"" redirectUri:@"" authType:@""];
+                [appInfo TSetupSinaWeiboByAppKey:@"4260063437" appSecret:@"52aeb891c169f9c1969367d43f603047" redirectUri:@"http://www.wangquanwei.com" authType:@""];
             }
                 break;
             default:
