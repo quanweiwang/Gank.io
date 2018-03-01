@@ -35,6 +35,7 @@
 #import "UIColor+Util.h"
 #import "UIImageView+Util.h"
 #import "UIImage+Util.h"
+#import "NSObject+Tips.h"
 #import "NSArray+Util.h"
 #import "NSString+Util.h"
 #import "NSDictionary+Util.h"
