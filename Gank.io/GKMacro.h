@@ -9,6 +9,12 @@
 #ifndef GKMacro_h
 #define GKMacro_h
 
+#ifdef DEBUG
+#define SUBMITDEBUG @"true"
+#else
+#define SUBMITDEBUG @"false"
+#endif
+
 #define kLoginNotification @"kLoginNotification"
 
 #define kSCREENWIDTH ([UIScreen mainScreen].bounds.size.width)

@@ -233,7 +233,7 @@
                            @"desc":self.titleTextView.text,
                            @"who":[GKUserManager shareInstance].nickName,
                            @"type":self.gankType,
-                           @"debug":@"true"
+                           @"debug":SUBMITDEBUG
                            };
     
     [GKNetwork postWithUrl:url showLoadding:YES parameter:dic completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {

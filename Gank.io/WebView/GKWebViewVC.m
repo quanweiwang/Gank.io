@@ -91,6 +91,27 @@
         make.left.top.right.equalTo(self.view);
         make.height.equalTo(2.0f);
     }];
+    
+    @weakObj(self)
+    UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"return_black"] style:UIBarButtonItemStyleDone handler:^(id sender) {
+        @strongObj(self)
+        
+        if ([self.webView canGoBack]) {
+            [self.webView goBack];
+        }
+        else {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
+    }];
+    
+    UIBarButtonItem * closeBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"关闭" style:UIBarButtonItemStyleDone handler:^(id sender) {
+        @strongObj(self)
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    
+    self.navigationItem.leftBarButtonItems = @[leftBarButtonItem,closeBarButtonItem];
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
