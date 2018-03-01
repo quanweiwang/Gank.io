@@ -8,6 +8,7 @@
 
 #import "GKShareVC.h"
 #import "GKShareCell.h"
+#import "NSMutableDictionary+TrochilusShare.h"
 
 @interface GKShareVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property(strong, nonatomic) UICollectionView * coll;
@@ -169,25 +170,40 @@ static NSString * cellStr = @"cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
-        
+    NSDictionary * dic = [self.data safeObjectAtIndex:indexPath.row];
+    NSString * title = dic[@"title"];
+    
+    NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
+    TPlatformType sharePlatform;
+    
+    if ([title isEqualToString:@"QQ"]) {
+        sharePlatform = TPlatformSubTypeQQFriend;
     }
-    else if (indexPath.row == 2) {
-        
+    else if ([title isEqualToString:@"Qzone"]) {
+        sharePlatform = TPlatformSubTypeQZone;
     }
-    else if (indexPath.row == 3) {
-        
+    else if ([title isEqualToString:@"微信"]) {
+        sharePlatform = TPlatformSubTypeWechatSession;
     }
-    else if (indexPath.row == 4) {
-        
+    else if ([title isEqualToString:@"朋友圈"]) {
+        sharePlatform = TPlatformSubTypeWechatTimeline;
     }
-    else if (indexPath.row == 5) {
+    else  {
+        [parameters TSetupSinaWeiboShareParamsByText:@"今日干货-干货集中营iOS"
+                                               title:nil
+                                               image:[UIImage imageNamed:@"loading"]
+                                                 url:nil
+                                            latitude:0
+                                           longitude:0
+                                            objectID:nil
+                                                type:TContentTypeImage];
         
+        sharePlatform = TPlatformTypeSinaWeibo;
     }
     
-//    [Trochilus share:(TPlatformType) parameters:<#(NSMutableDictionary *)#> onStateChanged:^(TResponseState state, NSDictionary *userData, NSError *error) {
-//
-//    }];
+    [Trochilus share:sharePlatform parameters:parameters onStateChanged:^(TResponseState state, NSDictionary *userData, NSError *error) {
+
+    }];
 }
 
 #pragma mark 动画
