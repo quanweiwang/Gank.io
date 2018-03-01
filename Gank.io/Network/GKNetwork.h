@@ -14,4 +14,6 @@
 
 + (void)getWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler;
 
++ (void)postWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding parameter:(NSDictionary *)parameter completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler;
+
 @end

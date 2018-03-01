@@ -11,8 +11,6 @@
 @interface GKAboutFooterView()
 @property(strong, nonatomic)UILabel * dataSourceLabel;//数据源
 @property(strong, nonatomic)UILabel * websiteLabel;//网址
-@property(strong, nonatomic)UILabel * gankAuthorLabel;//干货作者
-@property(strong, nonatomic)UILabel * appAuthorLabel;//app作者
 @end
 
 @implementation GKAboutFooterView
@@ -52,30 +50,6 @@
     [self.websiteLabel makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
         make.top.equalTo(self.dataSourceLabel.bottom).offset(10);
-    }];
-    
-    self.gankAuthorLabel = [[UILabel alloc] init];
-    self.gankAuthorLabel.text = @"干货集中营作者: 代码家";
-    self.gankAuthorLabel.textColor = RGB_HEX(0xaeaeae);
-    self.gankAuthorLabel.font = [UIFont systemFontOfSize:14.f];
-    self.gankAuthorLabel.textAlignment = NSTextAlignmentCenter;
-    [self addSubview:self.gankAuthorLabel];
-    
-    [self.gankAuthorLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self);
-        make.top.equalTo(self.websiteLabel.bottom).offset(10);
-    }];
-    
-    self.appAuthorLabel = [[UILabel alloc] init];
-    self.appAuthorLabel.text = @"今日干货作者: Wang Quanwei";
-    self.appAuthorLabel.textColor = RGB_HEX(0xaeaeae);
-    self.appAuthorLabel.font = [UIFont systemFontOfSize:14.f];
-    self.appAuthorLabel.textAlignment = NSTextAlignmentCenter;
-    [self addSubview:self.appAuthorLabel];
-    
-    [self.appAuthorLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self);
-        make.top.equalTo(self.gankAuthorLabel.bottom).offset(10);
     }];
     
 }

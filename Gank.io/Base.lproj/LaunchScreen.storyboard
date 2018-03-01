@@ -21,9 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="YGR-Rd-X7G">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading.png" translatesAutoresizingMaskIntoConstraints="NO" id="YGR-Rd-X7G">
                                 <rect key="frame" x="157" y="587" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.35686274509999999" green="0.71764705880000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Oj5-wR-gox"/>
                                     <constraint firstAttribute="width" constant="60" id="Wyh-jN-Uar"/>
@@ -43,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="loading" width="60" height="60"/>
+        <image name="loading.png" width="180" height="180"/>
     </resources>
 </document>

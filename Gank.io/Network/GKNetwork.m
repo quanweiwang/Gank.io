@@ -18,32 +18,36 @@
 
 @implementation GKNetwork
 
-- (void)postWithUrl:(NSString *)url parameter:(NSDictionary *)parameter completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
++ (void)postWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding parameter:(NSDictionary *)parameter completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
     
-//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://gank.io/%@",url]]];
-//
-//    NSData *postBody = requestInfo.content.data;
-//
-//    unsigned long long postLength = postBody.length;
-//    NSString *contentLength = [NSString stringWithFormat:@"%llu", postLength];
-//    [request addValue:contentLength forHTTPHeaderField:@"Content-Length"];
-//
-//    [request setHTTPMethod:@"POST"];
-//    [request setHTTPBody:postBody];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://gank.io/%@",url]]];
+
+    NSData * postBody = [NSData data];
+    
+    if ([NSJSONSerialization isValidJSONObject:parameter]) {
+        
+        postBody = [NSJSONSerialization dataWithJSONObject:parameter options:NSJSONWritingPrettyPrinted error:nil];
+    }
+
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:postBody];
+    
+    [GKNetwork handleRequest:request showLoadding:showLoadding completionHandler:completionHandler];
 }
 
 + (void)getGithubWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
-    [GKNetwork handleRequest:request showLoadding:(BOOL)showLoadding completionHandler:completionHandler];
+    [GKNetwork handleRequest:request showLoadding:showLoadding completionHandler:completionHandler];
 }
 
 + (void)getWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[[NSString stringWithFormat:@"http://gank.io/%@",url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
-    [GKNetwork handleRequest:request showLoadding:(BOOL)showLoadding completionHandler:completionHandler];
+    [GKNetwork handleRequest:request showLoadding:showLoadding completionHandler:completionHandler];
 }
 
 + (void)handleRequest:(NSURLRequest *)request showLoadding:(BOOL)showLoadding completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {

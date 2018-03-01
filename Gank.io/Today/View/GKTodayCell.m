@@ -96,7 +96,8 @@
     //图片
     if (model.images.count > 0) {
 
-        [self.demoImageView setImageWithURL:model.images[0] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+        NSString * demoImageViewUrl = [NSString stringWithFormat:@"%@?imageMogr2/thumbnail/120x/format/jpg",model.images[0]];
+        [self.demoImageView setImageWithURL:demoImageViewUrl placeholderImage:[UIImage imageNamed:@"placeholder"]];
         
         if (model.textHeight == 0) {
             //缓存文字高度

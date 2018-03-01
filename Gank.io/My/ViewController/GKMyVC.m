@@ -10,6 +10,7 @@
 #import "GKDonateVC.h"
 #import "GKWebViewVC.h"
 #import "GKSettingVC.h"
+#import "GKGankSubmitVC.h"
 
 @interface GKMyVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong, nonatomic) UITableView * table;
@@ -268,6 +269,16 @@ static NSString * cellStr = @"cell";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([titleStr isEqualToString:@"干货爆料"]) {
+        
+        if ([GKUserManager isLogin]) {
+            GKGankSubmitVC * vc = [[GKGankSubmitVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else {
+            GKWebViewVC * vc = [[GKWebViewVC alloc] init];
+            vc.url = @"https://github.com/login/oauth/authorize?client_id=e87b832179dd95cf25b6";
+            [self.navigationController pushViewController:vc animated:YES];
+        }
         
     }
     else if ([titleStr isEqualToString:@"用户反馈"]) {

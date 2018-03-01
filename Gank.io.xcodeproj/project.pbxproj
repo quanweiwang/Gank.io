@@ -37,8 +37,6 @@
 		D64A817F20419DF900B81645 /* TSinaWeiBoPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A816B20419DF900B81645 /* TSinaWeiBoPlatform.m */; };
 		D64A818020419DF900B81645 /* Trochilus.m in Sources */ = {isa = PBXBuildFile; fileRef = D64A816E20419DF900B81645 /* Trochilus.m */; };
 		D64A81812041B49900B81645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7665DA7202AA32800EF8B3A /* LaunchScreen.storyboard */; };
-		D64A81842041B71000B81645 /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A81822041B71000B81645 /* loading@2x.png */; };
-		D64A81852041B71000B81645 /* loading@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A81832041B71000B81645 /* loading@3x.png */; };
 		D68D80C62046D55200CB5F96 /* GKAboutFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D68D80C52046D55200CB5F96 /* GKAboutFooterView.m */; };
 		D6C28CBD2045900C00E6F4DC /* GKAbout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C28CBC2045900C00E6F4DC /* GKAbout.m */; };
 		D6C28CC1204594BA00E6F4DC /* GKAboutHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C28CC0204594BA00E6F4DC /* GKAboutHeaderView.m */; };
@@ -46,6 +44,9 @@
 		D6C383C2204427DC00CC9AEE /* GKShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C383C1204427DC00CC9AEE /* GKShareVC.m */; };
 		D6C383C720442B0E00CC9AEE /* GKShareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C383C620442B0E00CC9AEE /* GKShareCell.m */; };
 		D7171C4820465A8C00517B50 /* GKCopyreaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7171C4720465A8C00517B50 /* GKCopyreaderCell.m */; };
+		D71E93822047A28800FB34A5 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = D71E93812047A28800FB34A5 /* loading.png */; };
+		D71E93852047A62900FB34A5 /* GKGankSubmitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E93842047A62900FB34A5 /* GKGankSubmitVC.m */; };
+		D71E93892047E24E00FB34A5 /* GKGankSubmitTypeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E93882047E24E00FB34A5 /* GKGankSubmitTypeListVC.m */; };
 		D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D73B439E20317B70009A4F7D /* GKDiscoverVC.m */; };
 		D7550EF7203FA50800023A89 /* GKMyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF6203FA50800023A89 /* GKMyVC.m */; };
 		D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF9203FAE8000023A89 /* GKDonateVC.m */; };
@@ -170,8 +171,6 @@
 		D64A816C20419DF900B81645 /* TAliPayPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAliPayPlatform.h; sourceTree = "<group>"; };
 		D64A816D20419DF900B81645 /* TUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUser.h; sourceTree = "<group>"; };
 		D64A816E20419DF900B81645 /* Trochilus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trochilus.m; sourceTree = "<group>"; };
-		D64A81822041B71000B81645 /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
-		D64A81832041B71000B81645 /* loading@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@3x.png"; sourceTree = "<group>"; };
 		D68D80C42046D55200CB5F96 /* GKAboutFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKAboutFooterView.h; sourceTree = "<group>"; };
 		D68D80C52046D55200CB5F96 /* GKAboutFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKAboutFooterView.m; sourceTree = "<group>"; };
 		D6C28CBB2045900C00E6F4DC /* GKAbout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKAbout.h; sourceTree = "<group>"; };
@@ -187,6 +186,11 @@
 		D7171C4620465A8C00517B50 /* GKCopyreaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKCopyreaderCell.h; sourceTree = "<group>"; };
 		D7171C4720465A8C00517B50 /* GKCopyreaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKCopyreaderCell.m; sourceTree = "<group>"; };
 		D7171C4920467CF600517B50 /* Gank.io.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gank.io.entitlements; sourceTree = "<group>"; };
+		D71E93812047A28800FB34A5 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		D71E93832047A62900FB34A5 /* GKGankSubmitVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKGankSubmitVC.h; sourceTree = "<group>"; };
+		D71E93842047A62900FB34A5 /* GKGankSubmitVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKGankSubmitVC.m; sourceTree = "<group>"; };
+		D71E93872047E24E00FB34A5 /* GKGankSubmitTypeListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKGankSubmitTypeListVC.h; sourceTree = "<group>"; };
+		D71E93882047E24E00FB34A5 /* GKGankSubmitTypeListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKGankSubmitTypeListVC.m; sourceTree = "<group>"; };
 		D73B439D20317B70009A4F7D /* GKDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverVC.h; sourceTree = "<group>"; };
 		D73B439E20317B70009A4F7D /* GKDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverVC.m; sourceTree = "<group>"; };
 		D7550EF5203FA50800023A89 /* GKMyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKMyVC.h; sourceTree = "<group>"; };
@@ -498,6 +502,13 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		D71E93862047A63000FB34A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D73B439920317B20009A4F7D /* Discover */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +533,7 @@
 		D7550EF1203FA4CE00023A89 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				D71E93862047A63000FB34A5 /* Model */,
 				D6C28CBE2045949F00E6F4DC /* View */,
 				D7550EF2203FA4DD00023A89 /* ViewController */,
 			);
@@ -543,6 +555,10 @@
 				D6C28CBC2045900C00E6F4DC /* GKAbout.m */,
 				D6C28CC220459C7600E6F4DC /* GKCopyreaderVC.h */,
 				D6C28CC320459C7600E6F4DC /* GKCopyreaderVC.m */,
+				D71E93832047A62900FB34A5 /* GKGankSubmitVC.h */,
+				D71E93842047A62900FB34A5 /* GKGankSubmitVC.m */,
+				D71E93872047E24E00FB34A5 /* GKGankSubmitTypeListVC.h */,
+				D71E93882047E24E00FB34A5 /* GKGankSubmitTypeListVC.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -581,10 +597,9 @@
 		D7665D9B202AA32800EF8B3A /* Gank.io */ = {
 			isa = PBXGroup;
 			children = (
+				D71E93812047A28800FB34A5 /* loading.png */,
 				D7171C4920467CF600517B50 /* Gank.io.entitlements */,
 				D6C383BF204427A400CC9AEE /* Share */,
-				D64A81822041B71000B81645 /* loading@2x.png */,
-				D64A81832041B71000B81645 /* loading@3x.png */,
 				D7550EFE20400EA600023A89 /* UserInfo */,
 				D7A66B2B2030144E00D25EA9 /* Third */,
 				D61939BF202EA2BB0081CB68 /* BaseClass */,
@@ -953,13 +968,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71E93822047A28800FB34A5 /* loading.png in Resources */,
 				D7A66B552030145A00D25EA9 /* FSActionSheet_cancel@2x.png in Resources */,
 				D7665DA6202AA32800EF8B3A /* Assets.xcassets in Resources */,
 				D7665DA4202AA32800EF8B3A /* Main.storyboard in Resources */,
-				D64A81842041B71000B81645 /* loading@2x.png in Resources */,
 				D64A81812041B49900B81645 /* LaunchScreen.storyboard in Resources */,
 				D7A66B562030145A00D25EA9 /* FSActionSheet_cancel@3x.png in Resources */,
-				D64A81852041B71000B81645 /* loading@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1061,6 +1075,7 @@
 				D7550F0120400EC700023A89 /* GKUserManager.m in Sources */,
 				D7A66B522030145A00D25EA9 /* FSActionSheetCell.m in Sources */,
 				D7A66B502030145A00D25EA9 /* UIView+XLExtension.m in Sources */,
+				D71E93892047E24E00FB34A5 /* GKGankSubmitTypeListVC.m in Sources */,
 				D64A818020419DF900B81645 /* Trochilus.m in Sources */,
 				D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */,
 				D60B6EDC20353B1A00061AE6 /* NSString+Util.m in Sources */,
@@ -1095,6 +1110,7 @@
 				D64A817120419DF900B81645 /* NSMutableArray+Trochilus.m in Sources */,
 				D7B831022032797B007F908D /* GKHistoryDateVC.m in Sources */,
 				D61939B8202E98240081CB68 /* UIImageView+Util.m in Sources */,
+				D71E93852047A62900FB34A5 /* GKGankSubmitVC.m in Sources */,
 				D64A817C20419DF900B81645 /* TAliPayPlatform.m in Sources */,
 				D60B6ED92035379900061AE6 /* GKDiscoverCell.m in Sources */,
 				D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */,
