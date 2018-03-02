@@ -64,17 +64,21 @@
 #pragma mark 网络请求
 - (void)gankDayList {
     
+    [self showLoaddingTip:@"" timeOut:20.5f];
+    
     NSString * url = @"/api/day/history";
-    [GKNetwork getWithUrl:url showLoadding:YES completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    
+    [GKNetwork getWithUrl:url success:^(id responseObj) {
         
-        NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-        
-        if ([[jsonDict objectForKey:@"error"] integerValue] == 0) {
-            self.data = [jsonDict objectForKey:@"results"];
+        if ([[responseObj objectForKey:@"error"] integerValue] == 0) {
+            self.data = [responseObj objectForKey:@"results"];
             [self.table reloadData];
         }
         
+    } failure:^(NSError *error) {
+        
     }];
+
 }
 
 #pragma mark tableView相关

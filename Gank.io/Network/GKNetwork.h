@@ -10,10 +10,10 @@
 
 @interface GKNetwork : NSObject
 
-+ (void)getGithubWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler;
++ (void)getWithUrl:(NSString *)url success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure;
 
-+ (void)getWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler;
++ (void)getGithubWithUrl:(NSString *)url success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure;
 
-+ (void)postWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding parameter:(NSDictionary *)parameter completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler;
++ (void)postWithUrl:(NSString *)url parameter:(NSDictionary *)parameter success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure;
 
 @end

@@ -56,16 +56,26 @@
         @strongObj(self)
         
         if ([self.urlTextField.text length] == 0) {
-            
+            [self showMessageTip:@"请输入url" detail:nil timeOut:1.5f];
         }
         else if ([self.titleTextView.text length] == 0) {
-            
+            [self showMessageTip:@"请输入标题" detail:nil timeOut:1.5f];
         }
         else if ([self.gankType length] == 0) {
-            
+            [self showMessageTip:@"请选择提交类型" detail:nil timeOut:1.5f];
         }
         else {
-            [self add2gank];
+            
+            UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self add2gank];
+            }];
+            
+            UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            
+            UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"请勿滥用此接口,不然我还得加身份校验代码,很麻烦的!!!" preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:okAction];
+            [alertController addAction:cancelAction];
+            [self presentViewController:alertController animated:YES completion:nil];
         }
         
     }];
@@ -100,6 +110,7 @@
     self.urlTextField.font = [UIFont systemFontOfSize:17.f];
     self.urlTextField.textColor = RGB_HEX(0xaeaeae);
     self.urlTextField.placeholder = @"请输入url";
+    self.urlTextField.keyboardType = UIKeyboardTypeURL;
     [self.contentView addSubview:self.urlTextField];
     
     [self.urlTextField makeConstraints:^(MASConstraintMaker *make) {
@@ -227,18 +238,27 @@
 #pragma mark 网络请求
 - (void)add2gank {
     
+    [self showLoaddingTip:@"" timeOut:20.5f];
+    
     NSString * url = @"api/add2gank";
     
-    NSDictionary * dic = @{@"url":self.urlTextField.text,
+    NSDictionary * dic = @{@"url":[self.urlTextField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
                            @"desc":self.titleTextView.text,
                            @"who":[GKUserManager shareInstance].nickName,
                            @"type":self.gankType,
                            @"debug":SUBMITDEBUG
                            };
     
-    [GKNetwork postWithUrl:url showLoadding:YES parameter:dic completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [GKNetwork postWithUrl:url parameter:dic success:^(id responseObj) {
+        
+        [self showMessageTip:@"提交成功" detail:nil timeOut:1.5f];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    } failure:^(NSError *error) {
         
     }];
+    
 }
 
 #pragma mark UITextView Delegate

@@ -25,6 +25,7 @@
 #import <SDWebImage/SDWebImageManager.h>
 #import "WRNavigationBar.h"
 #import <AFNetworking/AFNetworking.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 #import "GKMacro.h"
 #import "GKNetwork.h"

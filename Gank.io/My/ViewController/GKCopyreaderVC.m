@@ -136,7 +136,7 @@ static NSString * cellStr = @"cell";
     
 }
 
-#pragma makr 打开微博
+#pragma mark 打开微博
 - (void)openWeiBoWithUid:(NSString *)uid {
     
     if ([uid isEqualToString:@""] == NO) {
@@ -144,7 +144,7 @@ static NSString * cellStr = @"cell";
     }
 }
 
-#pragma makr 懒加载
+#pragma mark 懒加载
 - (NSArray *)data {
     
     if (_data == nil) {

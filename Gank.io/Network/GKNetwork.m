@@ -18,7 +18,7 @@
 
 @implementation GKNetwork
 
-+ (void)postWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding parameter:(NSDictionary *)parameter completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
++ (void)postWithUrl:(NSString *)url parameter:(NSDictionary *)parameter success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure {
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://gank.io/%@",url]]];
 
@@ -33,36 +33,77 @@
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:postBody];
     
-    [GKNetwork handleRequest:request showLoadding:showLoadding completionHandler:completionHandler];
+    [GKNetwork handleRequest:request success:success failure:failure];
 }
 
-+ (void)getGithubWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
++ (void)getGithubWithUrl:(NSString *)url success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure {
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
-    [GKNetwork handleRequest:request showLoadding:showLoadding completionHandler:completionHandler];
+    NSURLSessionDataTask *dataTask = [getSessionManager() dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        
+        if (error == nil) {
+            
+            if (success) {
+                success(responseObject);
+            }
+            
+        }
+        else {
+            
+            if (failure) {
+                failure(error);
+            }
+            
+            if([error.userInfo valueForKey:@"NSLocalizedDescription"] != nil){
+                [self showMessageTip:[error.userInfo valueForKey:@"NSLocalizedDescription"] detail:nil timeOut:1.5f];
+            }
+            else{
+                [self showMessageTip:@"服务器开小差了" detail:@"请稍后再试" timeOut:1.5f];
+            }
+            
+        }
+        
+    }];
+    
+    [dataTask resume];
 }
 
-+ (void)getWithUrl:(NSString *)url showLoadding:(BOOL)showLoadding completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
++ (void)getWithUrl:(NSString *)url success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure {
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[[NSString stringWithFormat:@"http://gank.io/%@",url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
-    [GKNetwork handleRequest:request showLoadding:showLoadding completionHandler:completionHandler];
+    [GKNetwork handleRequest:request success:success failure:failure];
 }
 
-+ (void)handleRequest:(NSURLRequest *)request showLoadding:(BOOL)showLoadding completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
-    
-    MBProgressHUD * hud;
-    
-    if (showLoadding) {
-        hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].delegate.window animated:YES];
-    }
++ (void)handleRequest:(NSURLRequest *)request success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure {
     
     NSURLSessionDataTask *dataTask = [getSessionManager() dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         
-        completionHandler(response,responseObject,error);
-        //hud 隐藏
-        [hud hideAnimated:YES];
+        if (error == nil) {
+            
+            if (success) {
+                NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+                success(jsonDict);
+                [self dissmissTips];
+            }
+            
+        }
+        else {
+            
+            if (failure) {
+                failure(error);
+            }
+            
+            if([error.userInfo valueForKey:@"NSLocalizedDescription"] != nil){
+                [self showMessageTip:[error.userInfo valueForKey:@"NSLocalizedDescription"] detail:nil timeOut:1.5f];
+            }
+            else{
+                [self showMessageTip:@"服务器开小差了" detail:@"请稍后再试" timeOut:1.5f];
+            }
+            
+        }
+        
     }];
     
     [dataTask resume];

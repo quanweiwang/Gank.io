@@ -143,60 +143,59 @@
 #pragma mark 网络请求
 - (void)githubAccessTokenWithCode:(NSString *)code {
     
+    [self showLoaddingTip:@"" timeOut:20.5f];
+    
     NSString * url = [NSString stringWithFormat:@"https://github.com/login/oauth/access_token?client_id=e87b832179dd95cf25b6&client_secret=5ff804aceadbab83d4a4716752b0956dd7e27830&code=%@&redirect_uri=http://www.wangquanwei.com",code];
     
-    [GKNetwork getGithubWithUrl:url showLoadding:YES completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-       
-        if (error) {
-            
-        }
-        else {
-            NSString * param = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            NSDictionary * dic = [NSDictionary dictionaryWithString:param];
-            
-            [self githubUserInfoWithAccessToken:[dic objectForKey:@"access_token"]];
-        }
+    [GKNetwork getGithubWithUrl:url success:^(id responseObj) {
+        
+        NSString * param = [[NSString alloc] initWithData:responseObj encoding:NSUTF8StringEncoding];
+        NSDictionary * dic = [NSDictionary dictionaryWithString:param];
+        
+        [self githubUserInfoWithAccessToken:[dic objectForKey:@"access_token"]];
+        
+    } failure:^(NSError *error) {
         
     }];
+    
 }
 
 - (void)githubUserInfoWithAccessToken:(NSString *)token {
     
+    [self showLoaddingTip:@"" timeOut:20.5f];
+    
     NSString * url = [NSString stringWithFormat:@"https://api.github.com/user?access_token=%@",token];
     
-    [GKNetwork getGithubWithUrl:url showLoadding:YES completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [GKNetwork getGithubWithUrl:url success:^(id responseObj) {
         
-        if (error) {
+        NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObj options:NSJSONReadingMutableLeaves error:nil];
+        
+        NSMutableDictionary * jsonMutableDict = [jsonDict mutableCopy];
+        for (NSString * key in jsonDict.allKeys) {
+            if ([[jsonDict objectForKey:key] isKindOfClass:[NSNull class]]) {
+                [jsonMutableDict setObject:@"" forKey:key];
+            }
+        }
+        
+        NSString * avatar_url = [jsonDict objectForKey:@"avatar_url"];
+        [self.headImageView setImageWithURL:avatar_url placeholderImage:[UIImage imageNamed:@"GitHub_icon"]];
+        
+        if ([[jsonDict valueForKey:@"name"] isKindOfClass:[NSNull class]] == NO) {
             
+            self.nickLabel.text = [jsonDict valueForKey:@"name"];
         }
         else {
-            NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-            
-            NSMutableDictionary * jsonMutableDict = [jsonDict mutableCopy];
-            for (NSString * key in jsonDict.allKeys) {
-                if ([[jsonDict objectForKey:key] isKindOfClass:[NSNull class]]) {
-                    [jsonMutableDict setObject:@"" forKey:key];
-                }
-            }
-            
-            NSString * avatar_url = [jsonDict objectForKey:@"avatar_url"];
-            [self.headImageView setImageWithURL:avatar_url placeholderImage:[UIImage imageNamed:@"GitHub_icon"]];
-            
-            if ([[jsonDict valueForKey:@"name"] isKindOfClass:[NSNull class]] == NO) {
-                
-                self.nickLabel.text = [jsonDict valueForKey:@"name"];
-            }
-            else {
-                self.nickLabel.text = [jsonDict valueForKey:@"login"];
-            }
-            
-            NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-            
-            [userDefaults setObject:[jsonMutableDict copy] forKey:@"userInfo"];
-            [userDefaults synchronize];
-            
-            [self.table reloadData];
+            self.nickLabel.text = [jsonDict valueForKey:@"login"];
         }
+        
+        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+        
+        [userDefaults setObject:[jsonMutableDict copy] forKey:@"userInfo"];
+        [userDefaults synchronize];
+        
+        [self.table reloadData];
+        
+    } failure:^(NSError *error) {
         
     }];
 }

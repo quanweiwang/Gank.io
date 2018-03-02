@@ -163,60 +163,55 @@
 - (void)gankTitle {
     
     NSString * url = @"/api/history/content/1/1";
-    [GKNetwork getWithUrl:url showLoadding:NO completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    
+    [GKNetwork getWithUrl:url success:^(NSDictionary * responseObj) {
         
-        if (error == nil) {
-            NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-            self.titleLabel.text = [[jsonDict objectForKey:@"results"][0] objectForKey:@"title"];
-            
-            //计算标题文字高度
-            [self titleLablTextHeight];
-        }
-        else {
-            
-        }
+        self.titleLabel.text = [[responseObj objectForKey:@"results"][0] objectForKey:@"title"];
+        
+        //计算标题文字高度
+        [self titleLablTextHeight];
+        
+    } failure:^(NSError *error) {
+        
     }];
+    
 }
 
 - (void)gankDayList {
     
     NSString * url = @"/api/day/history";
-    [GKNetwork getWithUrl:url showLoadding:NO completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    
+    [GKNetwork getWithUrl:url success:^(NSDictionary * responseObj) {
         
-        if (error) {
-            
-        }
-        else {
-            NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-            
-            if ([[jsonDict objectForKey:@"error"] integerValue] == 0) {
-                NSArray * dayArray = [jsonDict objectForKey:@"results"];
-                if (dayArray.count > 0) {
-                    NSString * day = dayArray[0];
-                    
-                    self.navTitleLabel.text = day;
-                    
-                    day = [day stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
-                    
-                    [self todayGank:day];
-                }
+        if ([[responseObj objectForKey:@"error"] integerValue] == 0) {
+            NSArray * dayArray = [responseObj objectForKey:@"results"];
+            if (dayArray.count > 0) {
+                NSString * day = dayArray[0];
+                
+                self.navTitleLabel.text = day;
+                
+                day = [day stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
+                
+                [self todayGank:day];
             }
         }
         
+    } failure:^(NSError *error) {
+        
     }];
+    
 }
 
 //最新干货
 - (void)todayGank:(NSString *)day {
     
+    [self showLoaddingTip:@"" timeOut:20.5f];
+    
     NSString * url = [NSString stringWithFormat:@"/api/day/%@",day];
     
-    [GKNetwork getWithUrl:url showLoadding:YES completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [GKNetwork getWithUrl:url success:^(NSDictionary * responseObj) {
         
-        NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-        NSLog(@"%@",jsonDict);
-        
-        NSDictionary * results = [jsonDict objectForKey:@"results"];
+        NSDictionary * results = [responseObj objectForKey:@"results"];
         
         NSMutableArray * contentArray = [NSMutableArray array];
         if ([results.allKeys containsObject:@"iOS"]) {
@@ -255,7 +250,11 @@
         
         self.data = [GKTodayModel mj_objectArrayWithKeyValuesArray:contentArray];
         [self.table reloadData];
+        
+    } failure:^(NSError *error) {
+        
     }];
+    
 }
 
 #pragma mark tableView相关

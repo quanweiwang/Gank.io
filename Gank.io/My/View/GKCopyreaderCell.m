@@ -53,7 +53,7 @@
     }];
     
     self.nameLabel = [[UILabel alloc] init];
-    self.nameLabel.textColor = RGB_HEX(0xaeaeae);
+    self.nameLabel.textColor = RGB_HEX(0x2F2F2F);
     self.nameLabel.font = [UIFont systemFontOfSize:14.f];
     [self addSubview:self.nameLabel];
     

@@ -26,6 +26,8 @@
     
     [self reachabilityNetworkStatus];
     
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+    
     // 设置导航栏默认的背景颜色
     [WRNavigationBar wr_setDefaultNavBarBarTintColor:RGB_HEX(0xD33E42)];
     // 设置导航栏所有按钮的默认颜色

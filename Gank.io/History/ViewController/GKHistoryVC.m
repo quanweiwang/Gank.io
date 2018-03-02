@@ -95,32 +95,36 @@
 #pragma mark 网络请求
 - (void)gankHistoryWithReload:(BOOL)reload {
     
+    if (reload) {
+        [self showLoaddingTip:@"" timeOut:20.5f];
+    }
+    
     NSString * url = [NSString stringWithFormat:@"/api/history/content/20/%ld",(long)self.page];
     
-    [GKNetwork getWithUrl:url showLoadding:reload  completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [GKNetwork getWithUrl:url success:^(id responseObj) {
         
-        if (error == nil) {
-            NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-            
-            NSArray * resultsArray = [jsonDict objectForKey:@"results"];
-            MUL_ARRAY_ADD_OR_CREATE(self.data, [GKHistoryModel mj_objectArrayWithKeyValuesArray:resultsArray]);
-            
-            if (reload) {
-                [self.table.mj_header endRefreshing];
-            }
-            else {
-                [self.table.mj_footer endRefreshing];
-            }
-            
-            [self.table reloadData];
-            
-            NSLog(@"%@",jsonDict);
+        NSArray * resultsArray = [responseObj objectForKey:@"results"];
+        MUL_ARRAY_ADD_OR_CREATE(self.data, [GKHistoryModel mj_objectArrayWithKeyValuesArray:resultsArray]);
+        
+        if (reload) {
+            [self.table.mj_header endRefreshing];
         }
         else {
-            
+            [self.table.mj_footer endRefreshing];
         }
         
+        [self.table reloadData];
+        
+    } failure:^(NSError *error) {
+        
+        if (reload) {
+            [self.table.mj_header endRefreshing];
+        }
+        else {
+            [self.table.mj_footer endRefreshing];
+        }
     }];
+    
 }
 
 #pragma mark tableView相关

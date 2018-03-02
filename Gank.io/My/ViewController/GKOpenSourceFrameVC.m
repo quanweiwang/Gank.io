@@ -79,7 +79,7 @@ static NSString * cellStr = @"cell";
     }
     
     cell.textLabel.font = [UIFont systemFontOfSize:14.f];
-    cell.textLabel.textColor = RGB_HEX(0xaeaeae);
+    cell.textLabel.textColor = RGB_HEX(0x2F2F2F);
     cell.textLabel.text = [self.cellTitleArray safeObjectAtIndex:indexPath.row];
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

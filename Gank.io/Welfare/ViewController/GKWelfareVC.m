@@ -83,30 +83,35 @@
 #pragma mark 网络请求
 - (void)welfareGankWithReload:(BOOL)reload {
     
+    if (reload) {
+        [self showLoaddingTip:@"" timeOut:20.5f];
+    }
+    
     NSString * url = [NSString stringWithFormat:@"/api/data/福利/20/%ld",(long)self.page];
     
-    [GKNetwork getWithUrl:url showLoadding:reload completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [GKNetwork getWithUrl:url success:^(id responseObj) {
         
-        if (error == nil) {
-            NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-            
-            NSArray * resultsArray = [jsonDict objectForKey:@"results"];
-            MUL_ARRAY_ADD_OR_CREATE(self.data, [GKWelfareModel mj_objectArrayWithKeyValuesArray:resultsArray]);
-            
-            if (reload) {
-                [self.coll.mj_header endRefreshing];
-            }
-            else {
-                [self.coll.mj_footer endRefreshing];
-            }
-            
-            [self.coll reloadData];
-            
-            NSLog(@"%@",jsonDict);
+        NSArray * resultsArray = [responseObj objectForKey:@"results"];
+        MUL_ARRAY_ADD_OR_CREATE(self.data, [GKWelfareModel mj_objectArrayWithKeyValuesArray:resultsArray]);
+        
+        if (reload) {
+            [self.coll.mj_header endRefreshing];
         }
         else {
-            
+            [self.coll.mj_footer endRefreshing];
         }
+        
+        [self.coll reloadData];
+        
+    } failure:^(NSError *error) {
+        
+        if (reload) {
+            [self.coll.mj_header endRefreshing];
+        }
+        else {
+            [self.coll.mj_footer endRefreshing];
+        }
+        
     }];
     
 }
