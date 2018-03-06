@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "NSMutableDictionary+TrochilusInit.h"
 #import "JPUSHService.h"
+#import <Bugtags/Bugtags.h>
 // iOS10注册APNs所需头文件
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
@@ -23,6 +24,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [Bugtags startWithAppKey:@"2eba5926decfe4e23bc1c20e2e340a2a" invocationEvent:BTGInvocationEventNone];
     
     [self reachabilityNetworkStatus];
     

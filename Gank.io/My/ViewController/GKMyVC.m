@@ -11,6 +11,7 @@
 #import "GKWebViewVC.h"
 #import "GKSettingVC.h"
 #import "GKGankSubmitVC.h"
+#import "GKFeedbackVC.h"
 
 @interface GKMyVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong, nonatomic) UITableView * table;
@@ -282,6 +283,15 @@ static NSString * cellStr = @"cell";
     }
     else if ([titleStr isEqualToString:@"用户反馈"]) {
         
+        if ([GKUserManager isLogin]) {
+            GKGankSubmitVC * vc = [[GKGankSubmitVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else {
+            GKFeedbackVC * vc = [[GKFeedbackVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            
+        }
     }
     else if ([titleStr isEqualToString:@"系统设置"]) {
         GKSettingVC * vc = [[GKSettingVC alloc] init];

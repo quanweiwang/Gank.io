@@ -19,5 +19,7 @@ target "Gank.io" do
 	pod 'FLAnimatedImage', '~> 1.0.12'
 	pod 'SDWebImage/GIF'
 	pod 'JPush', '3.0.8'
+	pod 'Bugtags', '~> 3.0.1'
+	
 end
 
