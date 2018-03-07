@@ -20,6 +20,7 @@
 #define kBUGTAGSKEY @"2eba5926decfe4e23bc1c20e2e340a2a"
 
 #define kLoginNotification @"kLoginNotification"
+#define kRefreshTodayNotification @"kRefreshTodayNotification"
 
 #define kSCREENWIDTH ([UIScreen mainScreen].bounds.size.width)
 #define kSCREENHEIGHT ([UIScreen mainScreen].bounds.size.height)

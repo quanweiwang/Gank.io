@@ -48,6 +48,7 @@
                 success(responseObject);
             }
             
+            [self dissmissTips];
         }
         else {
             

@@ -284,13 +284,13 @@ static NSString * cellStr = @"cell";
     else if ([titleStr isEqualToString:@"用户反馈"]) {
         
         if ([GKUserManager isLogin]) {
-            GKGankSubmitVC * vc = [[GKGankSubmitVC alloc] init];
+            GKFeedbackVC * vc = [[GKFeedbackVC alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }
         else {
-            GKFeedbackVC * vc = [[GKFeedbackVC alloc] init];
+            GKWebViewVC * vc = [[GKWebViewVC alloc] init];
+            vc.url = @"https://github.com/login/oauth/authorize?client_id=e87b832179dd95cf25b6";
             [self.navigationController pushViewController:vc animated:YES];
-            
         }
     }
     else if ([titleStr isEqualToString:@"系统设置"]) {

@@ -41,15 +41,10 @@
     [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
     
     //分享
-    [Trochilus registerActivePlatforms:@[@(TPlatformTypeQQ),@(TPlatformTypeWechat),@(TPlatformTypeSinaWeibo)] onConfiguration:^(TPlatformType platformType, NSMutableDictionary *appInfo) {
+    [Trochilus registerActivePlatforms:@[@(TPlatformTypeWechat),@(TPlatformTypeSinaWeibo)] onConfiguration:^(TPlatformType platformType, NSMutableDictionary *appInfo) {
         
         switch (platformType) {
                 
-            case TPlatformTypeQQ:
-            {
-                [appInfo TSetupQQByAppId:@"" appKey:@"" authType:@"" useTIM:YES];
-            }
-                break;
             case TPlatformTypeWechat:
             {
                 [appInfo TSetupWeChatByAppId:kWECHATKEY appSecret:@""];
@@ -141,6 +136,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
         self.manager = [AFNetworkReachabilityManager sharedManager];
     }
     
+
     [self.manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         
         switch (status) {
@@ -148,17 +144,23 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
             {
                 UIAlertView *alert = [UIAlertView bk_alertViewWithTitle:@"未识别网络"];
                 [alert show];
-//                DLog(@"---未识别网络---");
+                
             }
                 break;
             case AFNetworkReachabilityStatusNotReachable: //网络未连接
             {
-                //网络未连接 跳转到登录页
-//                [Utils alertWithNetworkIsNotConnected];
+                
             }
                 break;
             case AFNetworkReachabilityStatusReachableViaWWAN: //移动网络
+            {
+                
+            }
+                break;
             case AFNetworkReachabilityStatusReachableViaWiFi: //无线网络
+            {
+                
+            }
                 break;
             default:
                 break;

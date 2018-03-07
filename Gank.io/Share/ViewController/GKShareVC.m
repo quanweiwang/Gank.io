@@ -180,7 +180,7 @@ static NSString * cellStr = @"cell";
         
         [parameters TSetupWeChatParamsByText:@"今日干货-干货集中营iOS"
                                        title:@"今日干货"
-                                         url:[NSURL URLWithString:@"https://www.mob.com"]
+                                         url:[NSURL URLWithString:[@"https://itunes.apple.com/us/app/%E4%BB%8A%E6%97%A5%E5%B9%B2%E8%B4%A7/id1353802293?l=zh&ls=1&mt=8" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
                                   thumbImage:nil
                                        image:[UIImage imageNamed:@"loading"]
                                 musicFileURL:nil
@@ -198,7 +198,7 @@ static NSString * cellStr = @"cell";
         
         [parameters TSetupWeChatParamsByText:@"今日干货-干货集中营iOS"
                                        title:@"今日干货"
-                                         url:[NSURL URLWithString:@"https://www.mob.com"]
+                                         url:[NSURL URLWithString:[@"https://itunes.apple.com/us/app/%E4%BB%8A%E6%97%A5%E5%B9%B2%E8%B4%A7/id1353802293?l=zh&ls=1&mt=8" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
                                   thumbImage:nil
                                        image:[UIImage imageNamed:@"loading"]
                                 musicFileURL:nil
@@ -213,20 +213,28 @@ static NSString * cellStr = @"cell";
         sharePlatform = TPlatformSubTypeWechatTimeline;
     }
     else  {
-        [parameters TSetupSinaWeiboShareParamsByText:@"今日干货-干货集中营iOS"
-                                               title:nil
+        [parameters TSetupSinaWeiboShareParamsByText:@""
+                                               title:@"今日干货-干货集中营iOS"
                                                image:[UIImage imageNamed:@"loading"]
-                                                 url:nil
+                                                 url:[NSURL URLWithString:@"https://itunes.apple.com/us/app/%E4%BB%8A%E6%97%A5%E5%B9%B2%E8%B4%A7/id1353802293?l=zh&ls=1&mt=8"]
                                             latitude:0
                                            longitude:0
                                             objectID:nil
-                                                type:TContentTypeImage];
+                                                type:TContentTypeWebPage];
         
         sharePlatform = TPlatformTypeSinaWeibo;
     }
     
     [Trochilus share:sharePlatform parameters:parameters onStateChanged:^(TResponseState state, NSDictionary *userData, NSError *error) {
-
+        if (state == TResponseStateSuccess) {
+            [self showMessageTip:@"分享成功" detail:nil timeOut:1.5f];
+        }
+        else if (state == TResponseStateCancel) {
+            [self showMessageTip:@"用户取消了分享" detail:nil timeOut:1.5f];
+        }
+        else {
+            [self showMessageTip:@"分享失败" detail:nil timeOut:1.5f];
+        }
     }];
 }
 
