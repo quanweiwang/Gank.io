@@ -107,7 +107,7 @@ static NSString * cellStr = @"cell";
 - (NSArray *)cellTitleArray {
     
     if (_cellTitleArray == nil) {
-        _cellTitleArray = [NSArray arrayWithObjects:@"AFNetworking",@"BlocksKit",@"FLAnimatedImage",@"IQKeyboardManager",@"Masonry",@"MBProgressHUD",@"MJExtension",@"MJRefresh",@"SDWebImage",@"TZImagePickerController",@"WRNavigationBar", nil];
+        _cellTitleArray = [NSArray arrayWithObjects:@"AFNetworking",@"BlocksKit",@"FLAnimatedImage",@"IQKeyboardManager",@"Masonry",@"MBProgressHUD",@"MJExtension",@"MJRefresh",@"SDWebImage",@"TZImagePickerController",@"WRNavigationBar",@"XLPhotoBrowser+CoderXL", nil];
     }
     
     return _cellTitleArray;
@@ -127,7 +127,8 @@ static NSString * cellStr = @"cell";
                      @"https://github.com/CoderMJLee/MJRefresh",
                      @"https://github.com/maccman/SDWebImage",
                      @"https://github.com/banchichen/TZImagePickerController",
-                     @"https://github.com/wangrui460/WRNavigationBar", nil];
+                     @"https://github.com/wangrui460/WRNavigationBar",
+                     @"https://github.com/CoderXLLau/XLPhotoBrowser",nil];
     }
     
     return _urlArray;

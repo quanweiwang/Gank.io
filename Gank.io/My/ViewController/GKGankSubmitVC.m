@@ -112,16 +112,12 @@
         
     }];
     
-    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44-kStatusBarHeight)];
+    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44-kNavigationAndStatusBarHeight)];
     [self.scrollView addSubview:self.contentView];
-    
-//    [self.contentView makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.top.bottom.equalTo(self.scrollView);
-//    }];
     
     self.urlTextField = [[UITextField alloc] init];
     self.urlTextField.font = [UIFont systemFontOfSize:17.f];
-    self.urlTextField.textColor = RGB_HEX(0xaeaeae);
+    self.urlTextField.textColor = [UIColor grayColor];
     self.urlTextField.placeholder = @"请输入url";
     self.urlTextField.keyboardType = UIKeyboardTypeURL;
     [self.contentView addSubview:self.urlTextField];
@@ -150,14 +146,14 @@
     
     self.titleTextView = [[UITextView alloc] init];
     self.titleTextView.font = [UIFont systemFontOfSize:17.f];
-    self.titleTextView.textColor = RGB_HEX(0xaeaeae);
+    self.titleTextView.textColor = [UIColor grayColor];
     self.titleTextView.delegate = self;
 //    self.titleTextView.placeholder = @"请输入标题";
     [self.contentView addSubview:self.titleTextView];
     
     [self.titleTextView makeConstraints:^(MASConstraintMaker *make) {
         
-        make.left.equalTo(self.contentView).offset(10);
+        make.left.equalTo(self.contentView).offset(5);
         make.right.equalTo(self.contentView).offset(-10);
         make.bottom.equalTo(self.contentView);
         make.top.equalTo(self.lineImageView.bottom).offset(5);
@@ -171,7 +167,7 @@
     [self.contentView addSubview:self.placeholderLabel];
     
     [self.placeholderLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.titleTextView.left);
+        make.left.equalTo(self.titleTextView.left).offset(5);
         make.right.equalTo(self.titleTextView.right);
         make.top.equalTo(self.titleTextView.top).offset(5);
     }];

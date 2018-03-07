@@ -60,12 +60,12 @@
             make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(-kNavigationAndStatusBarHeight);
             make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft).offset(0);
             make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(0);
-            make.height.equalTo(150);
+            make.height.equalTo(130+kNavigationAndStatusBarHeight);
         } else {
             // Fallback on earlier versions
             make.top.equalTo(self.view).offset(-kNavigationAndStatusBarHeight);
             make.left.right.equalTo(self.view);
-            make.height.equalTo(150);
+            make.height.equalTo(170);
         }
         
     }];
@@ -91,7 +91,7 @@
     [self.headImageView makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headerView).offset(20);
         make.width.height.equalTo(66);
-        make.top.equalTo(self.headerView).offset(48);
+        make.top.equalTo(self.headerView).offset(kNavigationAndStatusBarHeight);
     }];
     
     self.nickLabel = [[UILabel alloc] init];
