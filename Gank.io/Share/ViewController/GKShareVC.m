@@ -147,7 +147,7 @@ static NSString * cellStr = @"cell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    return CGSizeMake((kSCREENWIDTH-60)/5, 135);
+    return CGSizeMake((kSCREENWIDTH-60)/3, 135);
 }
 
 //设置每个item的UIEdgeInsets
@@ -176,16 +176,40 @@ static NSString * cellStr = @"cell";
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     TPlatformType sharePlatform;
     
-    if ([title isEqualToString:@"QQ"]) {
-        sharePlatform = TPlatformSubTypeQQFriend;
-    }
-    else if ([title isEqualToString:@"Qzone"]) {
-        sharePlatform = TPlatformSubTypeQZone;
-    }
-    else if ([title isEqualToString:@"微信"]) {
-        sharePlatform = TPlatformSubTypeWechatSession;
+    if ([title isEqualToString:@"微信"]) {
+        
+        [parameters TSetupWeChatParamsByText:@"今日干货-干货集中营iOS"
+                                       title:@"今日干货"
+                                         url:[NSURL URLWithString:@"https://www.mob.com"]
+                                  thumbImage:nil
+                                       image:[UIImage imageNamed:@"loading"]
+                                musicFileURL:nil
+                                     extInfo:nil
+                                    fileData:nil
+                                emoticonData:nil
+                         sourceFileExtension:nil
+                              sourceFileData:nil
+                                        type:TContentTypeWebPage
+                          forPlatformSubType:TPlatformSubTypeWechatSession];
+        
+         sharePlatform = TPlatformSubTypeWechatSession;
     }
     else if ([title isEqualToString:@"朋友圈"]) {
+        
+        [parameters TSetupWeChatParamsByText:@"今日干货-干货集中营iOS"
+                                       title:@"今日干货"
+                                         url:[NSURL URLWithString:@"https://www.mob.com"]
+                                  thumbImage:nil
+                                       image:[UIImage imageNamed:@"loading"]
+                                musicFileURL:nil
+                                     extInfo:nil
+                                    fileData:nil
+                                emoticonData:nil
+                         sourceFileExtension:nil
+                              sourceFileData:nil
+                                        type:TContentTypeWebPage
+                          forPlatformSubType:TPlatformSubTypeWechatTimeline];
+        
         sharePlatform = TPlatformSubTypeWechatTimeline;
     }
     else  {
@@ -259,19 +283,6 @@ static NSString * cellStr = @"cell";
     if (_data == nil) {
         
         _data = [NSMutableArray array];
-        
-        if ([Trochilus isQQInstalled] || [Trochilus isTIMInstalled]) {
-            
-            [_data addObject:@{
-                               @"icon":@"qq_icon",
-                               @"title":@"QQ"
-                               }];
-            
-            [_data addObject:@{
-                               @"icon":@"qzone_icon",
-                               @"title":@"Qzone"
-                               }];
-        }
         
         if ([Trochilus isWeChatInstalled]) {
             
