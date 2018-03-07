@@ -65,7 +65,12 @@ static GKUserManager * _instance = nil;
 + (BOOL)isLogin {
     
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults objectForKey:@"userInfo"];
+    
+    if ([userDefaults objectForKey:@"userInfo"]) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 + (void)loginOut {
