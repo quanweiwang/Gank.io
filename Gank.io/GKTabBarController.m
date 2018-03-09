@@ -26,18 +26,23 @@
     self.tabBar.tintColor = RGB_HEX(0xD33E42);
     
     @weakObj(self)
-    [self.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
+    [self.tabBarTitleArray enumerateObjectsUsingBlock:^(NSDictionary *dic, NSUInteger idx, BOOL * _Nonnull stop) {
         @strongObj(self)
-        UITabBarItem *item = obj.tabBarItem;
         
-        NSDictionary * dic = [self.tabBarTitleArray safeObjectAtIndex:idx];
+        BaseViewController *vc = [NSClassFromString([dic objectForKey:@"Class"]) new];
+        
+        BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vc];
+        
+        UITabBarItem *item = nav.tabBarItem;
         
         item.image = [UIImage imageNamed:[dic objectForKey:@"Image"]];
         item.selectedImage = [UIImage imageNamed:[dic objectForKey:@"Image"]];
         item.title = [dic objectForKey:@"Title"];
-
+        item.titlePositionAdjustment = UIOffsetMake(0, -5);
+        [self addChildViewController:nav];
+        
     }];
+    
     
 }
 
@@ -60,26 +65,35 @@
         [_tabBarTitleArray addObject:@{
                                        @"Title" : @"Today",
                                        @"Image" : @"cool_icon",
+                                       @"Class" : @"GKTodayVC"
                                        }];
         
         [_tabBarTitleArray addObject:@{
                                        @"Title" : @"历史",
                                        @"Image" : @"crazy_icon",
+                                       @"Class" : @"GKHistoryVC"
                                        }];
         
 //        [_tabBarTitleArray addObject:@{
 //                                       @"Title" : @"Today",
 //                                       @"Image" : @"cool_icon",
 //                                       }];
-        
-        [_tabBarTitleArray addObject:@{
-                                       @"Title" : @"萌妹子",
-                                       @"Image" : @"in_love_icon",
-                                       }];
+    
+        if (TARGET_IPHONE_SIMULATOR == 1 && TARGET_OS_IPHONE == 1) {
+            //模拟器
+        }else{
+            //真机
+            [_tabBarTitleArray addObject:@{
+                                           @"Title" : @"萌妹子",
+                                           @"Image" : @"in_love_icon",
+                                           @"Class" : @"GKWelfareVC"
+                                           }];
+        }
         
         [_tabBarTitleArray addObject:@{
                                        @"Title" : @"我的",
-                                       @"Image" : @"devil_icon"
+                                       @"Image" : @"devil_icon",
+                                       @"Class" : @"GKMyVC"
                                        }];
         
     }

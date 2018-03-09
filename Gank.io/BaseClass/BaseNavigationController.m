@@ -29,15 +29,11 @@
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    
+
     self.interactivePopGestureRecognizer.enabled = NO;
-    
-    if (![viewController isKindOfClass:[UITabBarController class]]) {
-        viewController.hidesBottomBarWhenPushed = YES;
-    }
-    
+
     [super pushViewController:viewController animated:animated];
-    
+
 }
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{

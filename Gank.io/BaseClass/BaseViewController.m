@@ -42,4 +42,9 @@
     NSLog(@"%@ 已销毁",NSStringFromClass([self class]));
 }
 
+- (BOOL) hidesBottomBarWhenPushed
+{
+    return (self.navigationController.topViewController != self);
+}
+
 @end

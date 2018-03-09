@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GKTabBarController.h"
 #import "NSMutableDictionary+TrochilusInit.h"
 #import "JPUSHService.h"
 #import <Bugtags/Bugtags.h>
@@ -24,6 +25,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.window.rootViewController = [[GKTabBarController alloc] init];
+    [self.window makeKeyAndVisible];
     
     [Bugtags startWithAppKey:kBUGTAGSKEY invocationEvent:BTGInvocationEventNone];
     
