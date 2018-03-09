@@ -79,10 +79,8 @@
 //                                       @"Image" : @"cool_icon",
 //                                       }];
     
-        if (TARGET_IPHONE_SIMULATOR == 1 && TARGET_OS_IPHONE == 1) {
-            //模拟器
-        }else{
-            //真机
+        if ([Trochilus isQQInstalled] || [Trochilus isWeChatInstalled] || [Trochilus isTIMInstalled] || [Trochilus isSinaWeiBoInstalled] || [Trochilus isAliPayInstalled]) {
+            
             [_tabBarTitleArray addObject:@{
                                            @"Title" : @"萌妹子",
                                            @"Image" : @"in_love_icon",
