@@ -12,7 +12,7 @@
 #import "GKTodayModel.h"
 #import "GKHistoryModel.h"
 
-@interface GKTodayVC ()<UITableViewDelegate,UITableViewDataSource,XLPhotoBrowserDelegate, XLPhotoBrowserDatasource>
+@interface GKTodayVC ()<UITableViewDelegate,UITableViewDataSource,XLPhotoBrowserDelegate, XLPhotoBrowserDatasource,IMNativeDelegate>
 
 @property(strong, nonatomic) UILabel * titleLabel;//标题
 @property(strong, nonatomic) UILabel * navTitleLabel;
@@ -20,6 +20,9 @@
 
 @property(strong, nonatomic) NSMutableArray * data;//数据源
 @property(strong, nonatomic) NSString * girlURL;//妹子图
+
+@property(strong, nonatomic) IMNative * nativeAD;//原生广告
+
 @end
 
 @implementation GKTodayVC
@@ -68,12 +71,19 @@
     
 }
 
+- (void)dealloc {
+    self.nativeAD.delegate = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (void)initUI {
+    
+    self.nativeAD = [[IMNative alloc] initWithPlacementId:1521633108352 delegate:self];
+    [self.nativeAD load];
     
     @weakObj(self)
     if (self.navigationController.viewControllers.count == 1) {
@@ -359,6 +369,16 @@ static NSString * cellStr = @"cell";
 - (void)photoBrowser:(XLPhotoBrowser *)browser clickActionSheetIndex:(NSInteger)actionSheetindex currentImageIndex:(NSInteger)currentImageIndex
 {
     [browser saveCurrentShowImage];
+}
+
+#pragma mark InMobi
+- (void)nativeDidFinishLoading:(IMNative *)native {
+    NSLog(@"%@",native);
+    
+}
+
+-(void)native:(IMNative*)native didInteractWithParams:(NSDictionary*)params {
+    NSLog(@"%@",params);
 }
 
 #pragma mark 懒加载

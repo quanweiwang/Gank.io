@@ -11,6 +11,8 @@
 #import "NSMutableDictionary+TrochilusInit.h"
 #import "JPUSHService.h"
 #import <Bugtags/Bugtags.h>
+#import <InMobiSDK/InMobiSDK.h>
+
 // iOS10注册APNs所需头文件
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
@@ -31,6 +33,8 @@
     
     self.window.rootViewController = [[GKTabBarController alloc] init];
     [self.window makeKeyAndVisible];
+    
+    [IMSdk initWithAccountID:kINMOBIKEY];
     
     [Bugtags startWithAppKey:kBUGTAGSKEY invocationEvent:BTGInvocationEventNone];
     
