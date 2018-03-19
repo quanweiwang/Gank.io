@@ -23,8 +23,17 @@
 #endif
 
 #define kINMOBIKEY @"b49f65de091f4ab9b11e44019b1c2bbb"
+
+//adView
+#define kADVIEWKEY @"SDK20181613040301ejjupvee8ck0mv5"
+
+//wechat
 #define kWECHATKEY @"wx2b2472cf1fb9c149"
+
+//sinaweibo
 #define kSINAWEIBOKEY @"4260063437"
+
+//bugtags
 #define kBUGTAGSKEY @"2eba5926decfe4e23bc1c20e2e340a2a"
 
 #define kLoginNotification @"kLoginNotification"

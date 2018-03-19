@@ -8,10 +8,11 @@
 
 #import "GKFeedbackVC.h"
 #import <Bugtags/Bugtags.h>
+#import "PlaceholderTextView.h"
 
 @interface GKFeedbackVC ()
 
-@property(strong, nonatomic)UITextView * textView;
+@property(strong, nonatomic)PlaceholderTextView * textView;
 
 @end
 
@@ -66,7 +67,8 @@
     
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     
-    self.textView = [[UITextView alloc] init];
+    self.textView = [[PlaceholderTextView alloc] init];
+    self.textView.placeholder = @"瞎吐槽";
     self.textView.font = [UIFont systemFontOfSize:14.f];
     self.textView.layer.borderWidth = 1;
     self.textView.layer.borderColor = RGB_HEX(0xaeaeae).CGColor;

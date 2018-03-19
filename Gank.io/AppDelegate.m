@@ -35,6 +35,7 @@
     [self.window makeKeyAndVisible];
     
     [IMSdk initWithAccountID:kINMOBIKEY];
+    [IMSdk setLogLevel:kIMSDKLogLevelDebug];
     
     [Bugtags startWithAppKey:kBUGTAGSKEY invocationEvent:BTGInvocationEventNone];
     

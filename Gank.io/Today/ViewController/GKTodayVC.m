@@ -11,8 +11,10 @@
 #import "GKTodayHeaderView.h"
 #import "GKTodayModel.h"
 #import "GKHistoryModel.h"
+#import "GKToadyADCell.h"
+#import <StoreKit/StoreKit.h>
 
-@interface GKTodayVC ()<UITableViewDelegate,UITableViewDataSource,XLPhotoBrowserDelegate, XLPhotoBrowserDatasource,IMNativeDelegate>
+@interface GKTodayVC ()<UITableViewDelegate,UITableViewDataSource,XLPhotoBrowserDelegate, XLPhotoBrowserDatasource,IMNativeDelegate,SKStoreProductViewControllerDelegate>
 
 @property(strong, nonatomic) UILabel * titleLabel;//标题
 @property(strong, nonatomic) UILabel * navTitleLabel;
@@ -82,9 +84,6 @@
 
 - (void)initUI {
     
-    self.nativeAD = [[IMNative alloc] initWithPlacementId:1521633108352 delegate:self];
-    [self.nativeAD load];
-    
     @weakObj(self)
     if (self.navigationController.viewControllers.count == 1) {
         UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"refresh_icon"] style:UIBarButtonItemStyleDone handler:^(id sender) {
@@ -139,9 +138,10 @@
     self.table.delegate = self;
     self.table.dataSource = self;
     self.table.estimatedSectionHeaderHeight = 200;
-    self.table.estimatedSectionFooterHeight = 0;
+    self.table.estimatedSectionFooterHeight = 200;
     self.table.estimatedRowHeight = 108;
     [self.table registerClass:[GKTodayCell class] forCellReuseIdentifier:@"cell"];
+    [self.table registerClass:[GKToadyADCell class] forCellReuseIdentifier:@"adcell"];
     [self.table registerClass:[GKTodayHeaderView class] forHeaderFooterViewReuseIdentifier:@"headerView"];
     [self.view addSubview:self.table];
     
@@ -259,7 +259,9 @@
         }
         
         self.data = [GKTodayModel mj_objectArrayWithKeyValuesArray:contentArray];
-        [self.table reloadData];
+        
+        //初始化广告
+        [self initAD];
         
     } failure:^(NSError *error) {
         
@@ -311,30 +313,72 @@ static NSString * headerViewStr = @"headerView";
 }
 
 static NSString * cellStr = @"cell";
+static NSString * adCellStr = @"adcell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    GKTodayCell * cell = [tableView dequeueReusableCellWithIdentifier:cellStr forIndexPath:indexPath];
-    
-    if (cell == nil) {
-        cell = (GKTodayCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
+    if ([[self.data safeObjectAtIndex:indexPath.row] isKindOfClass:[NSString class]]) {
+        //广告
+        GKToadyADCell * cell = [tableView dequeueReusableCellWithIdentifier:adCellStr forIndexPath:indexPath];
+        
+        if (cell == nil) {
+            cell = (GKToadyADCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:adCellStr];
+        }
+        
+        [cell setModel:self.nativeAD];
+        
+        return cell;
     }
-    
-    GKTodayModel * model = [self.data safeObjectAtIndex:indexPath.row];
-    
-    [cell setModel:model];
-    
-    return cell;
+    else {
+        GKTodayCell * cell = [tableView dequeueReusableCellWithIdentifier:cellStr forIndexPath:indexPath];
+        
+        if (cell == nil) {
+            cell = (GKTodayCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
+        }
+        
+        GKTodayModel * model = [self.data safeObjectAtIndex:indexPath.row];
+        
+        [cell setModel:model];
+        
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    GKTodayModel * model = [self.data safeObjectAtIndex:indexPath.row];
+    if ([[self.data safeObjectAtIndex:indexPath.row] isKindOfClass:[NSString class]]) {
+        
+        if (self.nativeAD.isAppDownload) {
+            
+            NSString * str = [self.nativeAD.adLandingPageUrl absoluteString];
+            NSRange idRange = [str rangeOfString:@"id"];
+            NSRange questionMarkRange = [str rangeOfString:@"?"];
+            
+            NSRange range = NSMakeRange(idRange.location+2, questionMarkRange.location-idRange.location-2);
+            NSString * appstoreId = [[self.nativeAD.adLandingPageUrl absoluteString] substringWithRange:range];
+            
+            SKStoreProductViewController *storeProductVC = [[SKStoreProductViewController alloc] init];
+            storeProductVC.delegate = self;
+            NSDictionary *dic = [NSDictionary dictionaryWithObject:appstoreId forKey:SKStoreProductParameterITunesItemIdentifier];
+            [storeProductVC loadProductWithParameters:dic completionBlock:^(BOOL result, NSError * _Nullable error) {
+                if (!error) {
+                    [self presentViewController:storeProductVC animated:YES completion:nil];
+                } else {
+                    NSLog(@"ERROR:%@",error);
+                }
+            }];
+        }
+    }
+    else {
+        GKTodayModel * model = [self.data safeObjectAtIndex:indexPath.row];
+        
+        GKWebViewVC * vc = [[GKWebViewVC alloc] init];
+        vc.url = model.url;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     
-    GKWebViewVC * vc = [[GKWebViewVC alloc] init];
-    vc.url = model.url;
-    [self.navigationController pushViewController:vc animated:YES];
 }
+
 
 #pragma mark 计算标题文字高度
 - (void)titleLablTextHeight {
@@ -371,14 +415,30 @@ static NSString * cellStr = @"cell";
     [browser saveCurrentShowImage];
 }
 
-#pragma mark InMobi
+#pragma mark- 广告
+- (void)initAD {
+    
+    if (self.nativeAD) {
+        [self.nativeAD recyclePrimaryView];
+    }
+    
+    self.nativeAD = [[IMNative alloc] initWithPlacementId:1521427521119 delegate:self];
+    [self.nativeAD load];
+}
+
 - (void)nativeDidFinishLoading:(IMNative *)native {
-    NSLog(@"%@",native);
+    
+    [self.data insertObject:@"ad" atIndex:3];
+    [self.table reloadData];
     
 }
 
--(void)native:(IMNative*)native didInteractWithParams:(NSDictionary*)params {
-    NSLog(@"%@",params);
+- (void)native:(IMNative *)native didFailToLoadWithError:(IMRequestStatus *)error {
+    [self.table reloadData];
+}
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark 懒加载

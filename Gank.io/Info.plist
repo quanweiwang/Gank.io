@@ -40,6 +40,12 @@
 				<string>wx2b2472cf1fb9c149</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>gankIO</string>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.1.2</string>
@@ -86,6 +92,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>今日干货需要您的同意,才能访问相册,以便于保存照片到本地</string>
 	<key>UILaunchStoryboardName</key>
@@ -105,7 +113,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>YES</string>
 </dict>
 </plist>

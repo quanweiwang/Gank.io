@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9044237F5D4AF596F5DA2163A89A6DDD'
+               BlueprintIdentifier = 'DE6ED0DA4F7579362448AF09C731A0E7'
                BlueprintName = 'WRNavigationBar'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'WRNavigationBar.framework'>

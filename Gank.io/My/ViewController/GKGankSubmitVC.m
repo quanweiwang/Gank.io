@@ -8,13 +8,13 @@
 
 #import "GKGankSubmitVC.h"
 #import "GKGankSubmitTypeListVC.h"
+#import "PlaceholderTextView.h"
 
-@interface GKGankSubmitVC ()<UITextViewDelegate,GKGankSubmitTypeListDelegate>
+@interface GKGankSubmitVC ()<GKGankSubmitTypeListDelegate>
 
 @property(strong, nonatomic)UITextField * urlTextField;
-@property(strong, nonatomic)UITextView * titleTextView;
+@property(strong, nonatomic)PlaceholderTextView * titleTextView;
 @property(strong, nonatomic)UIImageView * lineImageView;
-@property(strong, nonatomic)UILabel * placeholderLabel;
 @property(strong, nonatomic)UIScrollView *scrollView;
 @property(strong, nonatomic)UIView * contentView;
 @property(strong, nonatomic)UIButton * gankTypeBtn;
@@ -144,11 +144,10 @@
         
     }];
     
-    self.titleTextView = [[UITextView alloc] init];
+    self.titleTextView = [[PlaceholderTextView alloc] init];
     self.titleTextView.font = [UIFont systemFontOfSize:17.f];
     self.titleTextView.textColor = [UIColor grayColor];
-    self.titleTextView.delegate = self;
-//    self.titleTextView.placeholder = @"请输入标题";
+    self.titleTextView.placeholder = @"请输入标题";
     [self.contentView addSubview:self.titleTextView];
     
     [self.titleTextView makeConstraints:^(MASConstraintMaker *make) {
@@ -158,18 +157,6 @@
         make.bottom.equalTo(self.contentView);
         make.top.equalTo(self.lineImageView.bottom).offset(5);
         
-    }];
-    
-    self.placeholderLabel = [[UILabel alloc] init];
-    self.placeholderLabel.text = @"请输入标题";
-    self.placeholderLabel.font = [UIFont systemFontOfSize:17.f];
-    self.placeholderLabel.textColor = [UIColor grayColor];
-    [self.contentView addSubview:self.placeholderLabel];
-    
-    [self.placeholderLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.titleTextView.left).offset(5);
-        make.right.equalTo(self.titleTextView.right);
-        make.top.equalTo(self.titleTextView.top).offset(5);
     }];
     
     self.gankTypeBtn = [[UIButton alloc] init];
@@ -268,17 +255,6 @@
         
     }];
     
-}
-
-#pragma mark UITextView Delegate
-- (void)textViewDidChange:(UITextView *)textView {
-    
-    if ([textView.text isEqualToString:@""]) {
-        self.placeholderLabel.hidden = NO;
-    }
-    else {
-        self.placeholderLabel.hidden = YES;
-    }
 }
 
 #pragma mark GKGankSubmitTypeListVC Delegate

@@ -51,6 +51,7 @@
 		D71E93892047E24E00FB34A5 /* GKGankSubmitTypeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E93882047E24E00FB34A5 /* GKGankSubmitTypeListVC.m */; };
 		D71E938C2047F4A400FB34A5 /* GKOpenSourceFrameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E938B2047F4A400FB34A5 /* GKOpenSourceFrameVC.m */; };
 		D71E938F204800F900FB34A5 /* NSObject+Tips.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E938D204800F800FB34A5 /* NSObject+Tips.m */; };
+		D72FCC30205F9FBC00AB0DE0 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D72FCC2F205F9FBC00AB0DE0 /* PlaceholderTextView.m */; };
 		D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D73B439E20317B70009A4F7D /* GKDiscoverVC.m */; };
 		D7550EF7203FA50800023A89 /* GKMyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF6203FA50800023A89 /* GKMyVC.m */; };
 		D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF9203FAE8000023A89 /* GKDonateVC.m */; };
@@ -94,6 +95,9 @@
 		D7A66B672030357700D25EA9 /* GKWelfareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B662030357700D25EA9 /* GKWelfareCell.m */; };
 		D7A66B6A20303D9100D25EA9 /* GKWelfareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B6920303D9100D25EA9 /* GKWelfareModel.m */; };
 		D7B831022032797B007F908D /* GKHistoryDateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B831012032797B007F908D /* GKHistoryDateVC.m */; };
+		D7FEAC6B205A029200C5AF47 /* GKToadyADCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FEAC6A205A029200C5AF47 /* GKToadyADCell.m */; };
+		D7FEAC6E205A048100C5AF47 /* GKTodayFooterADView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FEAC6D205A048100C5AF47 /* GKTodayFooterADView.m */; };
+		D7FEAC70205A15E900C5AF47 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FEAC6F205A15E900C5AF47 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +204,8 @@
 		D71E938B2047F4A400FB34A5 /* GKOpenSourceFrameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKOpenSourceFrameVC.m; sourceTree = "<group>"; };
 		D71E938D204800F800FB34A5 /* NSObject+Tips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Tips.m"; sourceTree = "<group>"; };
 		D71E938E204800F900FB34A5 /* NSObject+Tips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Tips.h"; sourceTree = "<group>"; };
+		D72FCC2E205F9FBC00AB0DE0 /* PlaceholderTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
+		D72FCC2F205F9FBC00AB0DE0 /* PlaceholderTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
 		D73B439D20317B70009A4F7D /* GKDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverVC.h; sourceTree = "<group>"; };
 		D73B439E20317B70009A4F7D /* GKDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverVC.m; sourceTree = "<group>"; };
 		D7550EF5203FA50800023A89 /* GKMyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKMyVC.h; sourceTree = "<group>"; };
@@ -291,6 +297,11 @@
 		D7A66B6920303D9100D25EA9 /* GKWelfareModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWelfareModel.m; sourceTree = "<group>"; };
 		D7B831002032797B007F908D /* GKHistoryDateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKHistoryDateVC.h; sourceTree = "<group>"; };
 		D7B831012032797B007F908D /* GKHistoryDateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKHistoryDateVC.m; sourceTree = "<group>"; };
+		D7FEAC69205A029200C5AF47 /* GKToadyADCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKToadyADCell.h; sourceTree = "<group>"; };
+		D7FEAC6A205A029200C5AF47 /* GKToadyADCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKToadyADCell.m; sourceTree = "<group>"; };
+		D7FEAC6C205A048100C5AF47 /* GKTodayFooterADView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKTodayFooterADView.h; sourceTree = "<group>"; };
+		D7FEAC6D205A048100C5AF47 /* GKTodayFooterADView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKTodayFooterADView.m; sourceTree = "<group>"; };
+		D7FEAC6F205A15E900C5AF47 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +309,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7FEAC70205A15E900C5AF47 /* StoreKit.framework in Frameworks */,
 				D61939BE202EA0F40081CB68 /* WebKit.framework in Frameworks */,
 				570D384E38021F8797BC6113 /* Pods_Gank_io.framework in Frameworks */,
 			);
@@ -323,6 +335,7 @@
 		0733373CF18088EB5B0061B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7FEAC6F205A15E900C5AF47 /* StoreKit.framework */,
 				D61939BD202EA0F40081CB68 /* WebKit.framework */,
 				742EBE2EAF90C128DD97BD04 /* Pods_Gank_io.framework */,
 			);
@@ -365,6 +378,8 @@
 				D61FF05B202EDE420084E9FA /* BaseViewController.m */,
 				D61939C0202EA2E60081CB68 /* BaseNavigationController.h */,
 				D61939C1202EA2E60081CB68 /* BaseNavigationController.m */,
+				D72FCC2E205F9FBC00AB0DE0 /* PlaceholderTextView.h */,
+				D72FCC2F205F9FBC00AB0DE0 /* PlaceholderTextView.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -680,6 +695,10 @@
 				D7665DD6202AD95100EF8B3A /* GKTodayCell.m */,
 				D79784A5202D910400B7913C /* GKTodayHeaderView.h */,
 				D79784A6202D910400B7913C /* GKTodayHeaderView.m */,
+				D7FEAC69205A029200C5AF47 /* GKToadyADCell.h */,
+				D7FEAC6A205A029200C5AF47 /* GKToadyADCell.m */,
+				D7FEAC6C205A048100C5AF47 /* GKTodayFooterADView.h */,
+				D7FEAC6D205A048100C5AF47 /* GKTodayFooterADView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1050,6 +1069,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
@@ -1064,6 +1084,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
@@ -1113,6 +1134,7 @@
 				D6C28CC1204594BA00E6F4DC /* GKAboutHeaderView.m in Sources */,
 				D61939BC202EA0E20081CB68 /* GKWebViewVC.m in Sources */,
 				D61FF05C202EDE420084E9FA /* BaseViewController.m in Sources */,
+				D7FEAC6B205A029200C5AF47 /* GKToadyADCell.m in Sources */,
 				D7665DD3202AD50B00EF8B3A /* GKTodayVC.m in Sources */,
 				D61939C2202EA2E60081CB68 /* BaseNavigationController.m in Sources */,
 				D79784A7202D910400B7913C /* GKTodayHeaderView.m in Sources */,
@@ -1140,6 +1162,7 @@
 				D7A66B592030145A00D25EA9 /* TADotView.m in Sources */,
 				D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */,
 				D7A66B5D2030145A00D25EA9 /* XLZoomingScrollView.m in Sources */,
+				D7FEAC6E205A048100C5AF47 /* GKTodayFooterADView.m in Sources */,
 				D7A66B5A2030145A00D25EA9 /* TAPageControl.m in Sources */,
 				D64A817820419DF900B81645 /* NSMutableDictionary+TrochilusPay.m in Sources */,
 				D7A66B612030345C00D25EA9 /* GKWelfareVC.m in Sources */,
@@ -1150,6 +1173,7 @@
 				D71E938F204800F900FB34A5 /* NSObject+Tips.m in Sources */,
 				D7A66B582030145A00D25EA9 /* TAAnimatedDotView.m in Sources */,
 				D77952A0203E9E6000AF0023 /* GKDiscoverListVC.m in Sources */,
+				D72FCC30205F9FBC00AB0DE0 /* PlaceholderTextView.m in Sources */,
 				D64A817B20419DF900B81645 /* TUser.m in Sources */,
 				D71E938C2047F4A400FB34A5 /* GKOpenSourceFrameVC.m in Sources */,
 				D6C28CBD2045900C00E6F4DC /* GKAbout.m in Sources */,
