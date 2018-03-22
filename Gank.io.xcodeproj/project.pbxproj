@@ -95,6 +95,16 @@
 		D7A66B672030357700D25EA9 /* GKWelfareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B662030357700D25EA9 /* GKWelfareCell.m */; };
 		D7A66B6A20303D9100D25EA9 /* GKWelfareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B6920303D9100D25EA9 /* GKWelfareModel.m */; };
 		D7B831022032797B007F908D /* GKHistoryDateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B831012032797B007F908D /* GKHistoryDateVC.m */; };
+		D7C1253D2060DC280015D4FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C1253C2060DC270015D4FD /* AVFoundation.framework */; };
+		D7C1253F2060DC300015D4FD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C1253E2060DC300015D4FD /* Security.framework */; };
+		D7C125412060DC370015D4FD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C125402060DC370015D4FD /* AdSupport.framework */; };
+		D7C125432060DC3E0015D4FD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C125422060DC3E0015D4FD /* CoreLocation.framework */; };
+		D7C125452060DC460015D4FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C125442060DC460015D4FD /* QuartzCore.framework */; };
+		D7C125472060DC4E0015D4FD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C125462060DC4E0015D4FD /* SystemConfiguration.framework */; };
+		D7C125492060DC560015D4FD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C125482060DC560015D4FD /* CoreTelephony.framework */; };
+		D7C1254B2060DC5E0015D4FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C1254A2060DC5E0015D4FD /* CoreGraphics.framework */; };
+		D7C1254D2060DCD70015D4FD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C1254C2060DCD60015D4FD /* libz.tbd */; };
+		D7C1254F2060DCF50015D4FD /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C1254E2060DCF50015D4FD /* libxml2.tbd */; };
 		D7FEAC6B205A029200C5AF47 /* GKToadyADCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FEAC6A205A029200C5AF47 /* GKToadyADCell.m */; };
 		D7FEAC6E205A048100C5AF47 /* GKTodayFooterADView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FEAC6D205A048100C5AF47 /* GKTodayFooterADView.m */; };
 		D7FEAC70205A15E900C5AF47 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FEAC6F205A15E900C5AF47 /* StoreKit.framework */; };
@@ -297,6 +307,16 @@
 		D7A66B6920303D9100D25EA9 /* GKWelfareModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWelfareModel.m; sourceTree = "<group>"; };
 		D7B831002032797B007F908D /* GKHistoryDateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKHistoryDateVC.h; sourceTree = "<group>"; };
 		D7B831012032797B007F908D /* GKHistoryDateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKHistoryDateVC.m; sourceTree = "<group>"; };
+		D7C1253C2060DC270015D4FD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D7C1253E2060DC300015D4FD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D7C125402060DC370015D4FD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D7C125422060DC3E0015D4FD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D7C125442060DC460015D4FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D7C125462060DC4E0015D4FD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D7C125482060DC560015D4FD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		D7C1254A2060DC5E0015D4FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D7C1254C2060DCD60015D4FD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D7C1254E2060DCF50015D4FD /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		D7FEAC69205A029200C5AF47 /* GKToadyADCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKToadyADCell.h; sourceTree = "<group>"; };
 		D7FEAC6A205A029200C5AF47 /* GKToadyADCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKToadyADCell.m; sourceTree = "<group>"; };
 		D7FEAC6C205A048100C5AF47 /* GKTodayFooterADView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKTodayFooterADView.h; sourceTree = "<group>"; };
@@ -309,7 +329,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C1254F2060DCF50015D4FD /* libxml2.tbd in Frameworks */,
 				D7FEAC70205A15E900C5AF47 /* StoreKit.framework in Frameworks */,
+				D7C1253F2060DC300015D4FD /* Security.framework in Frameworks */,
+				D7C1254D2060DCD70015D4FD /* libz.tbd in Frameworks */,
+				D7C1254B2060DC5E0015D4FD /* CoreGraphics.framework in Frameworks */,
+				D7C125492060DC560015D4FD /* CoreTelephony.framework in Frameworks */,
+				D7C125472060DC4E0015D4FD /* SystemConfiguration.framework in Frameworks */,
+				D7C125452060DC460015D4FD /* QuartzCore.framework in Frameworks */,
+				D7C125432060DC3E0015D4FD /* CoreLocation.framework in Frameworks */,
+				D7C125412060DC370015D4FD /* AdSupport.framework in Frameworks */,
+				D7C1253D2060DC280015D4FD /* AVFoundation.framework in Frameworks */,
 				D61939BE202EA0F40081CB68 /* WebKit.framework in Frameworks */,
 				570D384E38021F8797BC6113 /* Pods_Gank_io.framework in Frameworks */,
 			);
@@ -335,6 +365,16 @@
 		0733373CF18088EB5B0061B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7C1254E2060DCF50015D4FD /* libxml2.tbd */,
+				D7C1254C2060DCD60015D4FD /* libz.tbd */,
+				D7C1254A2060DC5E0015D4FD /* CoreGraphics.framework */,
+				D7C125482060DC560015D4FD /* CoreTelephony.framework */,
+				D7C125462060DC4E0015D4FD /* SystemConfiguration.framework */,
+				D7C125442060DC460015D4FD /* QuartzCore.framework */,
+				D7C125422060DC3E0015D4FD /* CoreLocation.framework */,
+				D7C125402060DC370015D4FD /* AdSupport.framework */,
+				D7C1253E2060DC300015D4FD /* Security.framework */,
+				D7C1253C2060DC270015D4FD /* AVFoundation.framework */,
 				D7FEAC6F205A15E900C5AF47 /* StoreKit.framework */,
 				D61939BD202EA0F40081CB68 /* WebKit.framework */,
 				742EBE2EAF90C128DD97BD04 /* Pods_Gank_io.framework */,
@@ -1349,6 +1389,10 @@
 				INFOPLIST_FILE = Gank.io/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Gank.io/Third/GDTMob/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wangquanwei.GankIO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1369,6 +1413,10 @@
 				INFOPLIST_FILE = Gank.io/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Gank.io/Third/GDTMob/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wangquanwei.GankIO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

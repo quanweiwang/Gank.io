@@ -281,7 +281,7 @@ static NSString * cellStr = @"cell";
         }
         
     }
-    else if ([titleStr isEqualToString:@"用户反馈"]) {
+    else if ([titleStr isEqualToString:@"瞎吐槽"]) {
         
         if ([GKUserManager isLogin]) {
             GKFeedbackVC * vc = [[GKFeedbackVC alloc] init];
@@ -327,7 +327,7 @@ static NSString * cellStr = @"cell";
         if ([Trochilus isAliPayInstalled]) {
             [_cellTitleArray addObject:@[@"打赏"]];
         }
-        [_cellTitleArray addObject:@[@"干货爆料",@"用户反馈",@"系统设置"]];
+        [_cellTitleArray addObject:@[@"干货爆料",@"瞎吐槽",@"系统设置"]];
         [_cellTitleArray addObject:@[@"退出登录"]];
     }
     

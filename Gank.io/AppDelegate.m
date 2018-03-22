@@ -34,10 +34,10 @@
     self.window.rootViewController = [[GKTabBarController alloc] init];
     [self.window makeKeyAndVisible];
     
-    [IMSdk initWithAccountID:kINMOBIKEY];
-    [IMSdk setLogLevel:kIMSDKLogLevelDebug];
-    
     [Bugtags startWithAppKey:kBUGTAGSKEY invocationEvent:BTGInvocationEventNone];
+    
+    [IMSdk initWithAccountID:kINMOBIACCOUNTID];
+    [IMSdk setLogLevel:kIMSDKLogLevelDebug];
     
     [self reachabilityNetworkStatus];
     

@@ -22,10 +22,7 @@
 #define SUBMITDEBUG @"false"
 #endif
 
-#define kINMOBIKEY @"b49f65de091f4ab9b11e44019b1c2bbb"
-
-//adView
-#define kADVIEWKEY @"SDK20181613040301ejjupvee8ck0mv5"
+#define kINMOBIACCOUNTID @"b49f65de091f4ab9b11e44019b1c2bbb"
 
 //wechat
 #define kWECHATKEY @"wx2b2472cf1fb9c149"

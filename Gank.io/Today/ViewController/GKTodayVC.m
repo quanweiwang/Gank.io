@@ -13,6 +13,7 @@
 #import "GKHistoryModel.h"
 #import "GKToadyADCell.h"
 #import <StoreKit/StoreKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface GKTodayVC ()<UITableViewDelegate,UITableViewDataSource,XLPhotoBrowserDelegate, XLPhotoBrowserDatasource,IMNativeDelegate,SKStoreProductViewControllerDelegate>
 

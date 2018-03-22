@@ -8,11 +8,14 @@
 
 #import "GKHistoryDateVC.h"
 #import "GKTodayVC.h"
+#import <FSCalendar/FSCalendar.h>
 
-@interface GKHistoryDateVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface GKHistoryDateVC ()<FSCalendarDataSource, FSCalendarDelegate,FSCalendarDelegateAppearance>
 
 @property(strong, nonatomic) UITableView * table;
 @property(strong, nonatomic) NSMutableArray * data;
+@property (weak, nonatomic) FSCalendar *calendar;
+@property(strong, nonatomic) NSDateFormatter *dateFormatter;
 @end
 
 @implementation GKHistoryDateVC
@@ -21,8 +24,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //初始化
-    [self initUI];
     //网络请求
     [self gankDayList];
 }
@@ -36,29 +37,37 @@
     
     self.title = @"日期";
     
-    //table
-    self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    self.table.delegate = self;
-    self.table.dataSource = self;
-    self.table.estimatedSectionHeaderHeight = 0;
-    self.table.estimatedSectionFooterHeight = 0;
-    self.table.estimatedRowHeight = 108;
-    [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [self.view addSubview:self.table];
+    FSCalendar *calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, 0, kSCREENWIDTH, 300)];
+    calendar.dataSource = self;
+    calendar.delegate = self;
+    calendar.backgroundColor = [UIColor whiteColor];
+    calendar.appearance.caseOptions = FSCalendarCaseOptionsHeaderUsesUpperCase|FSCalendarCaseOptionsWeekdayUsesSingleUpperCase;
+    [self.view addSubview:calendar];
+    self.calendar = calendar;
     
-    [self.table makeConstraints:^(MASConstraintMaker *make) {
-        
-        if (@available(iOS 11.0, *)) {
-            make.top.equalTo(self.view.safeAreaLayoutGuideTop).offset(0);
-            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft).offset(0);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(0);
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(0);
-        } else {
-            // Fallback on earlier versions
-            make.top.left.bottom.right.equalTo(self.view);
-        }
-        
-    }];
+//    //table
+//    self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+//    self.table.delegate = self;
+//    self.table.dataSource = self;
+//    self.table.estimatedSectionHeaderHeight = 0;
+//    self.table.estimatedSectionFooterHeight = 0;
+//    self.table.estimatedRowHeight = 108;
+//    [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+//    [self.view addSubview:self.table];
+//
+//    [self.table makeConstraints:^(MASConstraintMaker *make) {
+//
+//        if (@available(iOS 11.0, *)) {
+//            make.top.equalTo(self.view.safeAreaLayoutGuideTop).offset(0);
+//            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft).offset(0);
+//            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(0);
+//            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(0);
+//        } else {
+//            // Fallback on earlier versions
+//            make.top.left.bottom.right.equalTo(self.view);
+//        }
+//
+//    }];
 }
 
 #pragma mark 网络请求
@@ -72,7 +81,10 @@
         
         if ([[responseObj objectForKey:@"error"] integerValue] == 0) {
             self.data = [responseObj objectForKey:@"results"];
-            [self.table reloadData];
+            
+            //初始化
+            [self initUI];
+            
         }
         
     } failure:^(NSError *error) {
@@ -81,51 +93,40 @@
 
 }
 
-#pragma mark tableView相关
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.data.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance fillDefaultColorForDate:(NSDate *)date
+{
     
-    return UITableViewAutomaticDimension;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0.001f;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.001f;
-}
-
-static NSString * cellStr = @"cell";
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *currentDateString = [self.dateFormatter stringFromDate:date];
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellStr forIndexPath:indexPath];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
+    for (NSString * dateStr in self.data) {
+        if ([currentDateString containsString:dateStr]) {
+            return [UIColor yellowColor];
+        }
     }
     
-    cell.textLabel.text = [self.data safeObjectAtIndex:indexPath.row];
-    
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    return cell;
+    return nil;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (BOOL)calendar:(FSCalendar *)calendar shouldSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition {
     
+    NSString *currentDateString = [self.dateFormatter stringFromDate:date];
+    for (NSString * dateStr in self.data) {
+        if ([currentDateString containsString:dateStr]) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition {
+    
+    NSString *currentDateString = [self.dateFormatter stringFromDate:date];
     GKTodayVC * vc = [[GKTodayVC alloc] init];
     vc.type = GankTypeHistory;
-    vc.dateStr = [self.data safeObjectAtIndex:indexPath.row];
+    vc.dateStr = currentDateString;
     [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 #pragma mark 懒加载
@@ -134,6 +135,16 @@ static NSString * cellStr = @"cell";
         _data = [NSMutableArray array];
     }
     return _data;
+}
+
+- (NSDateFormatter *)dateFormatter {
+    
+    if (_dateFormatter == nil) {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        _dateFormatter.dateFormat = @"yyyy-MM-dd";
+    }
+    
+    return _dateFormatter;
 }
 
 @end

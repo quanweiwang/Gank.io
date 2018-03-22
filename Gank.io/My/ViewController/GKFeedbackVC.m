@@ -45,7 +45,7 @@
 
 - (void)initUI {
     
-    self.title = @"用户反馈";
+    self.title = @"瞎吐槽";
     
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
