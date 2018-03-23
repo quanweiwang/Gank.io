@@ -32,7 +32,7 @@
 
 - (void)initUI {
     
-    self.title = @"开源组件";
+    self.title = @"开源框架";
     
     self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     self.table.delegate = self;

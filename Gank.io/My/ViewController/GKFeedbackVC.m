@@ -61,6 +61,13 @@
             [Bugtags sendFeedback:self.textView.text];
             
             [self showMessageTip:@"发送成功" detail:nil timeOut:1.5f];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                @strongObj(self)
+                [self.navigationController popViewControllerAnimated:YES];
+            });
+            
+            
         }
         
     }];

@@ -352,11 +352,11 @@ static NSString * adCellStr = @"adcell";
         if (self.nativeAD.isAppDownload) {
             
             NSString * str = [self.nativeAD.adLandingPageUrl absoluteString];
-            NSRange idRange = [str rangeOfString:@"id"];
-            NSRange questionMarkRange = [str rangeOfString:@"?"];
+            NSArray * array = [str componentsSeparatedByString:@"id"];
+            NSString * itunesIdStr = [array safeObjectAtIndex:1];
+            NSArray * itunesIdArray = [itunesIdStr componentsSeparatedByString:@"?"];
             
-            NSRange range = NSMakeRange(idRange.location+2, questionMarkRange.location-idRange.location-2);
-            NSString * appstoreId = [[self.nativeAD.adLandingPageUrl absoluteString] substringWithRange:range];
+            NSString * appstoreId = [itunesIdArray safeObjectAtIndex:0];
             
             SKStoreProductViewController *storeProductVC = [[SKStoreProductViewController alloc] init];
             storeProductVC.delegate = self;

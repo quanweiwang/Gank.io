@@ -12,7 +12,6 @@
 
 @interface GKHistoryDateVC ()<FSCalendarDataSource, FSCalendarDelegate,FSCalendarDelegateAppearance>
 
-@property(strong, nonatomic) UITableView * table;
 @property(strong, nonatomic) NSMutableArray * data;
 @property (weak, nonatomic) FSCalendar *calendar;
 @property(strong, nonatomic) NSDateFormatter *dateFormatter;
@@ -37,37 +36,14 @@
     
     self.title = @"日期";
     
-    FSCalendar *calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, 0, kSCREENWIDTH, 300)];
+    FSCalendar *calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(10, 0, kSCREENWIDTH-20, 300)];
     calendar.dataSource = self;
     calendar.delegate = self;
     calendar.backgroundColor = [UIColor whiteColor];
     calendar.appearance.caseOptions = FSCalendarCaseOptionsHeaderUsesUpperCase|FSCalendarCaseOptionsWeekdayUsesSingleUpperCase;
     [self.view addSubview:calendar];
     self.calendar = calendar;
-    
-//    //table
-//    self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-//    self.table.delegate = self;
-//    self.table.dataSource = self;
-//    self.table.estimatedSectionHeaderHeight = 0;
-//    self.table.estimatedSectionFooterHeight = 0;
-//    self.table.estimatedRowHeight = 108;
-//    [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-//    [self.view addSubview:self.table];
-//
-//    [self.table makeConstraints:^(MASConstraintMaker *make) {
-//
-//        if (@available(iOS 11.0, *)) {
-//            make.top.equalTo(self.view.safeAreaLayoutGuideTop).offset(0);
-//            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft).offset(0);
-//            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(0);
-//            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(0);
-//        } else {
-//            // Fallback on earlier versions
-//            make.top.left.bottom.right.equalTo(self.view);
-//        }
-//
-//    }];
+
 }
 
 #pragma mark 网络请求

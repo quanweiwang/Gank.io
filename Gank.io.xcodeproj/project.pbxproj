@@ -43,7 +43,6 @@
 		D6C28CC420459C7600E6F4DC /* GKCopyreaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C28CC320459C7600E6F4DC /* GKCopyreaderVC.m */; };
 		D6C383C2204427DC00CC9AEE /* GKShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C383C1204427DC00CC9AEE /* GKShareVC.m */; };
 		D6C383C720442B0E00CC9AEE /* GKShareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C383C620442B0E00CC9AEE /* GKShareCell.m */; };
-		D701B01D204E2B4A006775B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D701B01C204E2B49006775B5 /* GoogleService-Info.plist */; };
 		D701B023204E6E40006775B5 /* GKFeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D701B022204E6E40006775B5 /* GKFeedbackVC.m */; };
 		D7171C4820465A8C00517B50 /* GKCopyreaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7171C4720465A8C00517B50 /* GKCopyreaderCell.m */; };
 		D71E93822047A28800FB34A5 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = D71E93812047A28800FB34A5 /* loading.png */; };
@@ -199,7 +198,6 @@
 		D6C383C1204427DC00CC9AEE /* GKShareVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKShareVC.m; sourceTree = "<group>"; };
 		D6C383C520442B0E00CC9AEE /* GKShareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKShareCell.h; sourceTree = "<group>"; };
 		D6C383C620442B0E00CC9AEE /* GKShareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKShareCell.m; sourceTree = "<group>"; };
-		D701B01C204E2B49006775B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D701B021204E6E40006775B5 /* GKFeedbackVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKFeedbackVC.h; sourceTree = "<group>"; };
 		D701B022204E6E40006775B5 /* GKFeedbackVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKFeedbackVC.m; sourceTree = "<group>"; };
 		D7171C4620465A8C00517B50 /* GKCopyreaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKCopyreaderCell.h; sourceTree = "<group>"; };
@@ -681,7 +679,6 @@
 				D7665DA5202AA32800EF8B3A /* Assets.xcassets */,
 				D7665DA7202AA32800EF8B3A /* LaunchScreen.storyboard */,
 				D7665DAA202AA32800EF8B3A /* Info.plist */,
-				D701B01C204E2B49006775B5 /* GoogleService-Info.plist */,
 				D7665DAB202AA32800EF8B3A /* main.m */,
 				D7665DCE202AAC7B00EF8B3A /* GKTabBarController.h */,
 				D7665DCF202AAC7B00EF8B3A /* GKTabBarController.m */,
@@ -1042,7 +1039,6 @@
 				D7665DA6202AA32800EF8B3A /* Assets.xcassets in Resources */,
 				D64A81812041B49900B81645 /* LaunchScreen.storyboard in Resources */,
 				D7A66B562030145A00D25EA9 /* FSActionSheet_cancel@3x.png in Resources */,
-				D701B01D204E2B4A006775B5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
