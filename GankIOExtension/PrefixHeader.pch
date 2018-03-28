@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  Gank.io
+//
+//  Created by 王权伟 on 2018/2/7.
+//  Copyright © 2018年 王权伟. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//AutoLayout
+//define this constant if you want to use Masonry without the 'mas_' prefix
+#define MAS_SHORTHAND
+
+//define this constant if you want to enable auto-boxing for default syntax
+#define MAS_SHORTHAND_GLOBALS
+
+#import "Masonry.h"
+#import "BlocksKit/BlocksKit.h"
+#import <BlocksKit/BlocksKit+UIKit.h>
+#import <AFNetworking/AFNetworking.h>
+
+#import "GKMacro.h"
+
+//Categories
+#import "UIColor+Util.h"
+#import "NSObject+TipsExtension.h"
+#import "NSArray+Util.h"
+#import "NSString+Util.h"
+#import "NSDictionary+Util.h"
+
+//#import "Trochilus.h"
+
+#endif /* PrefixHeader_pch */

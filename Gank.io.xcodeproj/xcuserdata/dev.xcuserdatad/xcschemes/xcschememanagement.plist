@@ -7,11 +7,31 @@
 		<key>Gank.io.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>0</integer>
+		</dict>
+		<key>GankIOActionExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
+		<key>GankIOExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>D701F83B206B68E700DF4E0D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D701F84E206B69F400DF4E0D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D7665D98202AA32800EF8B3A</key>
 		<dict>
 			<key>primary</key>
