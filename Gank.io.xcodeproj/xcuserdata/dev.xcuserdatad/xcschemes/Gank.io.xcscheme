@@ -49,6 +49,16 @@
                ReferencedContainer = "container:Gank.io.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D73F218D206C85CC006BF63A"
+               BuildableName = "GankIOKitTests.xctest"
+               BlueprintName = "GankIOKitTests"
+               ReferencedContainer = "container:Gank.io.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

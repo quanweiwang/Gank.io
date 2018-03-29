@@ -44,13 +44,23 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D73F218D206C85CC006BF63A"
+               BuildableName = "GankIOKitTests.xctest"
+               BlueprintName = "GankIOKitTests"
+               ReferencedContainer = "container:Gank.io.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D701F84E206B69F400DF4E0D"
-            BuildableName = "GankIOExtension.appex"
-            BlueprintName = "GankIOExtension"
+            BlueprintIdentifier = "D7665D98202AA32800EF8B3A"
+            BuildableName = "Gank.io.app"
+            BlueprintName = "Gank.io"
             ReferencedContainer = "container:Gank.io.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

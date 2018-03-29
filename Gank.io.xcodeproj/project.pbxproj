@@ -46,13 +46,6 @@
 		D701B023204E6E40006775B5 /* GKFeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D701B022204E6E40006775B5 /* GKFeedbackVC.m */; };
 		D701F856206B69F400DF4E0D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D701F854206B69F400DF4E0D /* MainInterface.storyboard */; };
 		D701F85A206B69F400DF4E0D /* GankIOExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D701F84F206B69F400DF4E0D /* GankIOExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D701F860206B6F0300DF4E0D /* GKSubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D701F85F206B6F0300DF4E0D /* GKSubmitViewController.m */; };
-		D701F884206B8A8100DF4E0D /* GKSubmitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D701F883206B8A8100DF4E0D /* GKSubmitCell.m */; };
-		D701F89E206B91DC00DF4E0D /* NSArray+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D701F890206B91DC00DF4E0D /* NSArray+Util.m */; };
-		D701F89F206B91DC00DF4E0D /* NSDictionary+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D701F892206B91DC00DF4E0D /* NSDictionary+Util.m */; };
-		D701F8A0206B91DC00DF4E0D /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D701F894206B91DC00DF4E0D /* NSString+Util.m */; };
-		D701F8A1206B91DC00DF4E0D /* NSObject+TipsExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D701F897206B91DC00DF4E0D /* NSObject+TipsExtension.m */; };
-		D701F8A2206B91DC00DF4E0D /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D701F899206B91DC00DF4E0D /* UIColor+Util.m */; };
 		D701F8A5206B9BCB00DF4E0D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8B2206B9BCB00DF4E0D /* AFNetworking.framework */; };
 		D701F8A6206B9BCB00DF4E0D /* BlocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8B3206B9BCB00DF4E0D /* BlocksKit.framework */; };
 		D701F8AA206B9BCB00DF4E0D /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8B7206B9BCB00DF4E0D /* Masonry.framework */; };
@@ -68,17 +61,29 @@
 		D701F8C6206B9D9600DF4E0D /* WRNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8CE206B9D9600DF4E0D /* WRNavigationBar.framework */; };
 		D7171C4820465A8C00517B50 /* GKCopyreaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7171C4720465A8C00517B50 /* GKCopyreaderCell.m */; };
 		D71E93822047A28800FB34A5 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = D71E93812047A28800FB34A5 /* loading.png */; };
-		D71E93852047A62900FB34A5 /* GKGankSubmitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E93842047A62900FB34A5 /* GKGankSubmitVC.m */; };
-		D71E93892047E24E00FB34A5 /* GKGankSubmitTypeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E93882047E24E00FB34A5 /* GKGankSubmitTypeListVC.m */; };
 		D71E938C2047F4A400FB34A5 /* GKOpenSourceFrameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E938B2047F4A400FB34A5 /* GKOpenSourceFrameVC.m */; };
 		D71E938F204800F900FB34A5 /* NSObject+Tips.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E938D204800F800FB34A5 /* NSObject+Tips.m */; };
 		D72FCC30205F9FBC00AB0DE0 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D72FCC2F205F9FBC00AB0DE0 /* PlaceholderTextView.m */; };
 		D73B439F20317B70009A4F7D /* GKDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D73B439E20317B70009A4F7D /* GKDiscoverVC.m */; };
+		D73F218F206C85CC006BF63A /* GankIOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73F2186206C85CC006BF63A /* GankIOKit.framework */; };
+		D73F2196206C85CC006BF63A /* GankIOKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D73F2195206C85CC006BF63A /* GankIOKitTests.m */; };
+		D73F2198206C85CC006BF63A /* GankIOKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D73F2188206C85CC006BF63A /* GankIOKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D73F219B206C85CC006BF63A /* GankIOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73F2186206C85CC006BF63A /* GankIOKit.framework */; };
+		D73F219C206C85CC006BF63A /* GankIOKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D73F2186206C85CC006BF63A /* GankIOKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D73F21A4206C8614006BF63A /* GankIOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73F2186206C85CC006BF63A /* GankIOKit.framework */; };
+		D73F21A5206C8641006BF63A /* UIColor+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = D79784A2202D8EE900B7913C /* UIColor+Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D73F21A7206C8647006BF63A /* NSArray+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A66B28202FDB7F00D25EA9 /* NSArray+Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D73F21A9206C868A006BF63A /* NSArray+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B29202FDB7F00D25EA9 /* NSArray+Util.m */; };
+		D73F21AA206C8693006BF63A /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784A3202D8EE900B7913C /* UIColor+Util.m */; };
+		D73F21B5206C8AEB006BF63A /* GKSubmitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D73F21B1206C8AEA006BF63A /* GKSubmitCell.m */; };
+		D73F21B6206C8AEB006BF63A /* GKSubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D73F21B4206C8AEB006BF63A /* GKSubmitViewController.m */; };
+		D73F21BB206C8AF5006BF63A /* GKGankSubmitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D73F21B8206C8AF4006BF63A /* GKGankSubmitVC.m */; };
+		D73F21BC206C8AF5006BF63A /* GKGankSubmitTypeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D73F21BA206C8AF4006BF63A /* GKGankSubmitTypeListVC.m */; };
+		D73F21CD206C8B1F006BF63A /* NSObject+TipsExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D73F21C7206C8B1F006BF63A /* NSObject+TipsExtension.m */; };
 		D7550EF7203FA50800023A89 /* GKMyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF6203FA50800023A89 /* GKMyVC.m */; };
 		D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550EF9203FAE8000023A89 /* GKDonateVC.m */; };
 		D7550F0120400EC700023A89 /* GKUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7550F0020400EC700023A89 /* GKUserManager.m */; };
 		D7665D9E202AA32800EF8B3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665D9D202AA32800EF8B3A /* AppDelegate.m */; };
-		D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DA0202AA32800EF8B3A /* ViewController.m */; };
 		D7665DA6202AA32800EF8B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7665DA5202AA32800EF8B3A /* Assets.xcassets */; };
 		D7665DAC202AA32800EF8B3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DAB202AA32800EF8B3A /* main.m */; };
 		D7665DB6202AA32800EF8B3A /* Gank_ioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7665DB5202AA32800EF8B3A /* Gank_ioTests.m */; };
@@ -92,11 +97,9 @@
 		D77952A3203EA1C700AF0023 /* GKDiscoverListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D77952A2203EA1C700AF0023 /* GKDiscoverListCell.m */; };
 		D77952A8203EA48C00AF0023 /* GKDiscoverListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D77952A7203EA48C00AF0023 /* GKDiscoverListModel.m */; };
 		D77952B5203EC76F00AF0023 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D77952B4203EC76F00AF0023 /* UIImage+Util.m */; };
-		D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784A3202D8EE900B7913C /* UIColor+Util.m */; };
 		D79784A7202D910400B7913C /* GKTodayHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784A6202D910400B7913C /* GKTodayHeaderView.m */; };
 		D79784AB202D9A9E00B7913C /* GKNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784AA202D9A9E00B7913C /* GKNetwork.m */; };
 		D79784B0202DA6C300B7913C /* GKTodayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79784AF202DA6C300B7913C /* GKTodayModel.m */; };
-		D7A66B2A202FDB7F00D25EA9 /* NSArray+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B29202FDB7F00D25EA9 /* NSArray+Util.m */; };
 		D7A66B4F2030145A00D25EA9 /* UIImage+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B2E2030145A00D25EA9 /* UIImage+XLExtension.m */; };
 		D7A66B502030145A00D25EA9 /* UIView+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B302030145A00D25EA9 /* UIView+XLExtension.m */; };
 		D7A66B512030145A00D25EA9 /* FSActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A66B342030145A00D25EA9 /* FSActionSheet.m */; };
@@ -139,6 +142,27 @@
 			remoteGlobalIDString = D701F84E206B69F400DF4E0D;
 			remoteInfo = GankIOExtension;
 		};
+		D73F2190206C85CC006BF63A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7665D91202AA32800EF8B3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D73F2185206C85CC006BF63A;
+			remoteInfo = GankIOKit;
+		};
+		D73F2192206C85CC006BF63A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7665D91202AA32800EF8B3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7665D98202AA32800EF8B3A;
+			remoteInfo = Gank.io;
+		};
+		D73F2199206C85CC006BF63A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7665D91202AA32800EF8B3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D73F2185206C85CC006BF63A;
+			remoteInfo = GankIOKit;
+		};
 		D7665DB2202AA32800EF8B3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D7665D91202AA32800EF8B3A /* Project object */;
@@ -165,6 +189,17 @@
 				D701F85A206B69F400DF4E0D /* GankIOExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73F21A0206C85CD006BF63A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D73F219C206C85CC006BF63A /* GankIOKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -246,24 +281,10 @@
 		D701F84F206B69F400DF4E0D /* GankIOExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GankIOExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D701F855206B69F400DF4E0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		D701F857206B69F400DF4E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D701F85E206B6F0300DF4E0D /* GKSubmitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKSubmitViewController.h; sourceTree = "<group>"; };
-		D701F85F206B6F0300DF4E0D /* GKSubmitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKSubmitViewController.m; sourceTree = "<group>"; };
 		D701F862206B70A800DF4E0D /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D701F864206B717500DF4E0D /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D701F876206B746000DF4E0D /* GKMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKMacro.h; sourceTree = "<group>"; };
 		D701F87E206B74A300DF4E0D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		D701F882206B8A8100DF4E0D /* GKSubmitCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKSubmitCell.h; sourceTree = "<group>"; };
-		D701F883206B8A8100DF4E0D /* GKSubmitCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKSubmitCell.m; sourceTree = "<group>"; };
-		D701F88F206B91DC00DF4E0D /* NSArray+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Util.h"; sourceTree = "<group>"; };
-		D701F890206B91DC00DF4E0D /* NSArray+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Util.m"; sourceTree = "<group>"; };
-		D701F891206B91DC00DF4E0D /* NSDictionary+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Util.h"; sourceTree = "<group>"; };
-		D701F892206B91DC00DF4E0D /* NSDictionary+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Util.m"; sourceTree = "<group>"; };
-		D701F893206B91DC00DF4E0D /* NSString+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
-		D701F894206B91DC00DF4E0D /* NSString+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Util.m"; sourceTree = "<group>"; };
-		D701F896206B91DC00DF4E0D /* NSObject+TipsExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TipsExtension.h"; sourceTree = "<group>"; };
-		D701F897206B91DC00DF4E0D /* NSObject+TipsExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TipsExtension.m"; sourceTree = "<group>"; };
-		D701F898206B91DC00DF4E0D /* UIColor+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
-		D701F899206B91DC00DF4E0D /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
 		D701F8B2206B9BCB00DF4E0D /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D701F8B3206B9BCB00DF4E0D /* BlocksKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BlocksKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D701F8B4206B9BCB00DF4E0D /* FLAnimatedImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FLAnimatedImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,10 +310,6 @@
 		D7171C4720465A8C00517B50 /* GKCopyreaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKCopyreaderCell.m; sourceTree = "<group>"; };
 		D7171C4920467CF600517B50 /* Gank.io.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gank.io.entitlements; sourceTree = "<group>"; };
 		D71E93812047A28800FB34A5 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
-		D71E93832047A62900FB34A5 /* GKGankSubmitVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKGankSubmitVC.h; sourceTree = "<group>"; };
-		D71E93842047A62900FB34A5 /* GKGankSubmitVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKGankSubmitVC.m; sourceTree = "<group>"; };
-		D71E93872047E24E00FB34A5 /* GKGankSubmitTypeListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKGankSubmitTypeListVC.h; sourceTree = "<group>"; };
-		D71E93882047E24E00FB34A5 /* GKGankSubmitTypeListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKGankSubmitTypeListVC.m; sourceTree = "<group>"; };
 		D71E938A2047F4A400FB34A5 /* GKOpenSourceFrameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKOpenSourceFrameVC.h; sourceTree = "<group>"; };
 		D71E938B2047F4A400FB34A5 /* GKOpenSourceFrameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKOpenSourceFrameVC.m; sourceTree = "<group>"; };
 		D71E938D204800F800FB34A5 /* NSObject+Tips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Tips.m"; sourceTree = "<group>"; };
@@ -301,6 +318,22 @@
 		D72FCC2F205F9FBC00AB0DE0 /* PlaceholderTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
 		D73B439D20317B70009A4F7D /* GKDiscoverVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverVC.h; sourceTree = "<group>"; };
 		D73B439E20317B70009A4F7D /* GKDiscoverVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverVC.m; sourceTree = "<group>"; };
+		D73F2186206C85CC006BF63A /* GankIOKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GankIOKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D73F2188206C85CC006BF63A /* GankIOKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GankIOKit.h; sourceTree = "<group>"; };
+		D73F2189206C85CC006BF63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D73F218E206C85CC006BF63A /* GankIOKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GankIOKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D73F2195206C85CC006BF63A /* GankIOKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GankIOKitTests.m; sourceTree = "<group>"; };
+		D73F2197206C85CC006BF63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D73F21B1206C8AEA006BF63A /* GKSubmitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKSubmitCell.m; sourceTree = "<group>"; };
+		D73F21B2206C8AEA006BF63A /* GKSubmitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKSubmitViewController.h; sourceTree = "<group>"; };
+		D73F21B3206C8AEB006BF63A /* GKSubmitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKSubmitCell.h; sourceTree = "<group>"; };
+		D73F21B4206C8AEB006BF63A /* GKSubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKSubmitViewController.m; sourceTree = "<group>"; };
+		D73F21B7206C8AF4006BF63A /* GKGankSubmitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKGankSubmitVC.h; sourceTree = "<group>"; };
+		D73F21B8206C8AF4006BF63A /* GKGankSubmitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKGankSubmitVC.m; sourceTree = "<group>"; };
+		D73F21B9206C8AF4006BF63A /* GKGankSubmitTypeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKGankSubmitTypeListVC.h; sourceTree = "<group>"; };
+		D73F21BA206C8AF4006BF63A /* GKGankSubmitTypeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKGankSubmitTypeListVC.m; sourceTree = "<group>"; };
+		D73F21C6206C8B1F006BF63A /* NSObject+TipsExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TipsExtension.h"; sourceTree = "<group>"; };
+		D73F21C7206C8B1F006BF63A /* NSObject+TipsExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TipsExtension.m"; sourceTree = "<group>"; };
 		D7550EF5203FA50800023A89 /* GKMyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKMyVC.h; sourceTree = "<group>"; };
 		D7550EF6203FA50800023A89 /* GKMyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKMyVC.m; sourceTree = "<group>"; };
 		D7550EF8203FAE8000023A89 /* GKDonateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDonateVC.h; sourceTree = "<group>"; };
@@ -310,8 +343,6 @@
 		D7665D99202AA32800EF8B3A /* Gank.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gank.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7665D9C202AA32800EF8B3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7665D9D202AA32800EF8B3A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D7665D9F202AA32800EF8B3A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D7665DA0202AA32800EF8B3A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D7665DA5202AA32800EF8B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7665DA8202AA32800EF8B3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7665DAA202AA32800EF8B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -412,6 +443,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D73F21A4206C8614006BF63A /* GankIOKit.framework in Frameworks */,
 				D701F8BF206B9D9600DF4E0D /* FLAnimatedImage.framework in Frameworks */,
 				D701F8C0206B9D9600DF4E0D /* FSCalendar.framework in Frameworks */,
 				D701F8C1206B9D9600DF4E0D /* IQKeyboardManager.framework in Frameworks */,
@@ -428,6 +460,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D73F2182206C85CC006BF63A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73F218B206C85CC006BF63A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D73F218F206C85CC006BF63A /* GankIOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7665D96202AA32800EF8B3A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,6 +485,7 @@
 				D7C1254D2060DCD70015D4FD /* libz.tbd in Frameworks */,
 				D7C1254B2060DC5E0015D4FD /* CoreGraphics.framework in Frameworks */,
 				D7C125492060DC560015D4FD /* CoreTelephony.framework in Frameworks */,
+				D73F219B206C85CC006BF63A /* GankIOKit.framework in Frameworks */,
 				D7C125472060DC4E0015D4FD /* SystemConfiguration.framework in Frameworks */,
 				D7C125452060DC460015D4FD /* QuartzCore.framework in Frameworks */,
 				D7C125432060DC3E0015D4FD /* CoreLocation.framework in Frameworks */,
@@ -692,50 +740,17 @@
 		D701F850206B69F400DF4E0D /* GankIOExtension */ = {
 			isa = PBXGroup;
 			children = (
-				D701F88D206B91DC00DF4E0D /* Categories */,
+				D73F21BD206C8B1F006BF63A /* Categories */,
+				D73F21B3206C8AEB006BF63A /* GKSubmitCell.h */,
+				D73F21B1206C8AEA006BF63A /* GKSubmitCell.m */,
+				D73F21B2206C8AEA006BF63A /* GKSubmitViewController.h */,
+				D73F21B4206C8AEB006BF63A /* GKSubmitViewController.m */,
 				D701F876206B746000DF4E0D /* GKMacro.h */,
 				D701F854206B69F400DF4E0D /* MainInterface.storyboard */,
 				D701F857206B69F400DF4E0D /* Info.plist */,
-				D701F85E206B6F0300DF4E0D /* GKSubmitViewController.h */,
-				D701F85F206B6F0300DF4E0D /* GKSubmitViewController.m */,
-				D701F882206B8A8100DF4E0D /* GKSubmitCell.h */,
-				D701F883206B8A8100DF4E0D /* GKSubmitCell.m */,
 				D701F87E206B74A300DF4E0D /* PrefixHeader.pch */,
 			);
 			path = GankIOExtension;
-			sourceTree = "<group>";
-		};
-		D701F88D206B91DC00DF4E0D /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				D701F88E206B91DC00DF4E0D /* Core */,
-				D701F895206B91DC00DF4E0D /* UIKit */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		D701F88E206B91DC00DF4E0D /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				D701F88F206B91DC00DF4E0D /* NSArray+Util.h */,
-				D701F890206B91DC00DF4E0D /* NSArray+Util.m */,
-				D701F891206B91DC00DF4E0D /* NSDictionary+Util.h */,
-				D701F892206B91DC00DF4E0D /* NSDictionary+Util.m */,
-				D701F893206B91DC00DF4E0D /* NSString+Util.h */,
-				D701F894206B91DC00DF4E0D /* NSString+Util.m */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		D701F895206B91DC00DF4E0D /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				D701F896206B91DC00DF4E0D /* NSObject+TipsExtension.h */,
-				D701F897206B91DC00DF4E0D /* NSObject+TipsExtension.m */,
-				D701F898206B91DC00DF4E0D /* UIColor+Util.h */,
-				D701F899206B91DC00DF4E0D /* UIColor+Util.m */,
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 		D71E93862047A63000FB34A5 /* Model */ = {
@@ -766,6 +781,41 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		D73F2187206C85CC006BF63A /* GankIOKit */ = {
+			isa = PBXGroup;
+			children = (
+				D73F2188206C85CC006BF63A /* GankIOKit.h */,
+				D73F2189206C85CC006BF63A /* Info.plist */,
+			);
+			path = GankIOKit;
+			sourceTree = "<group>";
+		};
+		D73F2194206C85CC006BF63A /* GankIOKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D73F2195206C85CC006BF63A /* GankIOKitTests.m */,
+				D73F2197206C85CC006BF63A /* Info.plist */,
+			);
+			path = GankIOKitTests;
+			sourceTree = "<group>";
+		};
+		D73F21BD206C8B1F006BF63A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D73F21C5206C8B1F006BF63A /* UIKit */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		D73F21C5206C8B1F006BF63A /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D73F21C6206C8B1F006BF63A /* NSObject+TipsExtension.h */,
+				D73F21C7206C8B1F006BF63A /* NSObject+TipsExtension.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		D7550EF1203FA4CE00023A89 /* My */ = {
 			isa = PBXGroup;
 			children = (
@@ -779,6 +829,10 @@
 		D7550EF2203FA4DD00023A89 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D73F21B9206C8AF4006BF63A /* GKGankSubmitTypeListVC.h */,
+				D73F21BA206C8AF4006BF63A /* GKGankSubmitTypeListVC.m */,
+				D73F21B7206C8AF4006BF63A /* GKGankSubmitVC.h */,
+				D73F21B8206C8AF4006BF63A /* GKGankSubmitVC.m */,
 				D7550EF5203FA50800023A89 /* GKMyVC.h */,
 				D7550EF6203FA50800023A89 /* GKMyVC.m */,
 				D7550EF8203FAE8000023A89 /* GKDonateVC.h */,
@@ -789,10 +843,6 @@
 				D6C28CBC2045900C00E6F4DC /* GKAbout.m */,
 				D6C28CC220459C7600E6F4DC /* GKCopyreaderVC.h */,
 				D6C28CC320459C7600E6F4DC /* GKCopyreaderVC.m */,
-				D71E93832047A62900FB34A5 /* GKGankSubmitVC.h */,
-				D71E93842047A62900FB34A5 /* GKGankSubmitVC.m */,
-				D71E93872047E24E00FB34A5 /* GKGankSubmitTypeListVC.h */,
-				D71E93882047E24E00FB34A5 /* GKGankSubmitTypeListVC.m */,
 				D71E938A2047F4A400FB34A5 /* GKOpenSourceFrameVC.h */,
 				D71E938B2047F4A400FB34A5 /* GKOpenSourceFrameVC.m */,
 				D701B021204E6E40006775B5 /* GKFeedbackVC.h */,
@@ -817,6 +867,8 @@
 				D7665DB4202AA32800EF8B3A /* Gank.ioTests */,
 				D7665DBF202AA32800EF8B3A /* Gank.ioUITests */,
 				D701F850206B69F400DF4E0D /* GankIOExtension */,
+				D73F2187206C85CC006BF63A /* GankIOKit */,
+				D73F2194206C85CC006BF63A /* GankIOKitTests */,
 				D7665D9A202AA32800EF8B3A /* Products */,
 				7633468B6E00DDC476ECA352 /* Pods */,
 				0733373CF18088EB5B0061B6 /* Frameworks */,
@@ -830,6 +882,8 @@
 				D7665DB1202AA32800EF8B3A /* Gank.ioTests.xctest */,
 				D7665DBC202AA32800EF8B3A /* Gank.ioUITests.xctest */,
 				D701F84F206B69F400DF4E0D /* GankIOExtension.appex */,
+				D73F2186206C85CC006BF63A /* GankIOKit.framework */,
+				D73F218E206C85CC006BF63A /* GankIOKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -853,8 +907,6 @@
 				D7550EF1203FA4CE00023A89 /* My */,
 				D7665D9C202AA32800EF8B3A /* AppDelegate.h */,
 				D7665D9D202AA32800EF8B3A /* AppDelegate.m */,
-				D7665D9F202AA32800EF8B3A /* ViewController.h */,
-				D7665DA0202AA32800EF8B3A /* ViewController.m */,
 				D7665DA5202AA32800EF8B3A /* Assets.xcassets */,
 				D7665DA7202AA32800EF8B3A /* LaunchScreen.storyboard */,
 				D7665DAA202AA32800EF8B3A /* Info.plist */,
@@ -1100,6 +1152,19 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		D73F2183206C85CC006BF63A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D73F21A5206C8641006BF63A /* UIColor+Util.h in Headers */,
+				D73F21A7206C8647006BF63A /* NSArray+Util.h in Headers */,
+				D73F2198206C85CC006BF63A /* GankIOKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		D701F84E206B69F400DF4E0D /* GankIOExtension */ = {
 			isa = PBXNativeTarget;
@@ -1118,6 +1183,43 @@
 			productReference = D701F84F206B69F400DF4E0D /* GankIOExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		D73F2185206C85CC006BF63A /* GankIOKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D73F219D206C85CD006BF63A /* Build configuration list for PBXNativeTarget "GankIOKit" */;
+			buildPhases = (
+				D73F2181206C85CC006BF63A /* Sources */,
+				D73F2182206C85CC006BF63A /* Frameworks */,
+				D73F2183206C85CC006BF63A /* Headers */,
+				D73F2184206C85CC006BF63A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GankIOKit;
+			productName = GankIOKit;
+			productReference = D73F2186206C85CC006BF63A /* GankIOKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D73F218D206C85CC006BF63A /* GankIOKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D73F21A1206C85CD006BF63A /* Build configuration list for PBXNativeTarget "GankIOKitTests" */;
+			buildPhases = (
+				D73F218A206C85CC006BF63A /* Sources */,
+				D73F218B206C85CC006BF63A /* Frameworks */,
+				D73F218C206C85CC006BF63A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D73F2191206C85CC006BF63A /* PBXTargetDependency */,
+				D73F2193206C85CC006BF63A /* PBXTargetDependency */,
+			);
+			name = GankIOKitTests;
+			productName = GankIOKitTests;
+			productReference = D73F218E206C85CC006BF63A /* GankIOKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D7665D98202AA32800EF8B3A /* Gank.io */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7665DC5202AA32800EF8B3A /* Build configuration list for PBXNativeTarget "Gank.io" */;
@@ -1129,11 +1231,13 @@
 				D8F63E2D1AD524496B6CF9C7 /* [CP] Embed Pods Frameworks */,
 				009398AFC105EA50BECFC27C /* [CP] Copy Pods Resources */,
 				D701F837206B653000DF4E0D /* Embed App Extensions */,
+				D73F21A0206C85CD006BF63A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				D701F859206B69F400DF4E0D /* PBXTargetDependency */,
+				D73F219A206C85CC006BF63A /* PBXTargetDependency */,
 			);
 			name = Gank.io;
 			productName = Gank.io;
@@ -1190,6 +1294,15 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					D73F2185206C85CC006BF63A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					D73F218D206C85CC006BF63A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D7665D98202AA32800EF8B3A;
+					};
 					D7665D98202AA32800EF8B3A = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -1228,6 +1341,8 @@
 				D7665DB0202AA32800EF8B3A /* Gank.ioTests */,
 				D7665DBB202AA32800EF8B3A /* Gank.ioUITests */,
 				D701F84E206B69F400DF4E0D /* GankIOExtension */,
+				D73F2185206C85CC006BF63A /* GankIOKit */,
+				D73F218D206C85CC006BF63A /* GankIOKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1238,6 +1353,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D701F856206B69F400DF4E0D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73F2184206C85CC006BF63A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73F218C206C85CC006BF63A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1353,13 +1482,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D701F860206B6F0300DF4E0D /* GKSubmitViewController.m in Sources */,
-				D701F8A0206B91DC00DF4E0D /* NSString+Util.m in Sources */,
-				D701F89E206B91DC00DF4E0D /* NSArray+Util.m in Sources */,
-				D701F89F206B91DC00DF4E0D /* NSDictionary+Util.m in Sources */,
-				D701F884206B8A8100DF4E0D /* GKSubmitCell.m in Sources */,
-				D701F8A1206B91DC00DF4E0D /* NSObject+TipsExtension.m in Sources */,
-				D701F8A2206B91DC00DF4E0D /* UIColor+Util.m in Sources */,
+				D73F21B6206C8AEB006BF63A /* GKSubmitViewController.m in Sources */,
+				D73F21CD206C8B1F006BF63A /* NSObject+TipsExtension.m in Sources */,
+				D73F21B5206C8AEB006BF63A /* GKSubmitCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73F2181206C85CC006BF63A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D73F21A9206C868A006BF63A /* NSArray+Util.m in Sources */,
+				D73F21AA206C8693006BF63A /* UIColor+Util.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D73F218A206C85CC006BF63A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D73F2196206C85CC006BF63A /* GankIOKitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1370,16 +1512,13 @@
 				D7550F0120400EC700023A89 /* GKUserManager.m in Sources */,
 				D7A66B522030145A00D25EA9 /* FSActionSheetCell.m in Sources */,
 				D7A66B502030145A00D25EA9 /* UIView+XLExtension.m in Sources */,
-				D71E93892047E24E00FB34A5 /* GKGankSubmitTypeListVC.m in Sources */,
 				D64A818020419DF900B81645 /* Trochilus.m in Sources */,
-				D7665DA1202AA32800EF8B3A /* ViewController.m in Sources */,
 				D60B6EDC20353B1A00061AE6 /* NSString+Util.m in Sources */,
 				D77952A8203EA48C00AF0023 /* GKDiscoverListModel.m in Sources */,
 				D77952B5203EC76F00AF0023 /* UIImage+Util.m in Sources */,
 				D7A66B5C2030145A00D25EA9 /* XLProgressView.m in Sources */,
 				D6C383C2204427DC00CC9AEE /* GKShareVC.m in Sources */,
 				D7665DD0202AAC7B00EF8B3A /* GKTabBarController.m in Sources */,
-				D7A66B2A202FDB7F00D25EA9 /* NSArray+Util.m in Sources */,
 				D6C28CC420459C7600E6F4DC /* GKCopyreaderVC.m in Sources */,
 				D7A66B542030145A00D25EA9 /* FSActionSheetItem.m in Sources */,
 				D7A66B672030357700D25EA9 /* GKWelfareCell.m in Sources */,
@@ -1389,12 +1528,13 @@
 				D64A817020419DF900B81645 /* NSDate+Trochilus.m in Sources */,
 				D7665DAC202AA32800EF8B3A /* main.m in Sources */,
 				D7A66B5B2030145A00D25EA9 /* XLPhotoBrowser.m in Sources */,
-				D79784A4202D8EE900B7913C /* UIColor+Util.m in Sources */,
 				D77052832041042C005C9268 /* NSDictionary+Util.m in Sources */,
+				D73F21BC206C8AF5006BF63A /* GKGankSubmitTypeListVC.m in Sources */,
 				D7A66B532030145A00D25EA9 /* FSActionSheetConfig.m in Sources */,
 				D6C28CC1204594BA00E6F4DC /* GKAboutHeaderView.m in Sources */,
 				D61939BC202EA0E20081CB68 /* GKWebViewVC.m in Sources */,
 				D61FF05C202EDE420084E9FA /* BaseViewController.m in Sources */,
+				D73F21BB206C8AF5006BF63A /* GKGankSubmitVC.m in Sources */,
 				D7FEAC6B205A029200C5AF47 /* GKToadyADCell.m in Sources */,
 				D7665DD3202AD50B00EF8B3A /* GKTodayVC.m in Sources */,
 				D61939C2202EA2E60081CB68 /* BaseNavigationController.m in Sources */,
@@ -1406,7 +1546,6 @@
 				D64A817120419DF900B81645 /* NSMutableArray+Trochilus.m in Sources */,
 				D7B831022032797B007F908D /* GKHistoryDateVC.m in Sources */,
 				D61939B8202E98240081CB68 /* UIImageView+Util.m in Sources */,
-				D71E93852047A62900FB34A5 /* GKGankSubmitVC.m in Sources */,
 				D64A817C20419DF900B81645 /* TAliPayPlatform.m in Sources */,
 				D60B6ED92035379900061AE6 /* GKDiscoverCell.m in Sources */,
 				D7550EFA203FAE8000023A89 /* GKDonateVC.m in Sources */,
@@ -1474,6 +1613,21 @@
 			target = D701F84E206B69F400DF4E0D /* GankIOExtension */;
 			targetProxy = D701F858206B69F400DF4E0D /* PBXContainerItemProxy */;
 		};
+		D73F2191206C85CC006BF63A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D73F2185206C85CC006BF63A /* GankIOKit */;
+			targetProxy = D73F2190206C85CC006BF63A /* PBXContainerItemProxy */;
+		};
+		D73F2193206C85CC006BF63A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7665D98202AA32800EF8B3A /* Gank.io */;
+			targetProxy = D73F2192206C85CC006BF63A /* PBXContainerItemProxy */;
+		};
+		D73F219A206C85CC006BF63A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D73F2185206C85CC006BF63A /* GankIOKit */;
+			targetProxy = D73F2199206C85CC006BF63A /* PBXContainerItemProxy */;
+		};
 		D7665DB3202AA32800EF8B3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D7665D98202AA32800EF8B3A /* Gank.io */;
@@ -1539,6 +1693,80 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D73F219E206C85CD006BF63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 433U67TR43;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GankIOKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangquanwei.GankIOKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D73F219F206C85CD006BF63A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 433U67TR43;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GankIOKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangquanwei.GankIOKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D73F21A2206C85CD006BF63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89BZ957YW3;
+				INFOPLIST_FILE = GankIOKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangquanwei.GankIOKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gank.io.app/Gank.io";
+			};
+			name = Debug;
+		};
+		D73F21A3206C85CD006BF63A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89BZ957YW3;
+				INFOPLIST_FILE = GankIOKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangquanwei.GankIOKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gank.io.app/Gank.io";
 			};
 			name = Release;
 		};
@@ -1762,6 +1990,24 @@
 			buildConfigurations = (
 				D701F85C206B69F400DF4E0D /* Debug */,
 				D701F85D206B69F400DF4E0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D73F219D206C85CD006BF63A /* Build configuration list for PBXNativeTarget "GankIOKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D73F219E206C85CD006BF63A /* Debug */,
+				D73F219F206C85CD006BF63A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D73F21A1206C85CD006BF63A /* Build configuration list for PBXNativeTarget "GankIOKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D73F21A2206C85CD006BF63A /* Debug */,
+				D73F21A3206C85CD006BF63A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
