@@ -9,6 +9,21 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>GankIOExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>GankIOKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>GankIOShareExtensions.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 	</dict>
 </dict>
 </plist>

@@ -179,7 +179,13 @@
                 
                 if (src.length > 0) {
                     int imageWidth = (int)((kSCREENWIDTH)-70)/3;
-                    src = [src stringByReplacingOccurrencesOfString:@"imageView2/2/w/460" withString:[NSString stringWithFormat:@"imageMogr2/thumbnail/%dx/format/jpg",imageWidth]];
+                    if ([src containsString:@"imageView2/2/w/460"]) {
+                        src = [src stringByReplacingOccurrencesOfString:@"imageView2/2/w/460" withString:[NSString stringWithFormat:@"imageMogr2/thumbnail/%dx/format/jpg",imageWidth]];
+                    }
+                    else {
+                        src = [NSString stringWithFormat:@"%@?imageMogr2/thumbnail/%d/format/jpg",src,imageWidth];
+                    }
+                    
                     [imageUrlArray addObject:src];
                 }
             }

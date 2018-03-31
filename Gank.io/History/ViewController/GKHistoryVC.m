@@ -91,7 +91,17 @@
         [self gankHistoryWithReload:NO];
     }];
 }
-                                           
+
+#pragma mark 按钮点击事件
+- (void)moreBtn:(UIButton *)btn {
+    
+    GKShareVC * shareVC = [[GKShareVC alloc] init];
+    shareVC.providesPresentationContextTransitionStyle = YES;
+    shareVC.definesPresentationContext = YES;
+    shareVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self.tabBarController presentViewController:shareVC animated:NO completion:nil];
+}
+
 #pragma mark 网络请求
 - (void)gankHistoryWithReload:(BOOL)reload {
     
@@ -160,15 +170,7 @@ static NSString * cellStr = @"cell";
     
     GKHistoryModel * model = [self.data safeObjectAtIndex:indexPath.row];
     
-    @weakObj(self)
-    [cell.moreBtn bk_whenTapped:^{
-        @strongObj(self)
-        GKShareVC * shareVC = [[GKShareVC alloc] init];
-        shareVC.providesPresentationContextTransitionStyle = YES;
-        shareVC.definesPresentationContext = YES;
-        shareVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        [self.tabBarController presentViewController:shareVC animated:NO completion:nil];
-    }];
+    [cell.moreBtn addTarget:self action:@selector(moreBtn:) forControlEvents:UIControlEventTouchUpInside];
     
     [cell setModel:model];
     
