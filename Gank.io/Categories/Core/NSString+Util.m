@@ -15,4 +15,30 @@
     return [self boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil].size;
 }
 
++ (NSString *)keywordFilterWithString:(NSString *)string {
+    
+    NSString * str = [string copy];
+    if ([string containsString:@"android"]) {
+        str = [str stringByReplacingOccurrencesOfString:@"android" withString:@""];
+    }
+    
+    if ([string containsString:@"Android"]) {
+        str = [str stringByReplacingOccurrencesOfString:@"Android" withString:@""];
+    }
+    
+    if ([string containsString:@"Andorid"]) {
+        str = [str stringByReplacingOccurrencesOfString:@"Andorid" withString:@""];
+    }
+    
+    if ([string containsString:@"iOS"]) {
+        str = [str stringByReplacingOccurrencesOfString:@"iOS" withString:@""];
+    }
+    
+    if ([string containsString:@"ios"]) {
+        str = [str stringByReplacingOccurrencesOfString:@"ios" withString:@""];
+    }
+    
+    return str;
+}
+
 @end

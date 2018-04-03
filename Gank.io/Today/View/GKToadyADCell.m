@@ -43,6 +43,19 @@
 
 - (void)initUI {
     
+    //图片
+    self.adView = [[UIView alloc] init];
+    [self addSubview:self.adView];
+    
+    [self.adView makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(15);
+        make.right.equalTo(self).offset(-15);
+        make.width.equalTo(120);
+        make.bottom.equalTo(self).offset(-15);
+        make.height.equalTo(80);
+    }];
+    
+    //标题
     self.titleLabel = [[UILabel alloc] init];
     self.titleLabel.numberOfLines = 3;
     self.titleLabel.font = [UIFont systemFontOfSize:19.f];
@@ -52,17 +65,7 @@
         make.top.equalTo(self).offset(15);
         make.left.equalTo(self).offset(15);
         make.height.lessThanOrEqualTo(80);
-        make.right.equalTo(self).offset(-15);
-    }];
-    
-    self.adView = [[UIView alloc] init];
-    [self addSubview:self.adView];
-    
-    [self.adView makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(15);
-        make.right.equalTo(self).offset(-15);
-        make.top.equalTo(self.titleLabel.bottom).offset(10);
-        make.height.equalTo(220);
+        make.right.equalTo(self.adView.left).offset(-15);
     }];
     
     self.classifyLabel = [[UILabel alloc] init];
@@ -76,20 +79,21 @@
     [self addSubview:self.classifyLabel];
     
     [self.classifyLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.adView.bottom).offset(10);
         make.left.equalTo(self).offset(15);
-        make.bottom.equalTo(self).offset(-10);
-        //        make.top.equalTo(self.titleLabel.bottom).offset(5);
-        make.width.equalTo(35);
+        //            make.bottom.equalTo(self).offset(-15);
+        make.top.equalTo(self.titleLabel.bottom).offset(5);
+        make.width.equalTo(40);
         make.height.equalTo(21);
+        make.bottom.equalTo(self).offset(-15);
     }];
+    
 }
 
 - (void)setModel:(IMNative *)native {
     
     self.titleLabel.text = native.adDescription;
     
-    UIView * feedADView = [native primaryViewOfWidth:kSCREENWIDTH-30];
+    UIView * feedADView = [native primaryViewOfWidth:120];
     feedADView.userInteractionEnabled = NO;
     [self.adView addSubview:feedADView];
     

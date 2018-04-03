@@ -52,7 +52,12 @@
         else {
             //这里是历史页面跳过来的
             //标题
-            self.titleLabel.text = self.historyModel.title;
+            if ([Trochilus isWeChatInstalled]) {
+                self.titleLabel.text = self.historyModel.title;
+            }
+            else {
+                self.titleLabel.text = [NSString keywordFilterWithString:self.historyModel.title];
+            }
             
             //计算标题文字高度
             [self titleLablTextHeight];
@@ -70,7 +75,6 @@
         [self gankTitle];
         [self gankDayList];
     }
-    
     
 }
 
@@ -177,7 +181,13 @@
     
     [GKNetwork getWithUrl:url success:^(NSDictionary * responseObj) {
         
-        self.titleLabel.text = [[responseObj objectForKey:@"results"][0] objectForKey:@"title"];
+        if ([Trochilus isWeChatInstalled]) {
+            self.titleLabel.text = [[responseObj objectForKey:@"results"][0] objectForKey:@"title"];
+        }
+        else {
+            NSString * titleStr = [[responseObj objectForKey:@"results"][0] objectForKey:@"title"];
+            self.titleLabel.text = [NSString keywordFilterWithString:titleStr];
+        }
         
         //计算标题文字高度
         [self titleLablTextHeight];
@@ -351,23 +361,24 @@ static NSString * adCellStr = @"adcell";
         
         if (self.nativeAD.isAppDownload) {
             
-            NSString * str = [self.nativeAD.adLandingPageUrl absoluteString];
-            NSArray * array = [str componentsSeparatedByString:@"id"];
-            NSString * itunesIdStr = [array safeObjectAtIndex:1];
-            NSArray * itunesIdArray = [itunesIdStr componentsSeparatedByString:@"?"];
-            
-            NSString * appstoreId = [itunesIdArray safeObjectAtIndex:0];
-            
-            SKStoreProductViewController *storeProductVC = [[SKStoreProductViewController alloc] init];
-            storeProductVC.delegate = self;
-            NSDictionary *dic = [NSDictionary dictionaryWithObject:appstoreId forKey:SKStoreProductParameterITunesItemIdentifier];
-            [storeProductVC loadProductWithParameters:dic completionBlock:^(BOOL result, NSError * _Nullable error) {
-                if (!error) {
-                    [self presentViewController:storeProductVC animated:YES completion:nil];
-                } else {
-                    NSLog(@"ERROR:%@",error);
-                }
-            }];
+            [self.nativeAD reportAdClickAndOpenLandingPage];
+//            NSString * str = [self.nativeAD.adLandingPageUrl absoluteString];
+//            NSArray * array = [str componentsSeparatedByString:@"id"];
+//            NSString * itunesIdStr = [array safeObjectAtIndex:1];
+//            NSArray * itunesIdArray = [itunesIdStr componentsSeparatedByString:@"?"];
+//
+//            NSString * appstoreId = [itunesIdArray safeObjectAtIndex:0];
+//
+//            SKStoreProductViewController *storeProductVC = [[SKStoreProductViewController alloc] init];
+//            storeProductVC.delegate = self;
+//            NSDictionary *dic = [NSDictionary dictionaryWithObject:appstoreId forKey:SKStoreProductParameterITunesItemIdentifier];
+//            [storeProductVC loadProductWithParameters:dic completionBlock:^(BOOL result, NSError * _Nullable error) {
+//                if (!error) {
+//                    [self presentViewController:storeProductVC animated:YES completion:nil];
+//                } else {
+//                    NSLog(@"ERROR:%@",error);
+//                }
+//            }];
         }
     }
     else {

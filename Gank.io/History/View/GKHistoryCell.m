@@ -123,7 +123,12 @@
 - (void)setModel:(GKHistoryModel *)model{
     
     //标题
-    self.titleLabel.text = model.title;
+    if ([Trochilus isWeChatInstalled]) {
+        self.titleLabel.text = model.title;
+    }
+    else {
+        self.titleLabel.text = [NSString keywordFilterWithString:model.title];
+    }
     
     //图片
     if (model.imageArray == nil) {

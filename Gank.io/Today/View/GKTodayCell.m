@@ -88,10 +88,20 @@
 - (void)setModel:(GKTodayModel *)model {
     
     //标题
-    self.titleLabel.text = model.desc;
+    if ([Trochilus isWeChatInstalled]) {
+        self.titleLabel.text = model.desc;
+    }
+    else {
+        self.titleLabel.text = [NSString keywordFilterWithString:model.desc];
+    }
     
     //类型
-    self.classifyLabel.text = [NSString stringWithFormat:@"%@   by %@",model.type,model.who];
+    if ([Trochilus isWeChatInstalled]) {
+        self.classifyLabel.text = [NSString stringWithFormat:@"%@   by %@",model.type,model.who];
+    }
+    else {
+        self.classifyLabel.text = [NSString stringWithFormat:@"%@   by %@",[NSString keywordFilterWithString:model.type],model.who];
+    }
     
     //图片
     if (model.images.count > 0) {

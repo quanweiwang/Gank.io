@@ -12,4 +12,6 @@
 
 - (CGSize)boundingRectWithSize:(CGSize)size font:(UIFont *)font;
 
++ (NSString *)keywordFilterWithString:(NSString *)string;
+
 @end

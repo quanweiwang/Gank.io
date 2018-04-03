@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
+		<key>GankIOShareExtensions.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
