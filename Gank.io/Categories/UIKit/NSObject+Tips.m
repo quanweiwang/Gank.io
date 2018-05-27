@@ -26,8 +26,8 @@
 
 static Tips_private * _instance = nil;
 
-+ (instancetype)sharedInstance
-{
++ (instancetype)sharedInstance {
+    
     static dispatch_once_t onceToken ;
     dispatch_once(&onceToken, ^{
         _instance = [[self alloc] init] ;
@@ -36,8 +36,7 @@ static Tips_private * _instance = nil;
     return _instance ;
 }
 
--(id)init
-{
+- (instancetype)init {
     self = [super init];
     
     if (self) {
@@ -50,7 +49,7 @@ static Tips_private * _instance = nil;
     return self;
 }
 
--(void)showTTip:(NSString *)string detail:(NSString *)detail timeOut:(NSTimeInterval)interval mode:(MBProgressHUDMode)mode{
+- (void)showTTip:(NSString *)string detail:(NSString *)detail timeOut:(NSTimeInterval)interval mode:(MBProgressHUDMode)mode {
     
     hud.label.text = string;
     hud.detailsLabel.text = detail;
@@ -69,19 +68,26 @@ static Tips_private * _instance = nil;
         interval = 999;
     }
     
+    @weakObj(self)
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        @strongObj(self)
+        [self ttipsDismiss];
+    });
+    
     //[self ttipsDismiss];
-    timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(ttipsDismiss) userInfo:nil repeats:NO];
+//    timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(ttipsDismiss) userInfo:nil repeats:NO];
 }
 
-- (void)ttipsDismiss{
+- (void)ttipsDismiss {
     
+    [hud removeFromSuperview];
     hud.removeFromSuperViewOnHide = NO;
     [hud.layer removeAllAnimations];
     [hud hideAnimated:YES];
     
-    //销毁定时器
-    [timer invalidate];
-    timer = nil;
+//    //销毁定时器
+//    [timer invalidate];
+//    timer = nil;
 }
 
 @end
