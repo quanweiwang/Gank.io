@@ -89,14 +89,14 @@
     
 }
 
-- (void)setModel:(IMNative *)native {
-    
-    self.titleLabel.text = native.adDescription;
-    
-    UIView * feedADView = [native primaryViewOfWidth:120];
-    feedADView.userInteractionEnabled = NO;
-    [self.adView addSubview:feedADView];
-    
-}
+//- (void)setModel:(IMNative *)native {
+//    
+//    self.titleLabel.text = native.adDescription;
+//    
+//    UIView * feedADView = [native primaryViewOfWidth:120];
+//    feedADView.userInteractionEnabled = NO;
+//    [self.adView addSubview:feedADView];
+//    
+//}
 
 @end

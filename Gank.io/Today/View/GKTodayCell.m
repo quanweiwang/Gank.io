@@ -107,7 +107,7 @@
     if (model.images.count > 0) {
 
         NSString * demoImageViewUrl = [NSString stringWithFormat:@"%@?imageMogr2/thumbnail/120x/format/jpg",model.images[0]];
-        [self.demoImageView setImageWithURL:demoImageViewUrl placeholderImage:[UIImage imageNamed:@"placeholder"]];
+        [self.demoImageView setImageWithURLString:demoImageViewUrl placeholderImage:[UIImage imageNamed:@"placeholder"]];
         
         if (model.textHeight == 0) {
             //缓存文字高度

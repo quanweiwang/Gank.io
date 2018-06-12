@@ -12,4 +12,6 @@
 
 + (UIImage *)imageWithGifFristFrame:(UIImage *)image;
 
++ (UIImage*)image:(UIImage*)image fortargetSize:(CGSize)targetSize;
+
 @end

@@ -12,7 +12,7 @@
 
 @implementation UIImageView (Util)
 
-- (void)setImageWithURL:(NSString *)url placeholderImage:(UIImage *)placeholderImage {
+- (void)setImageWithURLString:(NSString *)url placeholderImage:(UIImage *)placeholderImage {
     
     NSString * urlString = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
@@ -20,7 +20,7 @@
     
 }
 
-- (void)setImageWithURL:(NSString *)url placeholderImage:(UIImage *)placeholderImage completed:(nullable SDExternalCompletionBlock)completedBlock {
+- (void)setImageWithURLString:(NSString *)url placeholderImage:(UIImage *)placeholderImage completed:(nullable SDExternalCompletionBlock)completedBlock {
     
     NSString * urlString = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     self.image = placeholderImage;

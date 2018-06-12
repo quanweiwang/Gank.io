@@ -10,6 +10,6 @@
 
 @interface GKToadyADCell : UITableViewCell
 
-- (void)setModel:(IMNative *)native;
+//- (void)setModel:(IMNative *)native;
 
 @end

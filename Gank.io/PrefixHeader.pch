@@ -26,7 +26,6 @@
 #import "WRNavigationBar.h"
 #import <AFNetworking/AFNetworking.h>
 #import <IQKeyboardManager/IQKeyboardManager.h>
-#import <InMobiSDK/InMobiSDK.h>
 
 #import "GKMacro.h"
 #import "GKNetwork.h"

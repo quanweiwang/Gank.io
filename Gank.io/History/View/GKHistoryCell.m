@@ -142,7 +142,7 @@
     for (int i = 0; i < model.imageArray.count; i++) {
         UIImageView * imgView = [self.imageViewArray safeObjectAtIndex:i];
         imgView.hidden = NO;
-        [imgView setImageWithURL:[model.imageArray safeObjectAtIndex:i] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+        [imgView setImageWithURLString:[model.imageArray safeObjectAtIndex:i] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     }
     
     //发布日期

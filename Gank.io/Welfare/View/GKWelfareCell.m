@@ -65,7 +65,7 @@
     int imageWeidth = (kSCREENWIDTH-(15 + 15 + 15)) * 0.5;
     NSString * imageUrl = [NSString stringWithFormat:@"%@?imageView2/0/w/%d",model.url,imageWeidth];
     
-    [self.welfareImageView setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    [self.welfareImageView setImageWithURLString:imageUrl placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     self.authorLabel.text = [NSString stringWithFormat:@"by: %@",model.who];
 }

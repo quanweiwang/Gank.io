@@ -66,7 +66,7 @@
 
 - (void)setModelWithDic:(NSDictionary *)dic {
     
-    [self.headImageView setImageWithURL:dic[@"url"] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    [self.headImageView setImageWithURLString:dic[@"url"] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     self.nameLabel.text = dic[@"name"];
 }

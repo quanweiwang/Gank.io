@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		570D384E38021F8797BC6113 /* Pods_Gank_io.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742EBE2EAF90C128DD97BD04 /* Pods_Gank_io.framework */; };
+		5FD20DAEF304D2F52CB3E009 /* Pods_Gank_io.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8BB206B9BCB00DF4E0D /* Pods_Gank_io.framework */; };
 		D60B6ED92035379900061AE6 /* GKDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B6ED82035379900061AE6 /* GKDiscoverCell.m */; };
 		D60B6EDC20353B1A00061AE6 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B6EDB20353B1A00061AE6 /* NSString+Util.m */; };
 		D61939B8202E98240081CB68 /* UIImageView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D61939B7202E98240081CB68 /* UIImageView+Util.m */; };
@@ -50,7 +51,6 @@
 		D701F8A6206B9BCB00DF4E0D /* BlocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8B3206B9BCB00DF4E0D /* BlocksKit.framework */; };
 		D701F8AA206B9BCB00DF4E0D /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8B7206B9BCB00DF4E0D /* Masonry.framework */; };
 		D701F8AB206B9BCB00DF4E0D /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8B8206B9BCB00DF4E0D /* MBProgressHUD.framework */; };
-		D701F8AE206B9BCB00DF4E0D /* Pods_Gank_io.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8BB206B9BCB00DF4E0D /* Pods_Gank_io.framework */; };
 		D701F8BF206B9D9600DF4E0D /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8C7206B9D9600DF4E0D /* FLAnimatedImage.framework */; };
 		D701F8C0206B9D9600DF4E0D /* FSCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8C8206B9D9600DF4E0D /* FSCalendar.framework */; };
 		D701F8C1206B9D9600DF4E0D /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F8C9206B9D9600DF4E0D /* IQKeyboardManager.framework */; };
@@ -205,9 +205,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		600C5F304B24BA741E369A45 /* Pods-Gank.io.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gank.io.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io.debug.xcconfig"; sourceTree = "<group>"; };
+		047CAA1FB7BFC51B0074D0F4 /* Pods-Gank.io.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gank.io.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io.debug.xcconfig"; sourceTree = "<group>"; };
+		682E6E86564353F1B1433CA8 /* Pods-Gank.io.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gank.io.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io.release.xcconfig"; sourceTree = "<group>"; };
 		742EBE2EAF90C128DD97BD04 /* Pods_Gank_io.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gank_io.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84D05CFF2E60B0548D03A34E /* Pods-Gank.io.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gank.io.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gank.io/Pods-Gank.io.release.xcconfig"; sourceTree = "<group>"; };
 		D60B6ED72035379900061AE6 /* GKDiscoverCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDiscoverCell.h; sourceTree = "<group>"; };
 		D60B6ED82035379900061AE6 /* GKDiscoverCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDiscoverCell.m; sourceTree = "<group>"; };
 		D60B6EDA20353B1A00061AE6 /* NSString+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
@@ -456,7 +456,6 @@
 				D701F8A6206B9BCB00DF4E0D /* BlocksKit.framework in Frameworks */,
 				D701F8AA206B9BCB00DF4E0D /* Masonry.framework in Frameworks */,
 				D701F8AB206B9BCB00DF4E0D /* MBProgressHUD.framework in Frameworks */,
-				D701F8AE206B9BCB00DF4E0D /* Pods_Gank_io.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +492,7 @@
 				D7C1253D2060DC280015D4FD /* AVFoundation.framework in Frameworks */,
 				D61939BE202EA0F40081CB68 /* WebKit.framework in Frameworks */,
 				570D384E38021F8797BC6113 /* Pods_Gank_io.framework in Frameworks */,
+				5FD20DAEF304D2F52CB3E009 /* Pods_Gank_io.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,8 +559,8 @@
 		7633468B6E00DDC476ECA352 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				600C5F304B24BA741E369A45 /* Pods-Gank.io.debug.xcconfig */,
-				84D05CFF2E60B0548D03A34E /* Pods-Gank.io.release.xcconfig */,
+				047CAA1FB7BFC51B0074D0F4 /* Pods-Gank.io.debug.xcconfig */,
+				682E6E86564353F1B1433CA8 /* Pods-Gank.io.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1662,7 +1662,7 @@
 /* Begin XCBuildConfiguration section */
 		D701F85C206B69F400DF4E0D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 600C5F304B24BA741E369A45 /* Pods-Gank.io.debug.xcconfig */;
+			baseConfigurationReference = 047CAA1FB7BFC51B0074D0F4 /* Pods-Gank.io.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 433U67TR43;
@@ -1680,7 +1680,7 @@
 		};
 		D701F85D206B69F400DF4E0D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84D05CFF2E60B0548D03A34E /* Pods-Gank.io.release.xcconfig */;
+			baseConfigurationReference = 682E6E86564353F1B1433CA8 /* Pods-Gank.io.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 433U67TR43;
@@ -1878,7 +1878,7 @@
 		};
 		D7665DC6202AA32800EF8B3A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 600C5F304B24BA741E369A45 /* Pods-Gank.io.debug.xcconfig */;
+			baseConfigurationReference = 047CAA1FB7BFC51B0074D0F4 /* Pods-Gank.io.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Gank.io/Gank.io.entitlements;
@@ -1900,7 +1900,7 @@
 		};
 		D7665DC7202AA32800EF8B3A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84D05CFF2E60B0548D03A34E /* Pods-Gank.io.release.xcconfig */;
+			baseConfigurationReference = 682E6E86564353F1B1433CA8 /* Pods-Gank.io.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Gank.io/Gank.io.entitlements;

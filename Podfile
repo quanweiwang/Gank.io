@@ -20,7 +20,6 @@ target "Gank.io" do
 	pod 'SDWebImage/GIF'
 	pod 'JPush', '3.0.8'
 	pod 'Bugtags', '~> 3.0.1'
-	pod 'InMobiSDK', '~> 7.0.4'
 	pod 'FSCalendar'
 end
 

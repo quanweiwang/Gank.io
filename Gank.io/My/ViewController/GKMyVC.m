@@ -74,7 +74,7 @@
     self.headImageView.layer.cornerRadius = 66/2;
     self.headImageView.layer.masksToBounds = YES;
     self.headImageView.userInteractionEnabled = YES;
-    [self.headImageView setImageWithURL:[GKUserManager shareInstance].avatar_url placeholderImage:[UIImage imageNamed:@"GitHub_icon"]];
+    [self.headImageView setImageWithURLString:[GKUserManager shareInstance].avatar_url placeholderImage:[UIImage imageNamed:@"GitHub_icon"]];
     [self.headerView addSubview:self.headImageView];
     
     [self.headImageView bk_whenTapped:^{
@@ -179,7 +179,7 @@
         }
         
         NSString * avatar_url = [jsonDict objectForKey:@"avatar_url"];
-        [self.headImageView setImageWithURL:avatar_url placeholderImage:[UIImage imageNamed:@"GitHub_icon"]];
+        [self.headImageView setImageWithURLString:avatar_url placeholderImage:[UIImage imageNamed:@"GitHub_icon"]];
         
         if ([[jsonDict valueForKey:@"name"] isKindOfClass:[NSNull class]] == NO) {
             

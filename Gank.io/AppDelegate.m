@@ -11,7 +11,6 @@
 #import "NSMutableDictionary+TrochilusInit.h"
 #import "JPUSHService.h"
 #import <Bugtags/Bugtags.h>
-#import <InMobiSDK/InMobiSDK.h>
 
 // iOS10注册APNs所需头文件
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
@@ -35,9 +34,6 @@
     [self.window makeKeyAndVisible];
     
     [Bugtags startWithAppKey:kBUGTAGSKEY invocationEvent:BTGInvocationEventNone];
-    
-    [IMSdk initWithAccountID:kINMOBIACCOUNTID];
-    [IMSdk setLogLevel:kIMSDKLogLevelDebug];
     
     [self reachabilityNetworkStatus];
     
@@ -90,7 +86,6 @@
     
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
