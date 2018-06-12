@@ -69,19 +69,27 @@ static Tips_private * _instance = nil;
         interval = 999;
     }
     
+    @weakObj(self)
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        @strongObj(self)
+        [self ttipsDismiss];
+    });
+    
     //[self ttipsDismiss];
-    timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(ttipsDismiss) userInfo:nil repeats:NO];
+    
+//    timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(ttipsDismiss) userInfo:nil repeats:NO];
 }
 
 - (void)ttipsDismiss{
     
+    [hud removeFromSuperview];
     hud.removeFromSuperViewOnHide = NO;
     [hud.layer removeAllAnimations];
     [hud hideAnimated:YES];
     
-    //销毁定时器
-    [timer invalidate];
-    timer = nil;
+//    //销毁定时器
+//    [timer invalidate];
+//    timer = nil;
 }
 
 @end

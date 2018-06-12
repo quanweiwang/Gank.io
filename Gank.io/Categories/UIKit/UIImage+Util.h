@@ -10,7 +10,15 @@
 
 @interface UIImage (Util)
 
-+ (UIImage *)imageWithGifFristFrame:(UIImage *)image;
+
+/**
+ 图片剪切
+
+ @param image 图片
+ @param targetSize 尺寸
+ @return 压缩后的图片
+ */
++ (UIImage *)clipImage:(UIImage *)image toRect:(CGSize)size;
 
 + (UIImage*)image:(UIImage*)image fortargetSize:(CGSize)targetSize;
 

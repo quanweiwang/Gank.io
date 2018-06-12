@@ -38,4 +38,22 @@
     
 }
 
+- (void)setImageWithURLString:(NSString *)url placeholderImage:(UIImage *)placeholderImage targetSize:(CGSize)targetSize {
+    
+    NSString * urlString = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    self.image = placeholderImage;
+    
+    if (url != nil) {
+        
+        @weakObj(self)
+        [self sd_setImageWithURL:[NSURL URLWithString:urlString] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            
+            @strongObj(self)
+            self.image = [UIImage clipImage:image toRect:targetSize];
+            
+        }];
+    }
+    
+}
+
 @end

@@ -264,7 +264,7 @@ static NSString * cellStr = @"cell";
     
     NSString * titleStr = [[self.cellTitleArray safeObjectAtIndex:indexPath.section] safeObjectAtIndex:indexPath.row];
     
-    if ([titleStr isEqualToString:@"打赏"]) {
+    if ([titleStr isEqualToString:@"请作者喝杯咖啡"]) {
         GKDonateVC * vc = [[GKDonateVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -325,7 +325,7 @@ static NSString * cellStr = @"cell";
         _cellTitleArray = [NSMutableArray array];
         
         if ([Trochilus isAliPayInstalled]) {
-            [_cellTitleArray addObject:@[@"打赏"]];
+            [_cellTitleArray addObject:@[@"请作者喝杯咖啡"]];
         }
         [_cellTitleArray addObject:@[@"干货爆料",@"瞎吐槽",@"系统设置"]];
         [_cellTitleArray addObject:@[@"退出登录"]];

@@ -14,4 +14,6 @@
 
 - (void)setImageWithURLString:(NSString *_Nullable)url placeholderImage:(UIImage *_Nullable)placeholderImage completed:(nullable SDExternalCompletionBlock)completedBlock;
 
+- (void)setImageWithURLString:(NSString *)url placeholderImage:(UIImage *)placeholderImage targetSize:(CGSize)targetSize;
+
 @end
